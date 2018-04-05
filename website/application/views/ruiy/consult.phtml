@@ -1,0 +1,493 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><?php echo $meta->title; ?></title>
+    <meta name="description" content="<?php echo $meta->description; ?>" />
+    <meta name="keywords" content="<?php echo $meta->keywords; ?>" />
+    <link rel="shortcut icon" href="<?php echo $meta->favicon; ?>" />
+    <link rel="bookmark" href="<?php echo $meta->favicon; ?>" type="image/x-icon"　/>
+    <link rel="icon" href="<?php echo $meta->favgif; ?>" type="image/gif" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta name="baidu-site-verification" content="l9jDiF4kqd" />
+	<meta name="baidu-site-verification" content="qvC3nD7GAI" />
+
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.css">
+<style type="text/css">
+  .content .container .hr{
+    width: 100%;
+   }
+  body .content .container .box{
+    margin-top: 20px;
+    width: 100%;
+  }
+  .container .content3 .descriptdiv{
+       height: 188px;
+      padding: 22px;
+  }
+  .container .content3 .descript-context{
+    height:100%;
+  }
+  .container .content1 .f_f_1,
+    .container .content1 .f_f_2
+  {
+    width: 69%;
+  }
+  .content .container{
+    padding: 0px;
+  }
+  .content .row{
+    margin: 0px;
+  }
+  .f_i img{
+    width:21%;
+    height: 21%; 
+  }
+  @media screen and (max-width: 767px){
+  .navr ul li a {
+    display: inline-block;
+    width: 65px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #151515;
+    font-size: 14px;
+}
+@media screen and (max-width: 767px){
+.navf ul li a {
+    display: inline-block;
+    width: 65px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #151515;
+    font-size: 14px;
+}
+</style>
+<!-- 轮播 -->
+ <style type="text/css">
+
+@media screen and (max-width:767px){
+   .lunbo{
+        width:100%;
+        height:250px !important;
+        position: relative;
+     }
+    .content3 .name {
+    font-size: 20px;
+    color: #252525;
+    width: 80%;
+    margin-left: 20%;
+    margin-bottom: 30px;
+    position: relative;
+    top: -5px;
+
+  }
+  .img-11{
+    position: relative;
+    top: 47px;
+    width:41px;
+  }
+}
+    .lunbo{
+        width:100%;
+        height:300px;
+        position: relative;
+     }
+    .arrow{
+       position: absolute;
+       top: 90px;
+       z-index: 2;
+   
+       cursor: pointer;
+    }
+    .prev{
+        left: 0;
+        
+    }
+    .next{
+        right: 0;
+    }
+        .container-lunbo {
+                width: 260px;
+                height: 255px;
+                overflow: hidden;
+                margin:0 auto;
+                position: relative;
+            }
+            .container-lunbo ul{
+                position: absolute;
+            }
+           
+    .container-lunbo li{
+        width:130px;
+        height: 250px;
+        position: relative;
+        top:10px;
+        left:5px;
+        /*border: 1px solid #000;*/
+    }
+    .li-img{
+      margin-bottom: 5px;
+    }
+      .lunbo .container-lunbo img{
+          width:120px;
+          height:90px;
+      }
+
+
+      .lunbo-ul .slide{
+          float:left;
+          list-style: none;
+
+      }
+      .descriptdiv{
+        width: 80%;
+        margin-left:10%;
+          clear: both;
+          height:100px;
+          border: 2px solid #f1f1f1;
+      }
+    .content3 .ceo {
+    font-size: 14px;
+    color: #151515;
+    width: 80%;
+    margin-left: 20%;
+    position: absolute;
+    top: 30px;
+    left: 11px;
+}
+  </style>
+</head>
+<body>
+<header id="header"><?php require __DIR__.'/../ruiy/header.phtml';?></header>
+<!-- banner -->
+<div class="banner">
+	<div id="myCarousel1" class="carousel slide">
+		<?php Cms_Widget::factory('Ad')->display(Cms_Service_Api_Contents_Banner::getInstance()->getListByTypeId(100170),['need_LR'=>true,]); ?>
+    </div>
+   <!--  <div class="ban-left">
+    	<p>为了看见未来</p>
+    	<p style="margin-left:20px;">相信未来的企业</p>
+    </div> -->
+</div>
+<!-- nav -->
+<div id="nav" class="navr">
+	<ul style='margin: 0;'>
+		<li><a class='active' href="/ruiy/consult">睿远咨询</a><span class="xian">|</span></li>
+		<li><a href="/ruiy/lianx">联系我们</a><span class="xian">|</span></li>
+		<li><a href="https://www.liepin.com/zhaopin/?sfrom=click-pc_homepage-centre_searchbox-search_new&d_sfrom=search_fp&key=%E7%9D%BF%E4%BB%AA" target="_blank">加入睿远</a><span class="xian">|</span></li>
+		<li><a href="/ruiy/news" style="width:50px;">新闻室</a><span class="xian">|</span></li>
+		<li><a href="http://ibreakingpoint.huodongxing.com " target="_blank">活动沙龙</a></li>
+	</ul>
+</div>
+<!-- content -->
+<div class='content'>
+	<div class="container">
+		<div class="row">
+			<div class="">
+				<div class="content1" style="padding: 10%;">
+					<p class='title'>关于我们</p>
+					<p class='font1' style="width: 100%;">睿远成立于2008年，作为 Salesforce 和 SAP 的卓越合作伙伴，一直是企业信息化领域的先行者和倡领者。2016年，睿远突破产品服务供应商的自我定位，向客户提供从发展战略、管理咨询到信息系统解决方案的完整服务。真正从“客户需要什么”、“为什么需要”的角度出发，帮助企业提高运营效率、降低成本、提高客户满意度、提升综合竞争力。</p>
+					<!-- <img class='f1_img' src="/ruiy/images/logof.png"> -->
+					<p class="font2" style="width: 100%;">历时10年，睿远一直服务于国际500强、国内大型民企和新锐企业，拥有了行业良好的服务口碑。2017年，睿远再次扬帆起航，先后牵手各行业知名企业，发布了汽车、新零售、地产3大行业数字化经营解决方案，并成为这些企业的长期战略合作伙伴。未来，睿远将紧紧围绕客户需求进行有机衍生，为更多的企业提供更卓越的服务。</p>
+					<div class='f_i'>
+						<img src="/ruiy/images/zx_17.jpg" style="position: relative;top: -86px;">
+						<div class='f_f f_f_1'>
+							<p class='f1'>使命</p>
+							<p class='f2'>不为药而医，做有良知的企业健康管理医生</p>
+							<p class='f2'>做平台化的企业：让员工更强大，让客户更强大，让合作伙伴更强大</p>
+						</div>
+					</div>
+					<div class='f_i'>
+						<img src="/ruiy/images/zx_13.jpg" style="position: relative;top: -5px;">
+						<div class='f_f f_f_2'>
+							<p class='f1'>企业文化</p>
+							<p class='f2'>旷达、勇敢、诚信、创新、合作</p>
+						</div>
+					</div>
+				</div>
+				<div class="content3" style="padding: 50px;">
+					<p class='title'>我们的自白</p>
+					<div class="font"  style="width: 100%">
+						<p class="f1">睿远不是典型的IT咨询服务公司。
+						比起服务商，我们更像是一个良师益友，而且有意促成这种亦师亦友的合作关系。
+						我们相信，获得信赖与获得业务同等重要。
+						所以，我们绝不会对您急功近利，但会为了您的利益而加速推进。
+						</p>
+						<p class="f1">我们从不花钱大肆宣传，我们相信，行动胜于空谈，成果重于承诺。
+						我们深谙数字技术，同时自警事有可为有不可为。
+						我们热爱技术，厌恶“做不到”的态度。
+						宝贵的经验是每一家公司的秘密武器，
+						但如果这些对行业生态有利，我们愿意毫无保留。
+						</p>
+						<p class="f1">找到企业经营中的问题，并对症下药不是易事，
+						我们仍不懈追求。
+						我们是睿远，发展型企业成长路上的良师益友。 
+						</p>
+					</div>
+				</div>
+				<div class="content3">
+					<p style='margin-bottom:10px;' class="title">我们的管理团队</p>
+					<div class="t1">
+						<div class="row">
+							<div class="col-sm-1">
+								<img class='img-11' src="/ruiy/images/zx_25.jpg">
+							</div>
+							<div class="col-sm-11">
+								<P class="name">李子璇 <span style='color: #999;font-size: 20px;'>&nbsp;&nbsp;Tulipe Lee</span></P><p class="ceo">创始人 &amp; CEO</p>
+								<hr class='hr'>
+								<p class='y1'><img src="/ruiy/images/d.png">业务专长 <span>企业运营管理系统设计与实施</span>	</p>
+								<p class='y1'><img src="/ruiy/images/d.png">价值观 <span>&nbsp;&nbsp;&nbsp;&nbsp;毕己所识，分享共赢</span>	</p>
+								<p class="cont">资深IT人，中国企业家联合成长计划特邀嘉宾。从事企业信息化咨询、CRM等行业15年，曾获Salesforce全球杰出合作伙伴，云计算在中国最早的落地推动者之一，多年深研企业数字化发展战略和实践方法。曾供职于解放军总参谋部、国内知名IT企业，2008年南下上海并创建睿远咨询，致力于帮助企业打造智能高效的自运营生态系统。2016年获得中欧国际工商管理学院国际EMBA学位。</p>
+							</div>
+						</div>
+					</div>
+					<div class="t2">
+						<div class="row">
+							<div class="col-sm-1">
+								<img class='img-11' src="/ruiy/images/zx_28.png">
+							</div>
+							<div class="col-sm-11">
+								<P class="name">邴喆 <span style='font-size:20px;color:#999;'>&nbsp;&nbsp;Anson Bing</span></P><p class="ceo">合伙人</p>
+								<hr class='hr'>
+								
+								<p class='y1'><img src="/ruiy/images/d.png">业务专长 <span>企业创新经营咨询及运营管理咨询</span>	</p>
+								<p class='y1'><img src="/ruiy/images/d.png">价值观  <span>&nbsp;&nbsp;&nbsp;&nbsp;知行合一，致良知</span>	</p>
+								<p class="cont">毕业于中欧国际工商管理学院EMBA，拥有21年的企业信息化和管理咨询经验，曾供职于政府经济管理部门、知名软件公司、咨询公司，对传统企业数字化、信息化有着深刻的认识，尤其在家电、快消品、汽车、连锁经营服务、离散制造等领域的企业运营管理、创新管理和阿米巴经营体系有丰富的实战经验。</p>
+								<ul class="ul1">获得荣誉:
+									<li>•	14年工信部评选全国最佳CIO</li>
+									<li>•	IT价值联盟“2012年最具价值CIO”</li>
+									<li>•	中国工业与信息化融合发展高峰论坛“2012年中国制造业杰出CIO”</li>
+									<li>•	13、14年浙江省企业信息化促进会评选 浙江省优秀CIO</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+          <div class="t3">
+            <div class="row">
+              <div class="col-sm-1">
+                <img class='img-11' src="/ruiy/images/zx_29.png">
+              </div>
+              <div class="col-sm-11">
+                <P class="name">陈卓能 <span style='font-size:20px;color:#999;'>&nbsp;&nbsp;Neo Chen </span></P> <p class="ceo">合伙人</p>
+                <hr class='hr'>
+               
+                <p class='y1'><img src="/ruiy/images/d.png">业务专长 
+                <span>战略规划与业务转型</span> </p>
+                <p class='y1'><img src="/ruiy/images/d.png">价值观  <span>&nbsp;&nbsp;&nbsp;&nbsp;以信接人，天下信人</span>  </p>
+                <p class="cont">毕业于新加坡国立大学，资深咨询顾问，拥有15年管理咨询经验，长期在IBM、安永、埃森哲等国际知名咨询公司担任管理岗位，对企业数字化转型和运营管理有着深刻的理解和独到的见解，曾经为国内外高科技、电信和汽车企业提供过业务规划和转型服务。</p>
+              </div>
+            </div>
+          </div>
+				</div>
+                 <?php 
+
+
+                              $a=fetch_json_data('/ServerZX/GetListAll.cwg?count=1000&page=1&cms_types_id=100150')->Data;
+                              //var_dump($a);
+
+                                       
+                            ?>
+        <br><br>
+				<div class="content3" style="margin-top:-50px;height:700px;padding: 0px">
+        <br>
+        <br><br>
+
+                    <p class='title'>我们的客户</p>
+                      <div class="font">
+                        <div class="lunbo">
+                           
+                            <div class="arrow next" ><img src="/ruiy/images/right.jpg" style="width: 30px;"></div>
+                             <div class="arrow prev"><img src="/ruiy/images/left.jpg" style="width: 30px;"></div>
+                            <div class="container-lunbo">
+                            <div class="text" style="left: 0px;" >
+                                <ul class="lunbo-ul" style="position: absolute;left:0px;">
+                                    <?php 
+                                        $imgarr=[];
+                                      foreach ($a as $key => $value) 
+                                     {
+                                       
+                                       $imgarr[$key]=$value->_face->ico->public_src;
+                                      }
+                                       ?>
+                                       <?php
+                                       //var_dump($imgarr);
+                                       $num=count($imgarr);
+                                       // var_dump($num);
+                                       for ($i=0; $i <$num ; $i++) { 
+                                           //echo $i;
+                                       $j=$i+1;
+
+
+                                    ?>
+                                    <li class="slide active-nav">
+                                      
+                                       <div class="li-img"><img src="<?php echo $imgarr[$i]; ?>"></div>
+
+                                       <div class="li-img"><img src="<?php echo $imgarr[$j]; ?>"></div>
+                                    </li>
+                                    <?php  $i=$i+1;  }?>
+
+
+                                   <!--  <li class="slide"><div class="li-img"><img src="/ruiy/images/li2.png"></div><div class="li-img"><img src="/ruiy/images/li2.png"></div></li>
+                                                                    <li class="slide"><div class="li-img"><img src="/ruiy/images/li2.png"></div><div class="li-img"><img src="/ruiy/images/li2.png"></div></li>
+                                                                    <li class="slide"><div class="li-img"><img src="/ruiy/images/li2.png"></div><div class="li-img"><img src="/ruiy/images/li2.png"></div></li>
+                                                                    <li class="slide"><div class="li-img"><img src="/ruiy/images/li2.png"></div><div class="li-img"><img src="/ruiy/images/li2.png"></div></li>
+                                                                    <li class="slide"><div class="li-img"><img src="/ruiy/images/li2.png"></div><div class="li-img"><img src="/ruiy/images/li2.png"></div></li> -->
+                                 
+
+                                  
+                                </ul>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="descriptdiv">
+                        <div class="descriptdiv-text">
+                            <p class="descriptdiv-title"><?php echo $a[0]->title;?></p>
+                            <div class="descript-context">
+                              <span class="descriptdiv-context">
+                                 <?php echo $a[0]->summary;?>
+                              </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div id="text" style="width: 20px;height: 20px;background: #000;left: 0px;" onclick=""></dir> -->
+</div>
+</div>
+				<script type="text/javascript"></script>
+			</div>
+			<div class="" style="padding-left:0;">
+			<!-- 	<div class="box">
+					<p class="title"><span class="xian">|</span>关注我们</p>
+					<p style='margin:15px;'>
+            <a target="_blank" href="http://www.linkedin.com/groups?gid=3291404"><img src="/ruiy/images/zx_03.jpg"></a>
+						<a  target="_blank" href="https://www.facebook.com/ibreakingpoint"><img src="/ruiy/images/zx_05.jpg"></a>
+						
+						<a id='cimg' href="javascript:;"><img src="/ruiy/images/zx_07.jpg"></a>
+					</p>
+					<p id='pimg' style='text-align:center;display: none;'><img style='width:80%;' src="/ruiy/images/er.jpg"></p>
+				</div> -->
+				<div class="box">
+					<p class='title'><span class="xian">|</span>市场合作</p>
+					<p class='s1'>电话：021-34010561</p>
+					<p class='s1'>邮箱：even.zhang@ibreaking point.com</p>
+				</div>
+			<!-- 	<div class="box">
+					<p class='title'><span class="xian">|</span>阅读参考</p>
+					<?php $b=fetch_json_data('/ServerZX/GetListAll.cwg?count=5&page=1&cms_types_id=100120')->Data; ?>
+					<?php                         
+                        
+                          foreach ($b as $key => $value) {
+                          	//var_dump($value);
+                      
+                      ?>
+                    <a href="/news/<?php echo $value->id.'.html';?>" style='margin-right: 0px;' target="_blank">
+					<p class='wei'><?php echo $value->title;?></p>
+					<p class='s1 w1'><?php echo $value->summary;?></p><hr style="margin-top: 10px; margin-bottom: 10px;">
+					</a>
+
+                   <?php } ?>
+				</div> -->
+			</div>
+		</div>
+	</div>
+</div>
+             <?php 
+                        $arr=[];
+                        $summary=[];
+                        foreach ($a as $key => $value) {
+                           $arr[$key]=$value->title;
+                           $summary[$key]=$value->summary;
+                        }
+                         // var_dump($arr);
+                         // var_dump($summary);
+                       // echo $arr[1];
+                        //$ar=json_decode($arr);
+                    //  $summ=json_encode($summary);
+                      // var_dump($summ);
+                   /* echo "var data =". $summ;
+                    echo "<script>alert(data[0])</script>";*/
+                  
+             ?>
+<!-- footer -->
+ <div id='footer'><?php require __DIR__.'/../ruiy/footer.phtml';?></div>
+<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/main1.js"></script>
+<!-- <script type='text/javascript' src='/ruiy/js/img-change.js'></script> -->
+<script type="text/javascript">
+$(function(){
+            
+            var list = document.getElementsByClassName('lunbo-ul')[0];
+            var prev = document.getElementsByClassName('prev')[0];
+            var next = document.getElementsByClassName('next')[0];
+            var oLi  = list.getElementsByTagName('li');
+            var oTilite = document.getElementsByClassName('descriptdiv-title')[0];
+            var oText = document.getElementsByClassName('descriptdiv-context')[0];
+            var oImg = list.getElementsByTagName('img');
+            /*var arr1 = ["博士伦1","博士伦2","博士伦3","博士伦4","博士伦5","博士伦6","博士伦7","博士伦8","博士伦9","博士伦10","博士伦11","博士伦8",];*/
+           /* var arr2 = ["博士伦是一家全球性的眼睛保健公司，致力于通过创新的科技与技术，让消费者看得更好、形象更好、感觉更好。博士伦成立于1853年，目前年度营业额近二十亿美...","","博士伦是一家全球性的眼睛保健公司，致力于通过创新的科技与技术，让消费者看得更好、形象更好、感觉更好。博士伦成立于1853年，目前年度营业额近二十亿美...","","","","","","","","","","",""];*/
+           /*var arr1=<?php echo json_decode($arr);?>;
+           var arr2=<?php echo json_decode($summary);?>;*/
+             var arr1=<?php  echo json_encode($arr);?>;
+             var arr2=<?php  echo json_encode($summary);?>;
+            for(var i =0;i<oImg.length;i++){
+                (function(i){
+                oImg[i].onmouseover = function(){
+                    oTilite.innerHTML = arr1[i];
+                    oText.innerHTML = arr2[i];
+                   oImg[i].style.cssText = "box-shadow:0px 0px 10px #000;border-radius: 8px;";
+                for(var j = 0;j<oImg.length;j++){
+                    if( j != i){
+                   oImg[j].style.cssText = "border:none;border-radius: 0px;";
+                    }
+                }
+                }
+                oImg[i].onmouseout = function(){
+                   oImg[i].style.cssText = "box-shadow:0px 0px 10px #000;border-radius: 8px;";
+
+                }
+                })(i);
+
+            }
+            var i = 4;
+            var page=1;
+            var $parent = $("div.font");
+             var $v_content = $("div.container-lunbo");
+            var $v_show = $("ul.lunbo-ul");
+            var v_width = $v_content.width();
+            var len = $(".lunbo-ul img").length;
+            var page_count = Math.ceil(len/i);
+            $("div.next").click(function(){
+                if(!$v_show.is(":animated")){
+                    if(page == page_count){
+                        $v_show.animate({left:'0px'},"slow");
+                        page=1;
+                    }else{
+                        $v_show.animate({left:'-='+v_width},"slow");
+                        page++;
+                    }
+                }
+            });
+            $("div.prev").click(function(){
+                if(!$v_show.is(":animated")){
+                    if(page==1){
+                        $v_show.animate({left:'-='+v_width*(page_count-1)},"slow");
+                        page=page_count;
+                    }else{
+                        $v_show.animate({left:'+='+v_width},"slow");
+                        page--;
+                    }
+                }
+            });
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<div id="dead" class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-2">
+				<a href="/pc/ruiy/index"><img id="logo" src="/ruiy/images/logob.png"></a>
+			</div>
+			<div class="col-sm-6 header-title">
+				<ul>
+					<li><a class="title-li" href="/pc/ruiy/index/">首页</a></li>
+					<li class="dropdown"><a class="title-li dropdown-toggle" data-toggle="dropdown" href="/pc/ruiy/consult/" style='margin-left:-20px;'>服务</a>
+				        <!----> <ul class="dropdown-menu menu" style='height:240px' role="menu">
+				           	<li><a class="item" href="/pc/ruiy/serve/">咨询</a>
+				           		<li class="divider"></li>
+					           	<ul>
+					           		<li><a class="item_son" href="/pc/ruiy/innovate/">创新变革</a></li>
+					           		<li><a class="item_son" href="/pc/ruiy/busi/">企业运营</a></li>
+					           		<li><a class="item_son" href="/pc/ruiy/itconsult/"> IT咨询规划</a></li>
+					           	</ul>
+				           	</li>
+				           	<li><a class="item" href="/pc/ruiy/softwave/">软件</a></li>	<ul>
+				           	<li class="divider"></li>
+					           		<li><a class="item_son" href="/pc/ruiy/salesforce/">Salesforce</a></li>
+					           		<li><a class="item_son" href="/pc/ruiy/spa/">SAP</a></li>
+					           	</ul>
+				        </ul> 
+					</li> 
+					<li><a class="title-li" data-toggle="dropdown" href="javascript:;" style='margin-left: 8px;'>行业与解决方案</a>
+						 <ul class="dropdown-menu menu" style='height:200px' role="menu">
+				           	<li><a class="item" href="/pc/ruiy/engine/">汽车</a>
+				           		<li class="divider"></li>
+					           	<ul>
+					           		<li><a class="item_son" href="/pc/ruiy/engine/">主机厂</a></li>
+					           		<li><a class="item_son" href="/pc/ruiy/dealer/">经销商</a></li>
+					           	</ul>
+				           	</li>
+				           	<li><a class="item" href="/pc/ruiy/land/">地产</a></li>
+				           	<li class="divider"></li>
+				           	<li><a class="item" href="/pc/ruiy/retail/">新零售</a></li>
+				        </ul>
+					</li>	
+					<li><a class="title-li" data-toggle="dropdown" class="g1" href="javascript:;" style='margin-left: 25px;'>关于我们</a>
+						 <ul class="dropdown-menu menu" style='height:260px' role="menu">
+				           	<li><a class="item" href="/pc/ruiy/consult/">睿远咨询</a>
+				           	<li class="divider"></li>
+					        <li><a class="item" href="/pc/ruiy/lianx/">联系我们</a>
+					        <li class="divider"></li>
+				           	<li><a class="item" href="http://search.51job.com/list/020000,000000,0000,00,9,99,%25E4%25B8%258A%25E6%25B5%25B7%25E7%259D%25BF%25E8%25BF%259C%25E8%25BD%25AF%25E4%25BB%25B6%25E4%25BF%25A1%25E6%2581%25AF%25E5%2592%25A8%25E8%25AF%25A2%25E6%259C%2589%25E9%2599%2590%25E5%2585%25AC%25E5%258F%25B8,1,1.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare= ">加入睿远</a></li>
+				           	<li class="divider"></li>
+				           	<li><a class="item" href="/pc/ruiy/news/">新闻室</a>
+				           	<li class="divider"></li>
+				           	<li><a class="item" href="http://ibreakingpoint.huodongxing.com ">活动沙龙</a></li>
+				        </ul>
+					</li>
+					<li><a class="title-li" href="http://search.51job.com/list/020000,000000,0000,00,9,99,%25E4%25B8%258A%25E6%25B5%25B7%25E7%259D%25BF%25E8%25BF%259C%25E8%25BD%25AF%25E4%25BB%25B6%25E4%25BF%25A1%25E6%2581%25AF%25E5%2592%25A8%25E8%25AF%25A2%25E6%259C%2589%25E9%2599%2590%25E5%2585%25AC%25E5%258F%25B8,1,1.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare= "">加入我们</a></li>
+				</ul>
+				
+			</div>
+			<div class="col-sm-2 phone"><a style="font-size:16px; text-align:right;margin-left: 47px;" href="#">400-820-7332</a></div>
+			<div class="col-sm-2 lian">	<a class="l1" href="/pc/ruiy/lianx/">联系我们 </a><a class="l2" href="/pc/enruiy/index">EN</a></div>
+		</div>
+	</div>
+</div>

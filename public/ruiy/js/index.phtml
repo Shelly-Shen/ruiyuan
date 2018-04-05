@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><?php echo $meta->title; ?></title>
+    <meta name="description" content="<?php echo $meta->description; ?>" />
+    <meta name="keywords" content="<?php echo $meta->keywords; ?>" />
+    <link rel="shortcut icon" href="<?php echo $meta->favicon; ?>" />
+    <link rel="bookmark" href="<?php echo $meta->favicon; ?>" type="image/x-icon"　/>
+    <link rel="icon" href="<?php echo $meta->favgif; ?>" type="image/gif" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta name="baidu-site-verification" content="l9jDiF4kqd" />
+	<meta name="baidu-site-verification" content="qvC3nD7GAI" />
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.css">
+</head>
+<body>
+<header id="header"><?php require __DIR__.'/../ruiy/header.phtml';?></header>
+<div class="banner">
+	<div id="myCarousel1" class="carousel slide">
+	     <?php Cms_Widget::factory('Ad')->display(Cms_Service_Api_Contents_Banner::getInstance()->getListByTypeId(100096),['need_LR'=>true,]); ?>
+    </div>
+    <div class="banner-right" style="top:35%;font-color:#252525;">
+    	<!--  <p class="title">帮助企业实现数字化转型</p>-->
+
+
+        <script type="text/javascript">window._not_pack_widget=<?php echo @Yaf_Registry::get('cms')->global->pack_widget_php?1:0; ?></script>
+    <script src='/Cms/pack.js<?php if(@Yaf_Registry::get('cms')->global->pack_js_php)echo '.php'; ?>?<?php echo time(); ?>'></script>
+    <?php if(@Yaf_Registry::get('cms')->global->pack_widget_php): ?><script src='/Cms/widget.js.php?<?php echo time(); ?>'></script><?php endif; ?>
+
+
+
+
+    <!--  	<div>
+    		<form>
+    			<input type="text" name="uname" id='uname' placeholder="姓名">
+    			<input type="text" name="company" id='company' placeholder="公司">
+    			<p class='i1'>
+    				<input type="text" name="mobile" id='mobile' placeholder="联系电话">
+    			</p>
+    			<div class="zix" style="background-color: #c7161e">
+	    			<!--<span class='iconfont' style="color:#fff;">&#xe64a;</span>
+	    			<span><a href="#" id="thisStep">我要咨询</a></span>
+    			</div>
+    		</form>
+    	</div>
+ --> 
+    <script type="text/javascript">
+  require(['wx'],function(wx){
+    wx.config(<?php echo (Cms_Service_Api_Share_WX::getInstance()->getConfig()); ?>);
+
+  });
+  </script>
+                  <script>
+                  	
+
+
+                      $('#thisStep').on('click',function(){
+
+    require(['request'],function(request){
+      try{
+        if(!$('#uname').val())throw '姓名必填';
+         if(!$('#company').val())throw '公司名称必填';
+        if(!$('#mobile').val() || !$('#mobile').val().match(/^\d{11}/))throw '请填写正确手机号';
+        
+       
+      }catch(e){
+        alert(e)
+        return;
+      }
+    
+
+      
+
+             var msg =[                
+                       '姓名：'+$('#uname').val(),
+                       '手机号：'+$('#company').val(),
+                       '联系方式：'+$('#mobile').val()
+                                        
+           
+                         ].join('\n')
+
+request({
+                        url:'/ServerMsg/Add44.cwg',
+                        data:{
+                                 
+                                  x_state:'8',
+                                  msg: msg
+                                  
+                                   
+                        
+                              
+
+                        },
+                        method:'post',
+                        header:{
+                          'Content-Type':'application/x-www-form-urlencoded'
+                        }
+                 
+
+
+
+           }).then(function(){
+                    alert("已提交");
+                    
+                  },function(msg){
+                    alert(msg);
+                  })         
+                    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  })
+
+
+</script>
+
+
+    </div>
+</div>
+<!-- f1 -->
+<div class="container floor">
+	<p class='title'>管理咨询 + IT 实现</p>
+	<p><img style="width:400px;height:28px;" src="/ruiy/images/xian.png"></p>
+	<p style="margin:0 auto;text-align:center;font-size:16px;color:#555;">以高远的“战略思维”和清晰的“战略逻辑” 缓解企业转型中对未知的恐惧</p>
+	<div class="row" style="margin-top:40px;">
+		<div class='col-sm-3 font' style='background:#fdfdfd;'>
+			<p>
+				<img src="/ruiy/images/x.png">
+			</p>
+			<p class="title">分析现状</p>
+			<p class="t">宏观环境PEST分析</p>
+			<p class='t'>竞争环境及竞争对标分析</p>
+			<p class="t">企业内部优势和痛点分析</p>
+		</div>
+		<div class='col-sm-3 font' style='background:#fafafa;'>
+			<p>
+				<img src="/ruiy/images/y.png">
+				<img class="i2" src="/ruiy/images/1.jpg">
+			</p>
+			<p class="title">战略及布局</p>
+			<p class="t">经营战略</p>
+			<p class='t'>阶段实现方法</p>
+			<p class="t">风险及应对策略</p>
+		</div>
+		<div class='col-sm-3 font' style='background:#fdfdfd;'>
+			<p>
+				<img src="/ruiy/images/z.png">
+				<img class="i2" src="/ruiy/images/1.jpg">
+			</p>
+			<p class="title">定制解决方案</p>
+			<p class="t">运营管理模型</p>
+			<p class='t'>创建管理</p>
+			<p class="t">组织流程管理</p>
+			<p class="t">信息系统支持</p>
+		</div>
+		<div class='col-sm-3 font' style='background:#fafafa;'>
+			<p>
+				<img src="/ruiy/images/u.png">
+				<img class="i2" src="/ruiy/images/1.jpg">
+			</p>
+			<p class="title">实施及迭代</p>
+			<p class="t">构建实现计划</p>
+			<p class='t'>按计划实施</p>
+			<p class="t">标准点检查分析</p>
+			<p class="t">定制改进策略</p>
+		</div>
+	</div>
+</div>
+<!-- f2 -->
+<div class='floor2'>
+<style type="text/css">
+	.carousel .carousel-control img,
+	.carousel .carousel-control img{opacity:0 !important;}
+</style>
+	<div id="myCarousel2" class="carousel slide" style='position: relative;'>
+	     <?php Cms_Widget::factory('Ad')->display(Cms_Service_Api_Contents_Banner::getInstance()->getListByTypeId(100098),['need_LR'=>true,]); ?>
+   
+    <img style='position: absolute;top:0;right:0;height:100%' src="/ruiy/images/rz.png">
+     </div>
+	<!-- <div class='font'>
+		<p class="p1">从终局来看布局</p>
+		<p class='p2'>以未来定义现在</p>
+		<p class="p3">为企业量身定制与业务相匹配的数字化战略，以及实施解决方案</p>
+	</div> -->
+</div>
+<!-- floor3 -->
+<div class="floor3">
+	<p class='title'>让企业的 IT 投资发挥真正的力量</p>
+	<p style="margin-top:106px;"><img style="width:400px;height:28px;" src="/ruiy/images/xian.png"></p>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 font">
+				<p class='p1'><img src="/ruiy/images/tb1.jpg"></p>
+				<p class='p2'>企业业务和运营模式创新</p>
+			</div>
+			<div class="col-sm-4 font">
+				<p class='p1'><img src="/ruiy/images/tb2.jpg"></p>
+				<p class='p2'>以客户为中心的数字化经营</p>
+			</div>
+			<div class="col-sm-4 font">
+				<p class='p1'><img src="/ruiy/images/tb3.jpg"></p>
+				<p class='p2'>传统企业的互联网化变革</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- footer -->
+<div id='footer'><?php require __DIR__.'/../ruiy/footer.phtml';?></div>
+
+<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="/ruiy/js/main.js"></script> -->
+</body>
+</html>

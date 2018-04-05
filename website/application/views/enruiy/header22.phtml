@@ -1,0 +1,225 @@
+<div class="content">
+      <div class="topLogo">
+        <span class="logo"></span>
+        <div class="rigthMenu">
+          <i class="icon-hanbao j_hanbao"></i>
+          <div class="menu j_menu">
+            <div class="left"></div>
+            <ul class="j_one">
+              <li>
+                <a href="/">首页</a>
+              </li>
+              <li class="Product">
+                <a>产品服务<i class="icon-xiangxia">asdfsa</i></a>
+                <ul>
+                   <li><a href="/mozhan" class="overflow">魔站</a></li>
+                            <li><a href="/weishi" class="overflow">商务卫士</a></li>
+                            <li><a href="/yxb" class="overflow">营销宝</a></li>
+                            <li><a href="/258" class="overflow">258.com</a></li>
+                            <li><a href="/xiuke" class="overflow">秀客</a></li>
+                            <li><a href="/lawyer" class="overflow">首席律师</a></li>
+                            <li><a href="/huiyi" class="overflow">会议营销</a></li>
+                </ul>
+              </li>
+              <li class="News">
+                <a>新闻中心<i class="icon-xiangxia"></i></a>
+                <ul>
+                   <li><a href="/news-index" class="overflow">集团资讯</a></li>
+                            <!-- <li><a href="/news-3" class="overflow">投资者公告</a></li> -->
+                </ul>
+              </li>
+              <li class="Hr">
+                <a>加入二五八<i class="icon-xiangxia"></i></a>
+              <ul>
+                              <li><a href="/hr/school" class="overflow">校园招聘</a></li>
+                              <li><a href="/hr" class="overflow">社会招聘</a></li>
+                          </ul>
+              </li>
+              <li>
+                <a href="/zs" class="overflow">招商加盟</a>
+              </li>
+              <li class="Gongyi">
+                <a>二五八公益<i class="icon-xiangxia"></i></a>
+                <ul>
+                            <li><a href="/yunzhuan" class="overflow">云赚</a></li>
+                            <li><a href="/yanshangdao" class="overflow">言商岛</a></li>
+                        </ul>
+              </li>
+              <li class="Group">
+                <a>二五八集团<i class="icon-xiangxia"></i></a>
+                <ul>
+                  <li><a href="/introduction" class="overflow">集团介绍</a></li>
+                           <li><a href="/contact" class="overflow">联系我们</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+<style type="text/css">
+  #loading > * {
+  line-height: 0.26rem;
+  height: 0.26rem;
+  text-align: center;
+  font-size: 0.24rem;
+  margin: 0.3rem 0;
+  display: block;
+  color: #999;
+}
+#loading .loading {
+  display: block;
+}
+.show {
+  display: block !important;
+  transform: scale(1) !important;
+  opacity: 1 !important;
+}
+.btn {
+  background: #5EE3E7;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-size: 0.24rem;
+  text-align: center;
+}
+.btn:active {
+  background-color: #40C7CB;
+}
+.topLogo {
+  height: 0.88rem;
+  border-bottom: #626262 solid 1px;
+  background: #323232;
+  text-align: center;
+  position: relative;
+}
+.topLogo .logo {
+  background: url(../images/logo.png) no-repeat;
+  background-size: 100% 100%;
+  width: 1.9rem;
+  height: 0.48rem;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 0.2rem;
+}
+.topLogo > font {
+  font-size: 0.32rem;
+  line-height: 0.88rem;
+  color: #fff;
+}
+.topLogo .rigthMenu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 0.88rem;
+  width: 0.88rem;
+  text-align: center;
+  line-height: 0.88rem;
+}
+.topLogo .rigthMenu > i {
+  font-size: 0.4rem;
+  color: #cbcbcb;
+  display: block;
+}
+.topLogo .rigthMenu .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: none;
+}
+.topLogo .rigthMenu .menu .left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: all 0.2s;
+}
+.topLogo .rigthMenu .menu > ul {
+  background: #2E2E2E;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 65%;
+  color: #fff;
+  text-align: left;
+  font-size: 0.32rem;
+  z-index: 10;
+  overflow-y: auto;
+  opacity: 0;
+  transition: all 0.2s;
+  transform: translate3d(100%, 0, 0);
+}
+.topLogo .rigthMenu .menu > ul a {
+  color: #fff;
+  display: block;
+}
+.topLogo .rigthMenu .menu > ul a i {
+  float: right;
+  margin-right: 0.4rem;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+}
+.topLogo .rigthMenu .menu > ul > li {
+  border-bottom: 1px solid #444;
+}
+.topLogo .rigthMenu .menu > ul > li > a {
+  padding-left: 0.4rem;
+}
+.topLogo .rigthMenu .menu > ul > li ul {
+  background: #3B3B3B;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.2s;
+}
+.topLogo .rigthMenu .menu > ul > li ul li {
+  border-bottom: 1px solid #555;
+}
+.topLogo .rigthMenu .menu > ul > li ul li a {
+  padding-left: 0.7rem;
+  font-size: .28rem;
+  color: #9b9ea0;
+}
+.topLogo .rigthMenu .menu > ul > li.onShow a i {
+  transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+}
+</style>
+<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+  //nav
+  var menu=$('.j_menu').on('click','.j_one>li>a',function(){
+    var th=$(this),
+      li=th.parent('li');
+      ul=th.nextAll('ul');
+    
+    if(li.hasClass('onShow')){
+      ul.css('height',0);
+      li.removeClass('onShow');
+    }
+    else{
+      menu.find('.onShow').removeClass('onShow').find('ul').css('height',0);
+      var i=ul.find('li').length;
+      li.addClass('onShow');
+      ul.css('height',i*0.88+'rem');
+    }
+  }).on('click','.left',function(){
+    menu.find('.j_one,.left').removeClass('show');
+    setTimeout(function(){
+      menu.hide();
+    },200);
+  });
+  $('.j_hanbao').click(function(){
+    menu.show();
+    setTimeout(function(){
+      menu.find('.j_one,.left').addClass('show');
+    },40);
+  });
+</script>

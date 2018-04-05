@@ -1,0 +1,305 @@
+<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/ruiy/css/iconfont.css">
+<link rel="apple-touch-icon" href="/custom_icon.png">
+<div class="header1">
+			<div class="logo">
+				<a id="bread" href="javascript:;"><img src="/ruiy/images/log-b.png"></a>
+				<a href="/ruiy/index"><img id="logo1" src="/ruiy/images/logow2.png"></a>
+			</div>
+			<div class="en">	
+				<a id="zhong" class="l2" href="javascript:;">中文</a>
+				<span style='color: #bbbcbc;padding: 0 10px;'>|</span>
+				<a id="en" class="l2" href="javascript:;">English</a>
+			</div>
+			<div class="right11"  style="display: none;">
+				<ul>
+					<li class='item_p ' >
+				          <a  href="/ruiy/index/" class="item-a">首页
+				          </a>
+          			</li>
+					<li class='item_p server1'><a href="javascript:;" class="item-a">服务&nbsp;&nbsp;&nbsp;<i class="iconfont icon-jiantouxia"></i></a>
+				        <ul class='hide'>
+				           	<li class='er'><a style='border-top:0;' href="/ruiy/serve/">咨询</a>
+					           	<ul class='er_son'>
+					           		<li class='item_son_p'><a href="/ruiy/innovate/">创新变革</a></li>
+					           		<li class='item_son_p'><a href="/ruiy/busi/">企业运营</a></li>
+					           		<li class='item_son_p'><a href="/ruiy/itconsult/"> IT咨询规划</a></li>
+					           	</ul>
+				           	</li>
+				           	<li class='er' class='item_son_p'><a  href="/ruiy/softwave/">软件</a>
+				           		<ul class='er_son'>
+				           		    <li class='item_son_p'><a href="/ruiy/spa/">SAP</a></li>
+					           		<li class='item_son_p'><a  href="/ruiy/salesforce/">Salesforce</a></li>
+					           	</ul>
+					        </li>	
+				        </ul> 
+					</li> 
+					<li class='item_p hangy1'><a  href="javascript:;"  class="item-a">行业与解决方案<i class="iconfont icon-jiantouxia"></i></a>
+						 <ul class='hide'>
+				           	<li class='er' class='item_son_p'><a style='border-top:0;' href="/ruiy/engine/">汽车</a>
+					           	<ul class='er_son'>
+					           		<li class='item_son_p'><a href="/ruiy/engine/">主机厂</a></li>
+					           		<li class='item_son_p'><a href="/ruiy/dealer/">经销商</a></li>
+					           	</ul>
+				           	</li>
+				           	<li class='er'><a href="/ruiy/land/">地产</a></li>
+				           	<li class='er'><a href="/ruiy/retail/">新零售</a></li>
+				        </ul>
+					</li>	
+					<li class='item_p ours1'><a href="javascript:;"  class="item-a">关于我们<i class='iconfont icon-jiantouxia'></i></a>
+						 <ul class='hide'>
+				           	<li class='er'><a style='border-top:0;' href="/ruiy/consult/">睿远咨询</a>
+					        <li class='er'><a href="/ruiy/lianx/" >联系我们</a>
+				           	<li class='er'><a href="https://www.liepin.com/zhaopin/?sfrom=click-pc_homepage-centre_searchbox-search_new&d_sfrom=search_fp&key=%E7%9D%BF%E4%BB%AA" target="_blank">加入睿远</a></li>
+				           	<li class='er'><a href="/ruiy/news/">新闻室</a>
+				           	<li class='er'><a href="http://ibreakingpoint.huodongxing.com " target="_blank">活动沙龙</a></li>
+				        </ul>
+					
+							<li class='item_p'><a  href="https://www.liepin.com/zhaopin/?sfrom=click-pc_homepage-centre_searchbox-search_new&d_sfrom=search_fp&key=%E7%9D%BF%E4%BB%AA" target="_blank" class="item-a">加入我们</a></li>
+					</li>
+					<!-- <li class='item_p'><a  href="#">400-820-7332</a></li>
+					<li class='item_p'><a  href="/ruiy/lianx">联系我们</a></li> -->
+				</ul>
+				<!-- <div id='nav1' class='navr'>
+					<ul style='margin: 0;'>
+						<li><a href='/ruiy/serve/'>概述</a><span class='xian'>|</span></li>
+						<li><a class='active' href='/ruiy/innovate/'>创新变革</a><span class='xian'>|</span></li>
+						<li><a href='/ruiy/busi/'>企业运营</a><span class='xian'>|</span></li>
+						<li><a href='/ruiy/itconsult/ '>IT咨询规划</a></li>
+					</ul>
+				</div> -->
+			</div>
+			
+</div>
+
+<script type="text/javascript">
+$('body').load(function(){
+	$(".right11").css("display",'block');
+})
+$(document).ready(function(){
+	$(".server1").click(function(){
+		if($(".server1>ul").hasClass('show')){
+			$(".header1").removeClass("header2");
+			$(".server1>a").css("color",'#fff');
+			$(".server1>ul").addClass('hide').removeClass('show');
+			$(".server1>a>i").addClass("icon-jiantouxia").removeClass("icon-jiantoushang");
+		}else{
+			$(".header1").addClass("header2");
+			$(".server1>ul").addClass('show').removeClass('hide');
+			$(".server1>a").css("color",'#e40010');
+			$(".server1>a>i").addClass("icon-jiantoushang").removeClass("icon-jiantouxia");
+		}
+	})
+	$(".hangy1").click(function(){
+		if($(".hangy1>ul").hasClass('show')){
+			$(".header1").removeClass("header2");
+			$(".hangy1>a").css("color",'#fff');
+			$(".hangy1>ul").addClass('hide').removeClass('show');
+			$(".hangy1>a>i").addClass("icon-jiantouxia").removeClass("icon-jiantoushang");
+		}else{
+			$(".header1").addClass("header2");
+			$(".hangy1>a").css("color",'#e40010');
+			$(".hangy1>ul").addClass('show').removeClass('hide');
+			$(".hangy1>a>i").addClass("icon-jiantoushang").removeClass("icon-jiantouxia");
+		}
+	})
+	$(".ours1").click(function(){
+		if($(".ours1>ul").hasClass('show')){
+			$(".header1").removeClass("header2");
+			$(".ours1>a").css("color",'#fff');
+			$(".ours1>ul").addClass('hide').removeClass('show');
+			$(".ours1>a>i").addClass("icon-jiantouxia").removeClass("icon-jiantoushang");
+		}else{
+			$(".header1").addClass("header2");
+			$(".ours1>a").css("color",'#e40010');
+			$(".ours1>ul").addClass('show').removeClass('hide');
+			$(".ours1>a>i").addClass("icon-jiantoushang").removeClass("icon-jiantouxia");
+		}
+	})
+	
+	$("#bread").click(function(){
+		if(($(".right11").css("display")=='none') == true){
+			$(".right11").css("display",'block');
+		}else{
+			$(".right11").css("display",'none');
+		}
+		
+	
+	})
+
+
+})
+window.addEventListener('scroll',function(e){
+	var t = document.documentElement.scrollTop || document.body.scrollTop;
+	if(t > 100){
+	 	$('.header1').css({
+	 		"position":"fixed",
+	 		"background":"#323232"
+	 	});
+	 	$('#logo1').attr('src','/ruiy/images/logob2.png');
+	 	$("#bread img").attr("src","/ruiy/images/logo-h.png")
+	 }else{
+	 	$('.header1').css({
+	 		"position":"relative",
+	 		"background":"#fff"
+	 	});
+	 	$('#logo1').attr('src','/ruiy/images/logow2.png')
+	 	$("#bread img").attr("src","/ruiy/images/log-b.png")
+	 }
+	})
+$(".carousel-control .right").css({
+	"text-align":"left"
+});
+</script>
+
+
+
+<style type="text/css">
+	  [v-cloak] { 
+	    display: none; 
+	  } 
+	#header{
+	height:73px;
+	background:#323232;
+	}
+	
+	.header1{
+		height:75px;
+		width:100%;
+		position: relative;
+		z-index: 1000;
+		background: #fff;
+	}
+	.logo img{
+		width: 220px;
+    	margin-top: 10px;
+	}
+	.logo{
+		width:100%;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.right11{
+		width: 100%;
+	    background: #3d3d3d;
+	    top: -20px;
+	    right: 0;
+	    position: relative;
+	    color: #fff;
+	    text-align: left;
+	    font-size: 0.32rem;
+	    z-index: 10;
+	    overflow-y: auto;
+	    display: none;
+	    transition: all .3s linear;
+	}
+	.header2{
+		/*position: relative !important;*/
+	}
+	.right11 ul{
+		margin-bottom: 0;
+	}
+	.right11 .er > a{
+		border-top: 1px solid #444;
+		padding: 10px 5px 0 30px !important;
+   	    height: 64px !important;
+	}
+	.item_p a{
+		padding: 0px 5px 0px 10px;
+		font-size:20px;
+		color: #fff;
+
+	}
+	.item_p>a{
+		color: #fff;
+		height: 44px;
+		line-height:44px;
+		font-size:16px;
+		display: block;
+		border-top: 1px solid #f1f1f1;
+	}
+	.item_p .er a{
+		padding: 0px 5px 0px 30px;
+		font-size:20px;
+		color: #fff;
+	}
+	.item_p .er a{
+		height:44px;
+		line-height: 44px;
+		display: block;
+		background:#000;
+	}
+
+	.item_p .er_son a{
+		padding: 0px 5px 0px 30px;
+		font-size:14px;
+		color: #ccc;
+	}
+	.hide{
+		display: none;
+		transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+	}
+	.show{
+		height:100% !important;
+		transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+        border-top: 2px solid #e40010;
+        margin-bottom: 10px;
+        background: #000;
+	}
+	.item_p a:hover,
+	.item_p a:active{
+		text-decoration: none;
+	}
+	.right11 .er .er_son{
+		margin-bottom: 10px;
+	}
+	#bread img{
+		display: block;
+	    position: relative;
+	    left: 14px;
+	    top: 4px;
+	    width: 38px !important;
+	    float: left;
+	    border-radius: 50%;
+	}
+	.iconfont{
+		float: right;
+    	margin-right: 20px;
+	}
+	i{
+		transition: all 0.2s;
+	    -webkit-transition: all 0.2s;
+	}
+	.en{
+		width: 100%;
+	    padding: 5px 19px;
+	    background: #393939;
+	    border-top: 1px solid #555;
+	    text-align: right;
+	    position: relative;
+    	top: 11px;
+	}
+	.en a{color: #bbbcbc;}
+@media screen and (max-width: 767px){
+	.navf {
+	    position: fixed;
+	    top: 95px;
+	    text-align: center;
+	    background: #e9e9e9;
+	    z-index: 10;
+	    width: 100%;
+	}
+	.carousel-control .right{
+		text-align: left;
+		display: none;
+	}
+	.carousel-control{
+		display: none !important;
+	}
+}
+.carousel-inner .carousel-control .right{text-align:left;}
+</style>
+

@@ -1,0 +1,223 @@
+<div id="dead" class="header">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-2">
+				<a href="/pc/ruiy/index"><img id="logo" src="/ruiy/images/logob.png"></a>
+			</div>
+			<div class="col-sm-6 header-title">
+				<ul id='navv'>
+					<li class='item ' ><div class="itemTopDiv"></div><div class="itemDiv">
+          <a style='width:70px;' href="/" class="item-a">首页
+          </a>
+          </div>
+          </li>
+					<li class='item'><div class="itemTopDiv"></div><div class="itemDiv serveDiv"><a style='width:70px;'  href="/cn/zh/management-consulting.html" class="item-a">服务</a></div>
+				        <ul >
+				           	<li class='er' class='item_son'><a href="/cn/zh/management-consulting.html">咨询</a>
+					           	<div class='er_son'>
+					           		<p class='item_son'><a href="/cn/zh/strategy-transformation.html">创新变革</a></p>
+					           		<p class='item_son'><a href="/cn/zh/business-management.html">企业运营</a></p>
+					           		<p class='item_son'><a href="/cn/zh/it-strategic-planning.html"> IT咨询规划</a></p>
+					           	</div>
+				           	</li>
+				           	<li class='er' class='item_son'><a  href="/cn/zh/software.html">软件</a>
+				           		<div class='er_son'>
+				           		    <p class='item_son'><a href="/cn/zh/sap.html">SAP</a></p>
+					           		<p class='item_son'><a style='text-transform: capitalize;' href="/cn/zh/salesforce.html">Salesforce</a></p>
+					           	</div>
+					        </li>	
+				        </ul> 
+					</li> 
+					<li class='item'><div class="itemTopDiv"></div><div class="itemDiv"><a  href="javascript:;" style='width:120px' class="item-a">行业与解决方案</a></div>
+						 <ul >
+				           	<li class='er' class='item_son'><a href="/cn/zh/automaker.html">汽车</a>
+					           	<div class='er_son'>
+					           		<p class='item_son'><a href="/cn/zh/automaker.html">主机厂</a></p>
+					           		<p class='item_son'><a href="/cn/zh/dealers.html">经销商</a></p>
+					           	</div>
+				           	</li>
+				           	<li class='item_son'><a href="/cn/zh/real-estate.html">地产</a></li>
+				           	<li class='item_son'><a href="/cn/zh/new-retail.html">新零售</a></li>
+				        </ul>
+					</li>	
+					<li class='item'><div class="itemTopDiv"></div><div class="itemDiv"><a href="javascript:;" style='width:100px;' class="item-a">关于我们</a></div>
+						 <ul >
+				           	<li class='item_son'><a href="/cn/zh/breakingpoint-consulting.html">睿远咨询</a>
+					        <li class='item_son'><a href="/cn/zh/contact-us.html" style="font-size: 14px">联系我们</a>
+				           	<li class='item_son'><a href="https://www.liepin.com/zhaopin/?sfrom=click-pc_homepage-centre_searchbox-search_new&d_sfrom=search_fp&key=%E7%9D%BF%E4%BB%AA" target="_blank">加入睿远</a></li>
+				           	<li><a href="/cn/zh/news-room.html">新闻室</a>
+				           	<li><a href="http://ibreakingpoint.huodongxing.com " target="_blank">活动沙龙</a></li>
+				        </ul>
+					
+							<li class='item'><a style='width:70px;' href="https://www.liepin.com/zhaopin/?sfrom=click-pc_homepage-centre_searchbox-search_new&d_sfrom=search_fp&key=%E7%9D%BF%E4%BB%AA" target="_blank" class="item-a">加入我们</a></li>
+					</li>
+				</ul>
+				
+			</div>
+			<div class="col-sm-2 phone"><a style="font-size:16px; text-align:right;margin-left: 47px;" href="#">400-820-7332</a></div>
+			<div class="col-sm-2 lian" style="">	<a class="l1 lianxi" href="/cn/zh/contact-us.html" >联系我们 </a><a id="en" class="l2" href="javascript:;">EN</a></div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src='/ruiy/js/jquery-2.1.1.min.js'></script>
+<script type="text/javascript">
+	$(document).ready(function() { 
+ $('#navv li').hover(function() {
+  $('ul', this).slideDown(200);
+  $(this).children('a:first').addClass("hov");
+ }, function() {
+  $('ul', this).slideUp(100);
+  $(this).children('a:first').removeClass("hov");  
+ });
+ $('.er').hover(function() {
+  $('div', this).slideDown(200);
+  $(this).children('a:first').addClass("hov");
+ }, function() {
+  $('div', this).slideUp(100);
+  $(this).children('a:first').removeClass("hov");  
+ });
+});
+</script>
+<style type="text/css">
+	.wrap { width: 800px; margin: 0 auto; }
+#navv { margin: 0; padding: 0; list-style: none; border-bottom-left-radius: 4px; -moz-border-radius-bottom-left: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; -moz-border-radius-bottom-right: 4px; -webkit-border-bottom-right-radius: 4px; height: 50px; padding-left: 15px; padding-right: 15px;  text-align:center;}
+#navv li { float: left; display: block; background: none; position: relative; z-index: 999; margin: 0 1px; }
+#navv li a { 
+	display: block;
+    padding: 0;
+    font-weight: 14px;
+    line-height: 70px;
+    text-decoration: none;
+    color: #fff;
+    zoom: 1;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    font-size: 14px; 
+}
+#navv li a:hover{color:#c7161e;}
+#navv .item a{border-bottom: 2px solid transparent;}
+.item > ul{
+	padding: 11px 0;
+}
+
+#navv .item_son > a.hov { color:#c7161e;}
+#navv ul { 
+		position: absolute;top:70px; left: 1px; display: none; margin: 0; padding: 0; list-style: none; -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2); -o-box-shadow: 0 1px 3px rgba(0,0,0,0.2); box-shadow: 0 1px 3px rgba(0,0,0,0.2); -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2); 
+		padding: 5px 0;
+		background:#fff;
+		box-shadow: 1px 1px 10px rgba(0,0,0,.09);
+		border-top: 2px solid #c7161e;
+	}
+#navv ul li { 
+	width: 149px;
+    float: left;
+    text-align: left;
+    color: #333333;
+    padding: 7px 20px;
+ }
+#navv ul li:hover { border-left: 0px solid transparent; border-right: 0px solid transparent; }
+#navv ul a { 
+	display: block;
+    height: 25px;
+    line-height: 20px;
+    padding: 2px 16px;
+    color: #666;
+    border-bottom: 1px solid transparent;
+    text-transform: uppercase;
+    color: #797979;
+    font-weight: normal;
+}
+
+#navv ul a:hover { text-decoration: none; border-right-color: transparent; border-left-color: transparent; background: transparent; color: #c7161e; }
+* html #navv ul { margin: 0 0 0 -2px; }
+.clearfix:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+.clearfix { display: inline-block; }
+html[xmlns] .clearfix { display: block; }
+* html .clearfix { height: 1%; }
+.er_son{
+	position: absolute;
+    left: 150px;
+    display: none;
+    background: #fff;
+    width: 150px;
+    top: -5px;
+    padding:10px 0 10px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,.07);
+}
+.er_son a:hover{color:#c7161e;}
+.item_son{padding:2px 20px;}
+.itemTop, .itemlongTop, .itemMidTop{
+  height: 3px;
+  position: absolute;
+  z-index:20;
+  background: #c7161e;
+}
+.itemTop{
+    width:70px;
+}
+.itemlongTop{
+  width:120px;
+}
+.itemMidTop{
+  width: 100px;
+}
+
+.smalBack{
+
+    background: rgba(128, 128, 128, 0.18);
+    width: 70px;
+    height: 71px;  
+   /* box-sizing:border-box;  
+-moz-box-sizing:border-box; /* Firefox */  
+/*-webkit-box-sizing:border-box; */
+    /*border-top:3px solid #c7161e;*/
+  }
+.longBack{
+    background: rgba(128, 128, 128, 0.18);
+    width: 120px;
+    height: 72px;  
+
+}
+.medBack{
+    background: rgba(128, 128, 128, 0.18);
+    width: 100px;
+    height: 72px;
+}
+
+.lian .l1:hover{
+  border:none!important;
+  background:#c7161e!important;
+}
+
+</style>
+
+<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+
+<script type="text/javascript">
+var navv = document.getElementById("navv");
+var oHref = document.getElementsByClassName('item-a');
+var oItemDiv = document.getElementsByClassName('itemDiv');
+var oItemTopDiv = document.getElementsByClassName('itemTopDiv');
+var oServer = document.getElementsByClassName('serveDiv')[0];
+var serve = ["http://www.ibreakingpoint.com/cn/en/management-consulting.html","http://www.ibreakingpoint.com/cn/en/strategy-transformation.html","http://www.ibreakingpoint.com/cn/en/business-management.html","http://www.ibreakingpoint.com/cn/zh/it-strategic-planning.html","http://www.ibreakingpoint.com/cn/zh/software.html","http://www.ibreakingpoint.com/cn/zh/sap.html","http://www.ibreakingpoint.com/cn/zh/salesforce.html"];
+var solute = ["http://www.ibreakingpoint.com/cn/zh/automaker.html","http://www.ibreakingpoint.com/cn/zh/automaker.html","http://www.ibreakingpoint.com/cn/zh/dealers.html","http://www.ibreakingpoint.com/cn/zh/real-estate.html","http://www.ibreakingpoint.com/cn/zh/new-retail.html"];
+var about = ["http://www.ibreakingpoint.com/cn/zh/breakingpoint-consulting.html","http://www.ibreakingpoint.com/cn/zh/contact-us.html","http://www.ibreakingpoint.com/cn/zh/news-room.html"];
+for(var i = 0;i<20;i++){
+  if(serve[i] == window.location.href){
+    oItemDiv[1].className = "itemDiv smalBack";
+    oItemTopDiv[1].className = "itemTopDiv itemTop";
+  }else if(solute[i] == window.location.href){
+    oItemDiv[2].className = "itemDiv longBack";
+      oItemTopDiv[2].className = "itemTopDiv itemlongTop";
+  }else if(about[i] == window.location.href){
+    oItemDiv[3].className = "itemTopDiv medBack";
+      oItemTopDiv[3].className = "itemTopDiv itemMidTop";
+  }else if("http://www.ibreakingpoint.com/" == window.location.href){
+    oItemDiv[0].className = "itemDiv smalBack";
+    oItemTopDiv[0].className = "itemTopDiv itemTop";
+  }
+}
+
+
+</script>

@@ -1,0 +1,181 @@
+<?php 
+  //详情页接口
+  $id='377';
+  $detail=fetch_json_data("/ServerZX/GetDetailById.cwg?id=".$id);
+  
+  $site=Cms_Service_Api_Website::getInstance()->getInfo();
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><?php echo $meta->title; ?></title>
+    <meta name="description" content="<?php echo $meta->description; ?>" />
+    <meta name="keywords" content="<?php echo $meta->keywords; ?>" />
+    <link rel="shortcut icon" href="<?php echo $meta->favicon; ?>" />
+    <link rel="bookmark" href="<?php echo $meta->favicon; ?>" type="image/x-icon"　/>
+    <link rel="icon" href="<?php echo $meta->favgif; ?>" type="image/gif" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta name="baidu-site-verification" content="l9jDiF4kqd" />
+	<meta name="baidu-site-verification" content="qvC3nD7GAI" />
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.css">
+     <link rel="stylesheet" type="text/css" href="/ruiy/css/app-style.css">
+  <style type="text/css">
+
+  </style>
+</head>
+<body>
+ <header id="header"><?php require __DIR__.'/../enruiy/header.phtml';?></header>
+<!-- banner -->
+<div class="banner">
+	<div id="myCarousel1" class="carousel slide">
+	    <?php Cms_Widget::factory('Ad')->display(Cms_Service_Api_Contents_Banner::getInstance()->getListByTypeId(100202),['need_LR'=>true,]); ?>
+    </div>
+    
+</div>
+<!-- nav -->
+<div id="nav" class="navr nav-zh">
+	<div class="nav-left"><i class="glyphicon glyphicon-menu-left"></i></div>
+	<ul>
+		<li style="display: flex;justify-content: space-between;"><a href="/enruiy/serve/" class='active'>Overview</a><span>|</span><a href="/enruiy/innovate/">Strategy Transformation</a></li>
+		<!-- <li><a class='active' href="/enruiy/innovate/">Strategy Transformation</a></li> -->
+		<li><span>|</span><a style="width: 190px;" href="/enruiy/busi/">Business Management</a></li>
+		<li><span>|</span><a style="width: 175px;" href="/enruiy/itconsult/ ">IT Strategic Planning</a></li>
+	</ul>
+	<div class="nav-right"><i class="glyphicon glyphicon-menu-right"></i></div>
+</div>
+<!-- content -->
+<div class='content'>
+	<div class="container">
+		<div class="row">
+			<div class="serve">
+				<?php echo $detail->content; ?>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- footer -->
+<div id='footer'><?php require __DIR__.'/../enruiy/footer.phtml';?></div>
+<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/main1.js"></script>
+<script type='text/javascript' src='/ruiy/js/img-change.js'></script>
+<script>
+$(document).ready(function(){
+	var idx=0;//记录当前命中的索引
+	var width=$('#nav ul').width();
+	for(var i=0;i<$("#nav ul li").length;i++){
+		
+		$("#nav ul li").eq(i).css({
+			'position':'absolute',
+			'left':width*i+'px'
+		})
+	}
+	$('#nav .nav-right').click(function(){
+		if(idx<$("#nav ul li").length-1){
+			$("#nav ul li").eq(idx).animate({
+				position:'absolute',
+				left:-width+'px'
+			},300);
+			$("#nav ul li").eq(idx+1).animate({
+				position:'absolute',
+				left:0
+			},300);
+
+			$("#nav1 ul li").eq(idx).animate({
+				position:'absolute',
+				left:-width+'px'
+			},300);
+			$("#nav1 ul li").eq(idx+1).animate({
+				position:'absolute',
+				left:0
+			},300);
+			idx++;
+		}
+	});
+	$('#nav .nav-left').click(function(){
+		if(idx>0){
+			$("#nav ul li").eq(idx).animate({
+				position:'absolute',
+				left:width+'px'
+			},300);
+			$("#nav ul li").eq(idx-1).animate({
+				position:'absolute',
+				left:0
+			},300);
+
+			$("#nav1 ul li").eq(idx).animate({
+				position:'absolute',
+				left:width+'px'
+			},300);
+			$("#nav1 ul li").eq(idx-1).animate({
+				position:'absolute',
+				left:0
+			},300);
+			idx--;
+		}
+	});
+
+	for(var i=0;i<$("#nav1 ul li").length;i++){
+		
+		$("#nav1 ul li").eq(i).css({
+			'position':'absolute',
+			'left':width*i+'px'
+		})
+	}
+	$('#nav1 .nav-right').click(function(){
+		if(idx<$("#nav1 ul li").length-1){
+			console.log(idx);
+			$("#nav ul li").eq(idx).animate({
+				position:'absolute',
+				left:-width+'px'
+			},300);
+			$("#nav ul li").eq(idx+1).animate({
+				position:'absolute',
+				left:0
+			},300);
+
+			$("#nav1 ul li").eq(idx).animate({
+				position:'absolute',
+				left:-width+'px'
+			},300);
+			$("#nav1 ul li").eq(idx+1).animate({
+				position:'absolute',
+				left:0
+			},300);
+			idx++;
+		}
+	});
+	$('#nav1 .nav-left').click(function(){
+		if(idx>0){
+			$("#nav ul li").eq(idx).animate({
+				position:'absolute',
+				left:width+'px'
+			},300);
+			$("#nav ul li").eq(idx-1).animate({
+				position:'absolute',
+				left:0
+			},300);
+
+			$("#nav1 ul li").eq(idx).animate({
+				position:'absolute',
+				left:width+'px'
+			},300);
+			$("#nav1 ul li").eq(idx-1).animate({
+				position:'absolute',
+				left:0
+			},300);
+			idx--;
+		}
+	});
+})
+</script>
+</body>
+</html>

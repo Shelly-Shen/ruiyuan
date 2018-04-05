@@ -1,0 +1,91 @@
+
+<?php 
+  //http://peng.ilinme.com/ServerZX/GetDetailById.cwg?id=219  //详情页接口
+  // $this->redirect('/engine?id=227');
+  $id='451';
+  $detail=fetch_json_data("/ServerZX/GetDetailById.cwg?id=".$id);
+  
+  $site=Cms_Service_Api_Website::getInstance()->getInfo();
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><?php echo $meta->title; ?></title>
+    <meta name="description" content="<?php echo $meta->description; ?>" />
+    <meta name="keywords" content="<?php echo $meta->keywords; ?>" />
+    <link rel="shortcut icon" href="<?php echo $meta->favicon; ?>" />
+    <link rel="bookmark" href="<?php echo $meta->favicon; ?>" type="image/x-icon"　/>
+    <link rel="icon" href="<?php echo $meta->favgif; ?>" type="image/gif" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta name="baidu-site-verification" content="ISvznniG2q" />
+    <meta name="baidu-site-verification" content="l9jDiF4kqd" />
+	<meta name="baidu-site-verification" content="qvC3nD7GAI" />
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.css">
+</head>
+<body>
+<header id="header"><?php require __DIR__.'/../enruiy/header.phtml';?></header>
+<!-- banner -->
+<div class="banner">
+	<div id="myCarousel1" class="carousel slide">
+		<?php Cms_Widget::factory('Ad')->display(Cms_Service_Api_Contents_Banner::getInstance()->getListByTypeId(100156),['need_LR'=>true,]); ?>
+    </div>
+   <!--  <div class="ban-left">
+    	<p>为了看见未来</p>
+    	<p style="margin-left:20px;">相信未来的企业</p>
+    </div> -->
+</div>
+<!-- nav -->
+<div id="nav" class="navr">
+	<ul style='margin: 0;'>
+		<li><a href="/pc/enruiy/newretail/">New Retail</a></li>
+		<li><a style='text-decoration: underline;' href="/pc/enruiy/realestate/">Real Estate</a></li>
+		<li><a href="/pc/enruiy/dealers/">Dealers</a></li>
+		<li><a href="/pc/enruiy/automaker/">Automaker</a></li>
+	</ul>
+</div>
+<!-- content -->
+<div class='content'>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 dealer">
+			<?php echo $detail->content;?>
+				<!-- <p class="top">过去几年，中国房地产行业进入白银时代，行业暴利时代结束，整体增速放缓，行业集中度提升。特别2015年以来，中国宏观调控政策的持续出台，催生了竞争愈发激烈的市场外部环境。</p>
+				<p class="top">另一方面，房地产行业由卖方市场逐步转向了买方市场，众多企业在经历了以数量取胜、质量取胜、品牌取胜后，已经发展到了目前以客户满意取胜的阶段。</p>
+				<div class="shi">
+					<p class="them">市场挑战与机遇</p>
+					<div class="box">
+						<p class="title">存量房时代的到来:</p>
+						<p class="des">另一方面，房地产行业由卖方市场逐步转向了买方市场，众多企业在经历了以数量取胜、质量取胜、品牌取胜后，已经发展到了目前以客户满意取胜的阶段。另一方面，房地产行业由卖方市场逐步转向了买方市场，众多企业在经历了以数量取胜、质量取胜、品牌取胜后，已经发展到了目前以客户满意取胜的阶段。</p>
+					</div>
+					<div class="box">
+						<p class="title">存量房时代的到来:</p>
+						<p class="des">另一方面，房地产行业由卖方市场逐步转向了买方市场，众多企业在经历了以数量取胜、质量取胜、品牌取胜后，已经发展到了目前以客户满意取胜的阶段。另一方面，房地产行业由卖方市场逐步转向了买方市场，众多企业在经历了以数量取胜、质量取胜、品牌取胜后，已经发展到了目前以客户满意取胜的阶段。</p>
+					</div>
+					<div class="box">
+						<p class="title">存量房时代的到来:</p>
+						<p class="des">另一方面，房地产行业由卖方市场逐步转向了买方市场，众多企业在经历了以数量取胜、质量取胜、品牌取胜后，已经发展到了目前以客户满意取胜的阶段。另一方面，房地产行业由卖方市场逐步转向了买方市场，众多企业在经历了以数量取胜、质量取胜、品牌取胜后，已经发展到了目前以客户满意取胜的阶段。</p>
+					</div>
+				</div> -->
+			</div>
+			<div class="col-sm-2" style="padding-left:0;">
+				<?php require __DIR__.'/right.phtml';?>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<!-- footer -->
+<div id='footer'><?php require __DIR__.'/../enruiy/footer.phtml';?></div>
+<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/main.js"></script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1272959461'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272959461%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+</html>

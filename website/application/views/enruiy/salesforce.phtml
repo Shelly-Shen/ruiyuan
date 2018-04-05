@@ -1,0 +1,68 @@
+<?php 
+  //详情页接口
+  $id='385';
+  $detail=fetch_json_data("/ServerZX/GetDetailById.cwg?id=".$id);
+  
+  $site=Cms_Service_Api_Website::getInstance()->getInfo();
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><?php echo $meta->title; ?></title>
+    <meta name="description" content="<?php echo $meta->description; ?>" />
+    <meta name="keywords" content="<?php echo $meta->keywords; ?>" />
+    <link rel="shortcut icon" href="<?php echo $meta->favicon; ?>" />
+    <link rel="bookmark" href="<?php echo $meta->favicon; ?>" type="image/x-icon"　/>
+    <link rel="icon" href="<?php echo $meta->favgif; ?>" type="image/gif" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta name="baidu-site-verification" content="l9jDiF4kqd" />
+	<meta name="baidu-site-verification" content="qvC3nD7GAI" />
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.css">
+</head>
+<body>
+<header id="header"><?php require __DIR__.'/../ruiy/header.phtml';?></header>
+<!-- banner -->
+<div class="banner">
+	<div id="myCarousel1" class="carousel slide">
+		<?php Cms_Widget::factory('Ad')->display(Cms_Service_Api_Contents_Banner::getInstance()->getListByTypeId(100201),['need_LR'=>true,]); ?>
+    </div>
+    
+</div>
+<!-- nav -->
+<div id="nav" class="navr">
+	<ul style='margin: 0;'>
+		<li><a href="/enruiy/softwave/" style="width:95px;">Overview</a><span class="xian">|</span></li>
+		<li><a href="/enruiy/spa/" style="width:65px;">SAP</a><span class="xian">|</span></li>
+		<li><a class='active' href="/enruiy/salesforce/" style="width:95px;">Salesforce</a></li>		
+	</ul>
+</div>
+<!-- content -->
+<div class='content'>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 salesforce">
+				<div class="row">
+					<div class="col-sm-12">
+						<?php echo $detail->content; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- footer -->
+<div id='footer'><?php require __DIR__.'/../ruiy/footer.phtml';?></div>
+<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/main1.js"></script>
+<script type='text/javascript' src='/ruiy/js/img-change.js'></script>
+</body>
+</html>

@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><?php echo $meta->title; ?></title>
+    <meta name="description" content="<?php echo $meta->description; ?>" />
+    <meta name="keywords" content="<?php echo $meta->keywords; ?>" />
+    <link rel="shortcut icon" href="<?php echo $meta->favicon; ?>" />
+    <link rel="bookmark" href="<?php echo $meta->favicon; ?>" type="image/x-icon"　/>
+    <link rel="icon" href="<?php echo $meta->favgif; ?>" type="image/gif" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta name="baidu-site-verification" content="l9jDiF4kqd" />
+	<meta name="baidu-site-verification" content="qvC3nD7GAI" />
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/ruiy/css/app-style.css">
+	<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/ruiy/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/ruiy/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/ruiy/js/main1.js"></script>
+<style type="text/css">
+  
+
+.content .container .box{
+  margin-top: 20px!important;
+}
+.content .lianx .bot {
+   
+    margin: 0 0;
+     margin-bottom: 50px;
+}
+
+
+.content .lianx .lianx_box {
+    width: 758px;
+    margin: 0 auto;
+    padding: 26px 0 !important;
+    box-shadow: 1px 1px 10px #777;
+}
+.content .lianx .lianx_box .title {
+    font-size: 16px;
+    color: #252525;
+    text-align: center;
+    margin: 0;
+}
+</style>
+</head>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+        var _hmt = _hmt || [];
+        (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?91f2281fcb8abdf0aa88e8718096a72e";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script type="text/javascript" src="/Cms/jquery-1.12.0.js"></script>
+
+    <!--[if lte IE 8]>
+    <script src="/Cms/html5shiv.min.js"></script>
+    <script src="/Cms/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link type="text/css" rel="stylesheet" href="/Cms/Font-Awesome-3.2.1/css/font-awesome-ie7.min.css"/>
+    <![endif]-->
+    <!--[if !IE]>-->
+    <!-- <![endif]-->
+    <!--[if IE]>
+    <script src="/Cms/jquery-1.11.1.min.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">window._not_pack_widget=<?php echo @Yaf_Registry::get('cms')->global->pack_widget_php?1:0; ?></script>
+    <script src='/Cms/pack.js<?php if(@Yaf_Registry::get('cms')->global->pack_js_php)echo '.php'; ?>?<?php echo time(); ?>'></script>
+    <?php if(@Yaf_Registry::get('cms')->global->pack_widget_php): ?><script src='/Cms/widget.js.php?<?php echo time(); ?>'></script><?php endif; ?>
+
+
+<body>
+<header id="header"><?php require __DIR__.'/../ruiy/header.phtml';?></header>
+<!-- banner -->
+<div class="banner">
+	<div id="myCarousel1" class="carousel slide">
+		<?php Cms_Widget::factory('Ad')->display(Cms_Service_Api_Contents_Banner::getInstance()->getListByTypeId(100170),['need_LR'=>true,]); ?>
+    </div>
+   <!--  <div class="ban-left">
+    	<p>为了看见未来</p>
+    	<p style="margin-left:20px;">相信未来的企业</p>
+    </div> -->
+</div>
+<!-- nav -->
+<div id="nav" class="navr">
+	<ul style='margin: 0;'>
+		<li><a href="/ruiy/consult">睿远咨询</a><span class="xian">|</span></li>
+		<li><a class='active' href="/ruiy/lianx">联系我们</a><span class="xian">|</span></li>
+		<li><a href="https://www.liepin.com/zhaopin/?sfrom=click-pc_homepage-centre_searchbox-search_new&d_sfrom=search_fp&key=%E7%9D%BF%E4%BB%AA" target="_blank">加入睿远</a><span class="xian">|</span></li>
+		<li><a href="/ruiy/news" style="width:50px;">新闻室</a><span class="xian">|</span></li>
+		<li><a href="http://ibreakingpoint.huodongxing.com " target="_blank">活动沙龙</a></li>
+	</ul>
+</div>
+<!-- content -->
+<div class='content'>
+	<div class="container">
+		<div class="row">
+			<div class="lianx">
+				<div class="row bot">
+					<div style="width:100%;text-align:center;">
+					 <a id='img1' href="javascript:;">
+						<img  style="width: 100%;margin-bottom:23px; padding: 0 15px;" src="/ruiy/images/1055.png">
+				     </a>		
+					</div>
+					<div class="col-sm-9" style="padding-left:30px;">
+						<p class='title'>上海公司（总部）</p>
+						<div class="dizhi">
+							<span>地址：</span>
+							<span>上海徐汇区中山西路1800号兆丰环球大厦17楼A1座</span>
+						</div>
+						<div class="call">
+							<span>电话：</span>
+							<span>400-820-7332</span>
+						</div>
+					</div>
+				</div>
+				<div class="row bot">
+					<div class="col-sm-3">
+					<a id='img2' href="javascript:;">
+						<img  style="width: 100%;margin-bottom:23px;" src="/ruiy/images/3022.png">
+				    </a>		
+					</div>
+					<div class="col-sm-9" style="padding-left:30px;">
+						<p class='title'>北京公司</p>
+						<div class="dizhi">
+							<span>地址：</span>
+							<span>北京市朝阳区八里庄西里98号住邦2000商务中心3号楼1502室</span>
+						</div>
+						<div class="call">
+							<span>电话：</span>
+							<span>400-820-7332</span>
+						</div>
+					</div>
+				</div>
+				<div class="row bot">
+					<div class="col-sm-3">
+					<a id='img3' href="javascript:;">
+						<img   style="width: 100%;margin-bottom:23px;" src="/ruiy/images/3203.png">
+					</a>
+					</div>
+					<div class="col-sm-9" style="padding-left:30px;">
+						<p class='title'>西安公司</p>
+						<div class="dizhi">
+							<span>地址：</span>
+							<span>陕西省西安市碑林区雁塔中段68号11A12</span>
+						</div>
+						<div class="call">
+							<span>电话：</span>
+							<span>400-820-7332</span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="lianx_box" id='ii'>
+					<form class="lianx-form">
+					<p class='title'>我们已一切就绪，亟待为您的经营实现创新变革</p>
+						<p class='title' style='margin-top: 10px;margin-bottom: 20px;'>欢迎来电联系我们，或者填写下框</p>
+						<div class='xm'>
+							<label for='uname'>姓名：</label>
+              <span style="color: red;">*</span>
+							<input type="text"  id='uname' name="uname">&nbsp;&nbsp;&nbsp;
+						</div>
+            <div class="fs">
+              <label for='fshi'>联系电话：</label>
+              <span style="color: red;">*</span>
+              <input type="text" id="mobile" name="fshi">&nbsp;&nbsp;&nbsp;
+            </div>
+						<div class="gs">
+							<label for='gname'>公司名称：</label>
+              <span style="color: red;">*</span>
+							<input type="text" id="company" name="gname">&nbsp;&nbsp;&nbsp;
+							<input name="yzm" class="form-control" type="hidden" value="0">
+						</div>
+						
+            <div class='xm'>
+              <label for='job11'>职位：</label>
+              <span style="color: red;">*</span>
+              <input type="text"  id='job' name="job1">&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class='xm'>
+              <label for='infor' class="liuyan-title">您的留言：</label>
+              <span style="color: red;">*</span>
+              <textarea type="text"  id='information' name="infor"></textarea>&nbsp;&nbsp;&nbsp;
+            </div>
+
+                          <!-- <div id="cert" class="fs">
+                                       <label for="inputEmail3" class="col-sm-2 control-label">验证码</label>
+                                      
+                                        <input name="yzm11" class="form-control" style="width: 150px;">
+                                      
+                                      
+                                        <img id="yzm" height="50" src="/ServerPNGYzm/NewImage.cwg"><script>
+                                        $('#yzm').on('click',function(){
+                                          $(this).attr('src','/ServerPNGYzm/NewImage.cwg?'+(new Date).getTime())
+                                        }).trigger('click')
+                                        </script>
+                                      
+                                    </div> -->
+
+
+
+					</form>
+					<div class="sub"><a href="#" style="width:110px;border-radius:3px;" id="thisStep">提交</a></div>
+				</div>
+			</div>
+		<!-- 	<div class="" style="padding-left:0;">
+				<div class="box">
+					<p class="title"><span class="xian">|</span>关注我们</p>
+					<p style='margin:15px;'>
+						<a target="_blank" href="http://www.linkedin.com/groups?gid=3291404"><img src="/ruiy/images/zx_03.jpg"></a>
+						<a target="_blank" href="https://www.facebook.com/ibreakingpoint"><img src="/ruiy/images/zx_05.jpg"></a>
+						<a id='cimg' href="javascript:;"><img src="/ruiy/images/zx_07.jpg"></a>
+          </p>
+          <p id='pimg' style='text-align:center;display: none;'><img style='width:80%;' src="/ruiy/images/er.jpg"></p>
+				</div> -->
+        <script type="text/javascript">
+          $('#cimg').click(function(){
+            var pimg = document.getElementById('pimg');
+            if(pimg.style.display == 'block'){
+              $('#pimg').css('display','none');
+            }else{
+              $('#pimg').css('display','block');
+            }
+          })
+        </script>
+				<!-- <div class="box">
+					<p class='title'><span class="xian">|</span>市场合作</p>
+					<p class='s1'>电话：021-34010561</p>
+					<p class='s1'>邮箱：even.zhang@ibreaking point.com</p>
+				</div>
+				<div class="box">
+					<p class='title'><span class="xian">|</span>阅读参考</p>
+						<?php $b=fetch_json_data('/ServerZX/GetListAll.cwg?count=5&page=1&cms_types_id=100120')->Data; ?>
+					<?php                         
+                        
+                          foreach ($b as $key => $value) {
+                          	//var_dump($value);
+                      
+                      ?>
+                    <a href="/news/<?php echo $value->id.'.html';?>" style='margin-right: 0px;' target="_blank">
+					<p class='wei'><?php echo $value->title;?></p>
+					<p class='s1 w1'><?php echo $value->summary;?></p>
+					</a>
+
+                   <?php } ?>
+ -->
+
+<script type="text/javascript">
+  require(['wx'],function(wx){
+    wx.config(<?php echo (Cms_Service_Api_Share_WX::getInstance()->getConfig()); ?>);
+
+  });
+  </script>
+                  <script>
+                  	
+
+
+                      $('#thisStep').on('click',function(){
+
+    require(['request'],function(request){
+      try{
+        if(!$('#uname').val())throw '姓名必填';
+         if(!$('#company').val())throw '公司名称必填';
+        if(!$('#mobile').val() || !$('#mobile').val().match(/^\d{11}/))throw '请填写正确手机号';   
+         if(!$('#job').val())throw '职位必填';
+         if(!$('#information').val())throw '您留言必填';
+      }catch(e){
+        alert(e)
+        return;
+      }
+    
+
+       /*var msg = [
+                    
+                    $('#uname').val(),
+                    $('#company').val(),
+                    $('#mobile').val()
+                   
+                  ].join("\n")
+         request({url:'/ServerMsg/Add44.cwg',data:{
+                   // yzm: $('[name="yzm"]').val(),
+                    x_state:'8',
+                    msg: msg
+                  }}).then(function(){
+                    alert("已提交");
+                    
+                  },function(msg){
+                    alert(msg);
+                  }).then(function(){
+                    $('#yzm').click()
+                  })
+
+                    })*/
+
+
+             var msg =[                
+                       '姓名：'+$('#uname').val(),
+                       '公司名称：'+$('#company').val(),
+                       '联系方式：'+$('#mobile').val(),
+                       '职位：'+$('#job').val(),  
+                       '您的留言：'+$('#information').val()            
+           
+                         ].join('\n')
+
+request({
+                        url:'/ServerMsg/Add44.cwg',
+                        data:{
+                                 /* msg:`
+                                  姓名:$('#uname').val()
+                                  公司名称:"$('#company').val()"
+                                  联系方式:"$('#mobile').val()"`,*/
+                                  x_state:'8',
+                                  msg: msg
+                                   //trd_session:wx.getStorageSync('trd_session')
+                                   
+                        
+                              
+
+                        },
+                        method:'post',
+                        header:{
+                          'Content-Type':'application/x-www-form-urlencoded'
+                        }
+                 
+
+
+
+           }).then(function(){
+                    alert("已提交");
+                    
+                  },function(msg){
+                    alert(msg);
+                  })         
+                    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  })
+ 
+                   /* var msg = [
+                    
+                    $('#uname').val(),
+                    $('#company').val(),
+                    $('#mobile').val()
+                   
+                  ].join("\n")*/
+           
+
+
+   
+
+
+
+
+
+
+
+
+
+                  </script>
+
+					<!-- <p class='wei'>. 微信文章标题</p>
+					<p class='s1 w1'>微信文章介绍简介微信微信文章介绍</p>
+					<p class='s1 w1'>简介微信文章介绍简介</p> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+  <!-- <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <form class="form-horizontal">
+         
+          <div class="form-group">
+            <label class="col-sm-2 control-label">姓名:</label>
+            <div class="col-sm-10">
+              <input class='form-control' id='contactMen' />
+            </div>
+          </div>
+           <div class="form-group">
+            <label class="col-sm-2 control-label">联系方式:</label>
+            <div class="col-sm-10">
+              <input class='form-control' id='contactWay' />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label">公司名称:</label>
+            <div class="col-sm-10">
+              <input class='form-control' id='csdu32h' />
+            </div>
+          </div>
+          
+  
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">验证码</label>
+            <div class="col-sm-2">
+              <input name="yzm" class="form-control">
+            </div>
+            <div class="col-sm-8">
+              <img id="yzm" height="50" src="/ServerPNGYzm/NewImage.cwg"><script>
+              $('#yzm').on('click',function(){
+                $(this).attr('src','/ServerPNGYzm/NewImage.cwg?'+(new Date).getTime())
+              }).trigger('click')
+              </script>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div id="fvnuydbwefbje" class="btn btn-danger">提交</div>
+              <script>
+              require(['request'],function(request){
+                $('#fvnuydbwefbje').on('click',function(){
+                	 try{
+                            if(!$('#uname').val())throw '姓名必填';
+                            if(!$('#company').val())throw '公司名称必填';
+                            if(!$('#mobile').val() || !$('#mobile').val().match(/^\d{11}/))throw '请填写正确手机号';
+        
+       
+                        }catch(e){
+                                  alert(e)
+                                 return;
+                        }
+                  var msg = [
+                   
+                    $(' #csdu32h').val(),
+                    $(' #edbcjhw').val(),
+                    $('#contactMen').val(),
+                    $('#contactWay').val()
+                  ].join("\n")
+  
+                  request({url:'/ServerMsg/Add.cwg',data:{
+                    yzm: $('[name="yzm"]').val(),
+                    msg: msg
+                  }}).then(function(){
+                    alert("已提交")
+                
+                  },function(msg){
+                    alert(msg)
+                  }).then(function(){
+                    $('#yzm').click()
+                  })
+                })
+              })
+              </script>
+            </div>
+          </div>
+        </form>
+      </div>
+     
+    </div>
+  </div>
+   -->
+
+
+<!--弹窗 -->
+<div class='chuan' id='c1'>
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具" />
+<meta name="description" content="百度地图API自定义地图，帮助用户在可视化操作下生成百度地图" />
+<title>百度地图API自定义地图</title>
+<!--引用百度地图API-->
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+    @media screen and (max-width: 767px){
+    .navr ul li a {
+        display: inline-block;
+        width: 69px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: #151515;
+        font-size: 14px;
+    }
+  }
+        @media screen and (max-width: 767px){
+    .navf ul li a {
+        display: inline-block;
+        width: 65px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: #151515;
+        font-size: 14px;
+    }
+  }
+ 
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+
+<body>
+  <!--百度地图容器-->
+  <div style="width:88%;height:60%;border:#ccc solid 1px;top:80px;" id="dituContent"></div>
+   <a id='cha1'>×</a>
+</body>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(121.430868,31.189754);//定义一个中心点坐标
+        map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+  var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+  map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+  var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+  map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+  var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+  map.addControl(ctrl_sca);
+    }
+    
+    
+    initMap();//创建和初始化地图
+</script>
+</html>
+
+
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具" />
+<meta name="description" content="百度地图API自定义地图，帮助用户在可视化操作下生成百度地图" />
+<title>百度地图API自定义地图</title>
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+    @media screen and (max-width: 767px){
+    .navr ul li a {
+        display: inline-block;
+        width: 69px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: #151515;
+        font-size: 14px;
+    }
+  }
+        @media screen and (max-width: 767px){
+    .navf ul li a {
+        display: inline-block;
+        width: 65px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: #151515;
+        font-size: 14px;
+    }
+  }
+ 
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+
+<body>
+  <div style="width:88%;height:60%;border:#ccc solid 1px;top:80px;" id="dituContent"></div>
+  <a id='cha1'>×</a>
+</body>
+</html> -->
+
+
+
+</div>
+<div class="chuan" id='c2'>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具" />
+<meta name="description" content="百度地图API自定义地图，帮助用户在可视化操作下生成百度地图" />
+<title>百度地图API自定义地图</title>
+<!--引用百度地图API-->
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+<body>
+  <!--百度地图容器-->
+  <div style="width:88%;height:60%;border:#ccc solid 1px;top:80px;" id="dituContent2"></div>
+  <a id='cha2'>×</a>
+</body>
+</html>
+
+
+
+</div>
+<div class='chuan' id='c3'>
+    
+     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具" />
+<meta name="description" content="百度地图API自定义地图，帮助用户在可视化操作下生成百度地图" />
+<title>百度地图API自定义地图</title>
+<!--引用百度地图API-->
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+
+<body>
+  <!--百度地图容器-->
+  <div style="width:88%;height:60%;border:#ccc solid 1px;top:80px;" id="dituContent3"></div>
+  <a id='cha3'>×</a>
+</body>
+</html>
+
+
+</div>
+<style type="text/css">
+  .chuan{
+   position: fixed;
+    margin: 0 auto;
+    padding-top: 74px;
+    width: 100%;
+    height: 100%;
+    left:0;
+    top:0;
+    background: rgba(0,0,0,.5);
+    display: none;
+    text-align: center;
+    z-index: 100;
+  }
+  .chuan>div{
+    margin: 5% auto;
+  }
+  #cha2,#cha3,#cha1{
+    position: absolute;
+    top:128px;
+    right:38px;
+    color:#fff;font-size:40px;
+    cursor: pointer;
+  }
+  #cha1:hover,#cha2:hover,#cha3:hover{text-decoration: none;}
+  .BMap_Marker{
+    /*width: 40px !important;
+    height: 40px !important;
+    left: 153px !important;
+    top: 165px !important;*/
+    /*background: url(/ruiy/images/ding.png) 6% 0% / contain !important;*/
+    background: url(/ruiy/images/ding.png)!important;
+    background-size: cover!important;
+  }
+   .BMapLabel{
+    background-color: transparent!important;
+    border:none!important;
+   }
+  .xm textarea{
+        border: none;
+    background: #eee;
+    padding: 9px 10px;
+    outline: none;
+    width: 100%;
+  } 
+</style>
+<script type="text/javascript">
+  $('#img1').click(function(){
+    $('#c1').css('display','block');
+        //创建和初始化地图函数：
+        function initMap(){
+            createMap();//创建地图
+            setMapEvent();//设置地图事件
+            addMapControl();//向地图添加控件
+            addMarker();//向地图中添加marker
+        }
+        
+        //创建地图函数：
+        function createMap(){
+            var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+            var point = new BMap.Point(121.430881,31.189816);//定义一个中心点坐标
+            map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+            window.map = map;//将map变量存储在全局
+        }
+        
+        //地图事件设置函数：
+        function setMapEvent(){
+            map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+            map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+            map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+            map.enableKeyboard();//启用键盘上下左右键移动地图
+        }
+        
+        //地图控件添加函数：
+        function addMapControl(){
+            //向地图中添加缩放控件
+      var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(ctrl_nav);
+            //向地图中添加缩略图控件
+      var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+      map.addControl(ctrl_ove);
+            //向地图中添加比例尺控件
+      var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      map.addControl(ctrl_sca);
+        }
+        
+        //标注点数组
+        var markerArr = [{title:"上海睿远软件信息咨询有限公司",content:"上海睿远软件信息咨询有限公司",point:"121.430674|31.189584",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+         ];
+        //创建marker
+        function addMarker(){
+            for(var i=0;i<markerArr.length;i++){
+                var json = markerArr[i];
+                var p0 = json.point.split("|")[0];
+                var p1 = json.point.split("|")[1];
+                var point = new BMap.Point(p0,p1);
+          var iconImg = createIcon(json.icon);
+                var marker = new BMap.Marker(point,{icon:iconImg});
+          var iw = createInfoWindow(i);
+          var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+          marker.setLabel(label);
+                map.addOverlay(marker);
+                label.setStyle({
+                            borderColor:"#808080",
+                            color:"#333",
+                            cursor:"pointer"
+                });
+          
+          (function(){
+            var index = i;
+            var _iw = createInfoWindow(i);
+            var _marker = marker;
+            _marker.addEventListener("click",function(){
+                this.openInfoWindow(_iw);
+              });
+              _iw.addEventListener("open",function(){
+                _marker.getLabel().hide();
+              })
+              _iw.addEventListener("close",function(){
+                _marker.getLabel().show();
+              })
+            label.addEventListener("click",function(){
+                _marker.openInfoWindow(_iw);
+              })
+            if(!!json.isOpen){
+              label.hide();
+              _marker.openInfoWindow(_iw);
+            }
+          })()
+            }
+        }
+        //创建InfoWindow
+        function createInfoWindow(i){
+            var json = markerArr[i];
+            var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+            return iw;
+        }
+        //创建一个Icon
+        function createIcon(json){
+            var icon = new BMap.Icon("/ruiy/images/ding.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+            return icon;
+        }
+        
+        initMap();//创建和初始化地图
+  })
+  $('#cha1').click(function(){
+    $('#c1').css('display','none');
+  })
+
+    $('#img2').click(function(){
+    $('#c2').css('display','block');
+
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent2");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(116.500665,39.920653);//定义一个中心点坐标
+        map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+  var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+  map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+  var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+  map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+  var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+  map.addControl(ctrl_sca);
+    }
+    
+    //标注点数组
+    var markerArr = [{title:"上海睿远软件信息咨询有限公司",content:"上海睿远软件信息咨询有限公司",point:"116.500261|39.920598",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+     ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+      var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+      var iw = createInfoWindow(i);
+      var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+      marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+      
+      (function(){
+        var index = i;
+        var _iw = createInfoWindow(i);
+        var _marker = marker;
+        _marker.addEventListener("click",function(){
+            this.openInfoWindow(_iw);
+          });
+          _iw.addEventListener("open",function(){
+            _marker.getLabel().hide();
+          })
+          _iw.addEventListener("close",function(){
+            _marker.getLabel().show();
+          })
+        label.addEventListener("click",function(){
+            _marker.openInfoWindow(_iw);
+          })
+        if(!!json.isOpen){
+          label.hide();
+          _marker.openInfoWindow(_iw);
+        }
+      })()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("/ruiy/images/ding.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+
+  })
+  $('#cha2').click(function(){
+    $('#c2').css('display','none');
+  }) 
+  $('#img3').click(function(){
+    $('#c3').css('display','block');
+
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+    
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent3");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(109.004445,34.217431);//定义一个中心点坐标
+        map.centerAndZoom(point,17);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+    
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+    
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+  var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+  map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+  var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+  map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+  var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+  map.addControl(ctrl_sca);
+    }
+    
+    //标注点数组
+    var markerArr = [{title:"上海睿远软件信息咨询有限公司",content:"上海睿远软件信息咨询有限公司",point:"109.002981|34.216565",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+     ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+      var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+      var iw = createInfoWindow(i);
+      var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+      marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+      
+      (function(){
+        var index = i;
+        var _iw = createInfoWindow(i);
+        var _marker = marker;
+        _marker.addEventListener("click",function(){
+            this.openInfoWindow(_iw);
+          });
+          _iw.addEventListener("open",function(){
+            _marker.getLabel().hide();
+          })
+          _iw.addEventListener("close",function(){
+            _marker.getLabel().show();
+          })
+        label.addEventListener("click",function(){
+            _marker.openInfoWindow(_iw);
+          })
+        if(!!json.isOpen){
+          label.hide();
+          _marker.openInfoWindow(_iw);
+        }
+      })()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("/ruiy/images/ding.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//创建和初始化地图
+
+  })
+  $('#cha3').click(function(){
+    $('#c3').css('display','none');
+  })
+</script>
+<!-- footer -->
+<div id='footer'><?php require __DIR__.'/../ruiy/footer.phtml';?></div>
+
+</body>
+</html>

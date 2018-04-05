@@ -1,0 +1,652 @@
+<?php
+
+/**
+ * 邻米网络
+ * ==================================================
+ * 版权所有 2015-2017 上海邻米网络科技有限公司开发，并保留所有权利。
+ * 网站地址: http://www.ilinme.com；
+ * --------------------------------------------------
+ * 本项目使用邻米核心开发，欢迎使用。
+ * 不允许对程序代码以任何形式任何目的的再发布。
+ * ===================================================
+ * $Author: 邻米网络 & 雾海树妖 $2017/05/20
+ */
+
+class QuestionController extends Controller_BaseModel{
+
+  function indexAction(){
+
+  }
+  
+  function questionlistAction(){
+    
+  }
+
+  function questiondetailAction(){
+
+
+    if(Request::isAjax() && Request::getStringParam('do')=='createAnswer'){
+      try{
+        Response::json_success([
+          'answer_id'=>Cms_Service_Api_Contents_Question::getInstance()->createAnswer(
+            Request::getIntParam('question_id'),
+            Request::getStringParam('answer')
+          )
+        ]);
+      }catch(Exception $e){
+        Response::error_end($e);
+      }
+    }
+
+
+    if(Request::isAjax() && Request::getStringParam('do')=='createAnswerComment'){
+      try{
+        Response::json_success([
+          'comment_id'=>Cms_Service_Api_Contents_Question::getInstance()->createAnswerComment(
+            Request::getIntParam('question_id'),
+            Request::getStringParam('comment'),
+            Request::getIntParam('reply_to')
+          )
+        ]);
+      }catch(Exception $e){
+        Response::error_end($e);
+      }
+    }
+
+
+    if(Request::isAjax() && Request::getStringParam('do')=='getAnswerList'){
+      try{
+      Response::json_success(Cms_Service_Api_Contents_Question::getInstance()->getAnswerList(
+        Request::getIntParam('id'),
+        Request::getIntParam('begin_id'), // 第一条二级回复的id，分页之后也需要传第一页的第一条id
+        Request::getIntParam('page')
+      )->_data);
+      }catch(Exception $e){
+        Response::error_end($e);
+      }
+    }
+
+    if(Request::isAjax() && Request::getStringParam('do')=='getAnswerCommentList'){
+      try{
+      $comments=Cms_Service_Api_Contents_Question::getInstance()->getAnswerCommentList(
+        Request::getIntParam('reply_to'), // 二级回复的目标评论id
+        Request::getIntParam('id'), // 问题id
+        Request::getIntParam('begin_id'), // 第一条二级回复的id，分页之后也需要传第一页的第一条id
+        Request::getIntParam('page'),
+        6
+      );
+      Response::json_success([
+        'comments'=>$comments,
+        'pager'=>Cms_Widget::factory('Pager')->newpager([
+          'page_code'=>Request::getIntParam('page'),
+          'page_itemcount'=>5,
+          'item_count_prepage'=>6,
+          'item_count_sum'=>$comments->_count,
+          'url'=>'pagenum{{page}};',
+         ],false)
+      ]);
+      }catch(Exception $e){
+        Response::error_end($e);
+      }
+    }
+
+    // 文章点赞、取消
+    if(Request::isAjax() && Request::getStringParam('do')=='setAgree'){
+      try{
+        Response::json_success(
+          Cms_Service_Api_Contents_Question::getInstance()->setAgree(
+            Request::getIntParam('id'), // 文章id
+            Request::getIntParam('state') // 点赞状态 0 取消点赞 1 点赞
+          )
+        );
+      }catch(Exception $e){
+        Response::error_end($e);
+      }
+    }
+
+    // 文章评论点赞、取消
+    if(Request::isAjax() && Request::getStringParam('do')=='setAnswerAgree'){
+      try{
+        Response::json_success(
+          Cms_Service_Api_Contents_Question::getInstance()->setAnswerAgree(
+            Request::getIntParam('id'), // 文章评论id
+            Request::getIntParam('state') // 点赞状态 0 取消点赞 1 点赞
+          )
+        );
+      }catch(Exception $e){
+        // Response::json_error('未知错误');
+        Response::error_end($e);
+      }
+    }
+
+    // 文章二级评论点赞、取消
+    if(Request::isAjax() && Request::getStringParam('do')=='setAnswerCommentAgree'){
+      try{
+        Response::json_success(
+          Cms_Service_Api_Contents_Question::getInstance()->setAnswerCommentAgree(
+            Request::getIntParam('id'), // 文章二级评论id
+            Request::getIntParam('state') // 点赞状态 0 取消点赞 1 点赞
+          )
+        );
+      }catch(Exception $e){
+        Response::error_end($e);
+      }
+    }
+
+    // 设置最佳答案
+    if(Request::isAjax() && Request::getStringParam('do')=='setBest' ){
+      try{
+        Cms_Service_Api_Contents_Question::getInstance()->setBestAnswer(
+          Request::getIntParam('question_id'),
+          Request::getIntParam('answer_id')
+        );
+        Response::json_success();
+      }catch(Exception $e){
+        Response::error_end($e);
+      }
+    }
+
+    // 设置推荐答案
+    // 此操作不允许在这个页面进行，因为没法控制权限，必须去后台操作
+
+    return;
+        Cms_Service_Api_Contents_Question::getInstance()->setBestAnswer(
+          115,//Request::getIntParam('question_id'),
+          20//Request::getIntParam('answer_id')
+        );
+
+
+  }
+
+  function askquestionAction(){
+
+  	Cms_Service_Api_Contents_Question::getInstance()->updateKeywords('火灾自动报警系统
+防火门
+泡沫灭火剂
+易熔合金喷头
+水雾喷头
+灭火器
+EPS消防应急电源
+消防器材
+感温探测器
+点型感温火灾探测器
+摩托车
+汽车停车棚
+不锈钢消火栓箱
+铝合金消火栓箱
+消防头盔
+自救式消防栓箱
+消防水枪
+水带消防水枪
+防火门钢质
+防火门价格
+推杠锁防火门
+超大防火门
+变压器防火门
+呼吸器
+气体探测器
+泡沫罐
+气体灭火
+变压器室防火门
+商场防火门
+木质防火门
+烟雾报警器
+烟雾感应器
+火灾报警器
+避火服
+消防车装备用头罩
+隔热服
+消防车装备用大褂
+防火服
+防火围裙
+消防服
+热防护手套
+消防安全通道
+防火门逃生锁
+消防推杠锁
+干粉灭火器
+灭火设备
+室内消防栓
+9马力手抬机动消防泵
+屏障水枪
+泡沫水枪
+消防水带
+直流水枪
+开关开花水枪
+消防应急六件套
+油锯
+消火栓箱
+全钢制消火栓箱
+快速反应早期灭火喷头
+易熔合金消防喷淋头
+防火涂料
+七氟丙烷
+气溶胶
+消防沙箱
+膨胀沙袋
+救生衣
+救生设备批发
+高空绳
+救生浮锁
+消防烟雾
+二氧化碳灭火器
+推车式ABC
+干粉ABC
+室内消火栓
+SNW65-III
+SN65
+离心风机
+苏州灭火器充装
+水成膜泡沫液
+消防泡沫液
+消防灭火剂
+氟蛋白泡沫液
+A类泡沫灭火剂
+B类泡沫灭火剂
+压缩空气灭火装置
+上海EPS
+天津防火卷帘门
+抗乙醇泡沫灭火剂
+抗醇型泡沫灭火剂
+抗溶性消防泡沫液
+氟蛋白抗溶泡沫灭火剂
+水成膜抗溶泡沫灭火剂
+凝胶型抗溶消防泡沫液
+RRD消防通道锁
+防火门锁
+烟感探测器
+感烟探测器
+燃气报警器
+灭火装置
+防火卷帘
+防火材料
+软管卷盘
+水泵接合器
+应急照明灯
+推车式灭火器
+消防炮
+防化服
+吴江灭火器
+哈尔滨消防器材
+哈尔滨市消防器材
+哈尔滨消防工程公司
+哈尔滨市消防工程公司
+消防通道推杠锁
+安全门锁
+防火门通道锁
+提前预放电避雷针
+三相电源防雷器
+OBO防雷器
+北京口罩
+消防泡沫推车
+移动式泡沫灭火装置
+动物蛋白泡沫液
+干粉灭火剂
+ABC干粉
+抗溶泡沫灭火剂
+成膜氟蛋白泡沫灭火剂
+成膜蛋白泡沫液
+消防报警锁230D
+水成膜泡沫灭火剂
+船用泡沫灭火剂
+角式水雾喷头
+单出口水幕喷头
+檐口型水幕喷头
+矿用通风阻力测试仪
+传感器
+自救装置
+消防器材设备
+液化气探测器
+四管空气采样
+七氟丙烷价格
+七氟丙烷灭火系统
+消防战斗服
+消防枪
+玻璃球洒水喷头
+ZSTX
+PSKD
+报警按钮
+手动消防水炮
+呼吸空气过滤器
+过滤器
+监控器
+消防应急包
+灭火器材
+消防箱
+机械泡沫灭火器
+报警器
+消防产品
+消防标识
+清水泡沫液
+包括推车式干粉泡沫
+三进三出
+消火枪箱
+防汛铜锣
+矿山多功能液压剪切器
+氨气泄漏报警器
+高速火焰检测仪
+单相
+火灾自动报警系统
+防火门
+泡沫灭火剂
+易熔合金喷头
+水雾喷头
+灭火器
+EPS消防应急电源
+消防器材
+感温探测器
+点型感温火灾探测器
+摩托车
+汽车停车棚
+不锈钢消火栓箱
+铝合金消火栓箱
+消防头盔
+自救式消防栓箱
+消防水枪
+水带消防水枪
+防火门钢质
+防火门价格
+推杠锁防火门
+超大防火门
+变压器防火门
+呼吸器
+气体探测器
+泡沫罐
+气体灭火
+变压器室防火门
+商场防火门
+木质防火门
+烟雾报警器
+烟雾感应器
+火灾报警器
+避火服
+消防车装备用头罩
+隔热服
+消防车装备用大褂
+防火服
+防火围裙
+消防服
+热防护手套
+消防安全通道
+防火门逃生锁
+消防推杠锁
+干粉灭火器
+灭火设备
+室内消防栓
+9马力手抬机动消防泵
+屏障水枪
+泡沫水枪
+消防水带
+直流水枪
+开关开花水枪
+消防应急六件套
+油锯
+消火栓箱
+全钢制消火栓箱
+快速反应早期灭火喷头
+易熔合金消防喷淋头
+防火涂料
+七氟丙烷
+气溶胶
+消防沙箱
+膨胀沙袋
+救生衣
+救生设备批发
+高空绳
+救生浮锁
+消防烟雾
+二氧化碳灭火器
+推车式ABC
+干粉ABC
+室内消火栓
+SNW65-III
+SN65
+离心风机
+苏州灭火器充装
+水成膜泡沫液
+消防泡沫液
+消防灭火剂
+氟蛋白泡沫液
+A类泡沫灭火剂
+B类泡沫灭火剂
+压缩空气灭火装置
+上海EPS
+天津防火卷帘门
+抗乙醇泡沫灭火剂
+抗醇型泡沫灭火剂
+抗溶性消防泡沫液
+氟蛋白抗溶泡沫灭火剂
+水成膜抗溶泡沫灭火剂
+凝胶型抗溶消防泡沫液
+RRD消防通道锁
+防火门锁
+烟感探测器
+感烟探测器
+燃气报警器
+灭火装置
+防火卷帘
+防火材料
+软管卷盘
+水泵接合器
+应急照明灯
+推车式灭火器
+消防炮
+防化服
+吴江灭火器
+哈尔滨消防器材
+哈尔滨市消防器材
+哈尔滨消防工程公司
+哈尔滨市消防工程公司
+消防通道推杠锁
+安全门锁
+防火门通道锁
+提前预放电避雷针
+三相电源防雷器
+OBO防雷器
+北京口罩
+消防泡沫推车
+移动式泡沫灭火装置
+动物蛋白泡沫液
+干粉灭火剂
+ABC干粉
+抗溶泡沫灭火剂
+成膜氟蛋白泡沫灭火剂
+成膜蛋白泡沫液
+消防报警锁230D
+水成膜泡沫灭火剂
+船用泡沫灭火剂
+角式水雾喷头
+单出口水幕喷头
+檐口型水幕喷头
+矿用通风阻力测试仪
+传感器
+自救装置
+消防器材设备
+液化气探测器
+四管空气采样
+七氟丙烷价格
+七氟丙烷灭火系统
+消防战斗服
+消防枪
+玻璃球洒水喷头
+ZSTX
+PSKD
+报警按钮
+手动消防水炮
+呼吸空气过滤器
+过滤器
+监控器
+消防应急包
+灭火器材
+消防箱
+机械泡沫灭火器
+报警器
+消防产品
+消防标识
+清水泡沫液
+包括推车式干粉泡沫
+三进三出
+消火枪箱
+防汛铜锣
+矿山多功能液压剪切器
+氨气泄漏报警器
+高速火焰检测仪
+单相
+zy60压缩氧自救器
+呼吸器充气机
+斜流风机
+ps20消防水炮
+上海电动门
+手报按钮
+3m面具促销
+气密试验箱
+柴油机
+自救器型号
+山东超细干粉
+pss消火栓
+pl消防炮
+移动式泡沫灭火系统
+ps30消防水炮
+室外地上消火栓
+柴油泄漏报警器
+昆明消防报警
+昆明消防应急灯
+昆明应急灯
+昆明消防水带
+昆明灭火器
+消防代办
+3m面罩
+安全出口灯
+汽油泄漏报警器
+防火卷帘门维修
+卷帘门维修
+2小时正压氧气呼吸器
+消防用呼吸器
+灭火器年检加压
+防火卷帘门电机
+负压氧气呼吸器
+强师无后座力水枪
+泡沫灭火剂价格
+灭火器图片
+低价销售
+火灾报警系统
+防爆门
+消防应急指示系统
+声光警报器
+气体报警仪
+诺帝菲尔
+气体自动灭火装置
+救生抛投器
+彩钢板
+自动灭火器
+吸水膨胀袋
+江铃消防车
+灭火阻化多用泵
+声光报警器价格
+火灾监控探测器
+压风自救装置价格
+矿用压风供水自救装置
+消防火灾自动报警系统
+zhj矿用防灭火装置
+海湾烟感探测器
+阻化剂灭火泵
+山西灭火装置
+泡沫灭火装置价格
+矿用防灭火注浆装置
+消防报警设备
+感温感烟探测器
+高倍数灭火器
+bgp泡沫灭火装置
+消防感烟
+报警控制器
+东风水罐消防车
+3kg灭火器
+4kg灭火器
+过滤式呼吸器
+氨气泄漏检测仪
+压力罐
+abc干粉灭火器
+探测器价格
+防火包厂家
+快速喷头
+高楼逃生绳
+天然气泄露报警器
+防蜂服
+防毒面罩
+固定式煤气报警器
+煤气泄露报警器
+乙炔气体
+氯气探测器
+氢气泄漏报警器
+氢气浓度报警仪
+氯气报警仪
+气溶胶价格
+液化气报警
+
+JTW-ZCD-G3N jty-gd-g3 安全消防知识 地址编码 电子编码功能 防火知识 海湾jty-gd-g3 海湾烟感 消防 消防安全知识 消防百科 消防工程资质 消防规范 消防技术 消防警铃 消防局 消防举报 消防控制模块 消防控制器 消防控制设备 消防控制设备的组成 消防控制室 消防控制室内设备的布 消防控制室图形显示装置 消防联动 消防联动报警锁、防火 消防联动控制器 消防楼层器材 消防面具 消防灭火 消防名言 消防明星代言人 消防模块 消防模块厂家 消防模块合格证 消防模块技术参数 消防模块生产厂家 消防模块外形尺寸 消防年检 消防排烟口 消防炮 消防泡沫液 消防培训 消防喷淋头 消防气压给水设备 消防器材 消防器材安装 消防器材标志 消防器材产品 消防器材代理 消防器材代理商 消防器材店 消防器材都有哪些 消防器材分类 消防器材公司 消防器材管理 消防器材价格 消防器材经销处 消防器材经营 消防器材类型 消防器材配备标准 消防器材配件 消防器材批发 消防器材品牌 消防器材商店 消防器材设备 消防器材生产 消防器材使用寿命 消防器材市场 消防器材销售 消防器材有限公司 消防器材正货 消防器材直销店面 消防器材专卖 消防器材专卖店 消防器材专卖市场 消防器材专售 消防器材资料 消防枪炮 消防切电的连接方法 消防日 消防设备 消防设备和器材的管理 消防设备检测 消防设备接线及原理 消防设备营销方案 消防设备知识 消防设计 消防设施 消防设施工程 消防设施器材维护 消防施工与保养 消防疏散 消防输入模块 消防术语 消防栓按钮 消防栓按钮报型号 消防栓管理 消防水泵 消防水泵接合器 消防水带 消防水炮 消防四工具 消防探头 消防逃生 消防逃生标志 消防逃生面具 消防逃生锁 消防逃生装置 消防梯 消防条例 消防通道 消防通道锁 消防通讯标准 消防投诉 消防涂料 消防推杆锁 消防推杠锁 消防网站 消防维保 消防维保公司 消防维护保养 消防维修业务 消防五五配置 消防系统 消防系统保护对象 消防系统操作人员上岗 消防系统故障 消防系统集成 消防系统设备 消防系统维护 消防系统维护保养 消防系统维护维修细则 消防系统在医院实现人 消防线路 消防箱 消防项目 消防消防联动 消防小常识 消防新闻资讯 消防信号线 消防宣传日 消防巡检技术报告 消防压力开关 消防演习 消防验收 消防验收资料 消防应急标志灯 消防应急灯 消防应急灯工作电压 消防应急灯图片 消防应急广播 消防应急广播系统 消防应急广播系统的组 消防应急器材 消防应急照明灯 消防应急指示 消防预警系统 消防员用呼救器 消防运动会 消防责任体系 消防展 消防知识 消防知识黑板报 消防知识讲座 消防知识漫画 消防知识培训 消防知识手抄报 消防知识问答 消防知识宣传 消防职场 消防指示灯 消防中控 消防中控室 消防主材 消防主机 消防主机更换 消防专家 消防资讯 消防自动报警主机 消火栓 消火栓按钮 消火栓按钮布线 消火栓按钮的连接导线 消火栓的压力 消火栓灯电流 消火栓附配件 消火栓给水系统 消火栓工作电压 消火栓图片 消火栓系统管道施工 消消防器材配置 消音指示灯点 小学生消防知识 小学生消防知识讲座 泄水处压力 泄压阀 泄压口 泄压口的工作原理？ 泄压装置 新老国标 新沃 新沃品牌 新消防法 新消防法颁布时间 新消防法全文 新消防法实施时间 信号传输 信号蝶阀 信号二总线 信号联动式闭门器 信号输出 信号线 信号线间电阻 蓄电池 蓄电池叉车 蓄热自燃 旋转消火栓 循环报火警 讯响器 压力表 压力开关 压力信号器 烟的浓度 烟感报警 烟感编码 烟感参数 烟感厂家 烟感潮湿误报警 烟感的安装 烟感底座 烟感地址 烟感合格证 烟感环境温度 烟感价格 烟感手报 烟感探测器 烟感探测器分类方式 烟感探头 烟感头 烟感外形尺寸 烟感温感 烟花爆竹工厂 烟花爆竹居住场所 烟气中毒 烟雾模拟器 烟雾浓度值 烟雾探测报警器 烟雾探测器 烟雾侦测主机 盐酸探测器 扬声器 阳台逃生 氧气探测器 夜光PVC贴 夜光地贴 液氨泄露报警器 液化气残液 液化气漏气 液化气瓶着火 液化气泄露 液化气泄露报警器 液化石油气 液化石油气储罐区 液化石油气瓶 液晶屏 液晶显示器 一氧化碳 医院消防漫画 义务消防 易燃、可燃装修材料的 易燃液体 易燃易爆场所的隐形杀 易燃易爆场所消防常识 谊信科技 翼捷火焰 翼捷火焰探测器 应急灯 应急灯保修期 应急灯锂电池 应急灯说明书 应急疏散 应急疏散预案 应急消防器材 应急照明 应急照明灯 应急照明系列 英国阿波罗公司有哪些 英国阿波罗为了系统的 英国阿波罗有哪些技术 英国阿波罗有哪些可靠 英国精灵gent 用于广播之间切换 油罐火灾 油锅起火 油库油品 油制气探测器 有衬里消防水带 有单独探测报警的四管 有毒气体 有毒气体报警器 有毒体有害气体报警器 有毒有害气体 有毒有害气体报警器 有毒有害气体检测 有毒有害气体检测报警 有毒有害气体检测仪 有毒有害气体检测仪哪 有毒有害气体探测器 有毒有害气体探测器量 有管网七氟丙烷 有管网气体灭火的管材 有害气体探测器 娱乐场所安全防范措施 雨淋系统工作原理 雨淋系统是怎么组成的 预防措施 预防火灾 预防微波炉火灾 预埋盒 预作用喷淋系统 远程监控 远程控制风机 远程遥控电动消防水炮 远端显示面板 早期报警 早期火灾探测器 早期建筑 照明灯具 真正的四管四区 整层感应器报故障是什 正品消防器材 正确使用灭火剂 正确维护灭火剂 正向理线 正压风机的作用 正压送风 织物阻燃剂 织物阻燃原理 直接联动式闭门器 直向安全出口 指示部件 指示灯 指示灯电源 智能点型感温探测器 智能点型感温探测器安 智能点型感温探测器的 智能点型感温探测器工 智能点型感温探测器合 智能点型感温探测器外 智能点型离子感烟火灾 智能电源盘 智能电源箱 智能感温探测器 智能高灵敏度激光感烟 智能警笛 智能控制模块 智能离子感烟探测器 智能疏散逃生系统功能 智能网络电源箱 智能显示终端软件 智能消火栓按钮 智能型点型感温火灾探 智能型模块 智能型主动喷水灭火系 智能讯响器 智能讯响器底座 智能烟感探测器 智能智能光电感烟探测 中倍泡沫液泡沫 中倍数泡沫发生器 中华人民共和国消防法 中继模块 中继模块合格证 中继器 中文的系统作用 中央管理系统 中央控制室 终端电阻盒 终端盒跟接线盒 终端器 重大火灾隐患 重复显示器 重复显示器价格 重新设定回路信息 主板 主机CRT接口卡 主机报警显示感烟探测 主机编码 主机电源板 主机调试 主机回路板 主机回路卡 助燃气体 贮存温度 专卖消防器材 专线联动模块 专业消防器材代理公司 专业销售消防器材 专职消防队 装修材料 装修消防设计 着火源分七类 紫红外复合型火焰探测 紫外火焰探测器 紫外线火焰检测器 紫外线火焰探测器 自动报警模块报警 自动报警设备 自动报警系统 自动编码 自动扶手电梯 自动灭火 自动灭火系统 自动喷淋系统 自动喷水灭火系统 自动喷水灭火系统抽验 自动喷水灭火系统系统 自动消防系统操作人员 自动允许状态 自发光贴 自救 自救呼吸器 自救式呼吸器 自身安全 综合报警盘 总线 总线报警主机 总线电话插孔 总线电话分机 总线隔离模块 总线隔离器 总线接线箱 总线控制盘 总线联动 总线联动模块 总线声光报警器 总线式 总线式频闪 总线式声光报警底座 总线式智能警笛 总线式智能警笛外壳 总线消防电话插孔 总线消防电话主机 总线制 总线制操作盘 总线制电话 总线制控制盘 总线终端适配器的型号 租用厂房验收 阻燃 阻燃标识 阻燃管 阻燃剂 阻燃剂原料 阻燃原理 阻燃制品 组合分配系统');
+
+    if(/*Request::isAjax() &&*/ Request::getStringParam('do')=='getkw'){
+      try{
+        Response::json_success(
+        	Cms_Service_Api_Contents_Question::getInstance()->getKeywords(
+        		Request::getStringParam('str')
+        	)
+        );
+      }catch(Exception $e){
+        Response::error_end($e);
+      }
+    }
+
+    if(/*Request::isAjax() &&*/ Request::getStringParam('do')=='gettype'){
+      try{
+      	$type_id=Cms_Service_Api_Contents_Question::getInstance()->getCmsTypeId(Request::getStringParam('str'));
+      	$data=Cms_Service_Api_Contents_Question::getInstance()->getCmsTypesList($type_id);
+        Response::json_success([
+        	'type_id'=>$type_id,
+        	'data'=>$data,
+        ]);
+      }catch(Exception $e){
+        Response::error_end($e);
+      }
+    }
+
+    if(/*Request::isAjax() &&*/ Request::getStringParam('do')=='gettypebyid'){
+      try{
+      	$type_id=Request::getStringParam('type_id');
+      	$data=Cms_Service_Api_Contents_Question::getInstance()->getCmsTypesList($type_id,true);
+        Response::json_success([
+        	'type_id'=>$type_id,
+        	'data'=>$data,
+        ]);
+      }catch(Exception $e){
+        Response::error_end($e);
+      }
+    }
+
+    if(/*Request::isAjax() &&*/ Request::getStringParam('do')=='searchkw'){
+      try{
+      	$data=Cms_Service_Api_Contents_Question::getInstance()->searchKeywords(Request::getStringParam('kwstr'));
+        Response::json_success($data);
+      }catch(Exception $e){
+        Response::error_end($e);
+      }
+    }
+
+    if(Request::getStringParam('do')=='createquestion'){
+      try{
+        $id=Cms_Service_Api_Contents_Question::getInstance()->create();
+        $this->redirect('/pc/question/questiondetail?question_id='.$id);
+      }catch(Exception $e){
+        $this->getView()->assign('errmsg',$e->getMessage());
+      }
+    }
+
+
+  }
+
+  function replyquestionAction(){
+    
+  }
+
+}
+

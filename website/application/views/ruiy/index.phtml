@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><?php echo $meta->title; ?></title>
+    <meta name="description" content="<?php echo $meta->description; ?>" />
+    <meta name="keywords" content="<?php echo $meta->keywords; ?>" />
+    <link rel="shortcut icon" href="<?php echo $meta->favicon; ?>" />
+    <link rel="bookmark" href="<?php echo $meta->favicon; ?>" type="image/x-icon"　/>
+    <link rel="icon" href="<?php echo $meta->favgif; ?>" type="image/gif" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta name="baidu-site-verification" content="l9jDiF4kqd" />
+	<meta name="baidu-site-verification" content="qvC3nD7GAI" />
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.css">
+</head>
+<body>
+<header id="header"><?php require __DIR__.'/../ruiy/header.phtml';?></header>
+<!-- 旧版后台上传banner -->
+<div class="banner">
+  <div id="myCarousel1" class="carousel slide">
+      <?php Cms_Widget::factory('Ad')->display(Cms_Service_Api_Contents_Banner::getInstance()->getListByTypeId(100159),['need_LR'=>true,]); ?>
+    </div>
+</div>
+
+
+<!-- f1 -->
+<div class="container floor">
+	<p class='title'>管理咨询 x 数字技术应用</p>
+	<p><img style="width:350px;height:28px;" src="/ruiy/images/xian.png"></p>
+	<!-- <p style="margin:0 auto;text-align:center;font-size:16px;color:#555; line-height:2">以高远的战略思维和清晰的战略逻辑，缓解企业数字化转型中对未知的恐惧，</p><p style="margin:0 auto;text-align:center;font-size:16px;color:#555;line-height:2;">以丰富的行业经验和全面的技术整合帮助企业在数字化的大潮中建立竞争优势</p> -->
+	<div class="row" style="margin-top:35px; background:#f6f7f7;">
+    <!-- <a href="/ruiy/serve/"> -->
+    <a href="javascript:;">
+  		<div class='col-sm-12 font font11' >	
+  			<p id='shi' class="title">
+          <img class='title-img' src="/ruiy/images/l1.png">市场分析 
+          <i class='iconfont icon-jiantouxia'></i>
+        </p>
+  			<a href='/ruiy/serve/' class="t shi">宏观环境PEST分析</a>
+  			<a href='/ruiy/serve/' class='t shi'>竞争环境及竞争对标分析</a>
+  			<a href='/ruiy/serve/' class="t shi">数字技术应用前景分析</a>
+        <br>
+        <!-- <img class='bg' src="/ruiy/images/m1.png"> -->
+  		</div>
+    </a>
+    <!-- <a href="/ruiy/serve/">     -->
+    <a href="javascript:;">    
+  		<div class='col-sm-12 font font12'>
+  			<p id='zhan' class="title">
+          <img class='title-img' src="/ruiy/images/l2.png">战略及布局
+           <i class='iconfont icon-jiantouxia'></i>
+        </p>
+  			<a href='/ruiy/serve/' class="t zhan">经营战略</a>
+  			<a href='/ruiy/serve/' class='t zhan'>阶段实现方法</a>
+  			<a href='/ruiy/serve/' class="t zhan">风险及应对策略</a>
+        <br>
+        <!-- <img class='bg' src="/ruiy/images/m2.png"> -->
+  		</div>
+    </a>
+    <!-- <a href="/ruiy/softwave"> -->
+    <a href="javascript:;">
+  		<div class='col-sm-12 font font13' >
+  			<p id='ding' class="title">
+          <img class='title-img' src="/ruiy/images/l3.png">定制转型方案
+          <i class='iconfont icon-jiantouxia'></i>
+        </p>
+  			<a href='/ruiy/softwave' class="t ding">运营管理模型</a>
+  			<a href='/ruiy/softwave' class='t ding'>创建管理</a>
+  			<a href='/ruiy/softwave' class="t ding">组织流程管理</a>
+  			<a href='/ruiy/softwave' class="t ding">数字技术支撑</a>
+         <br> 
+         <!-- <img class='bg' src="/ruiy/images/m3.png"> -->
+  		</div>
+    </a>
+    <!-- <a href="/ruiy/softwave"> -->
+    <a href="javascript:;">
+  		<div class='col-sm-12 font  font14' >
+  			<p id='shis' class="title">
+           <img class='title-img' src="/ruiy/images/l4.png">
+            实施及迭代
+           <i class='iconfont icon-jiantouxia'></i>
+        </p>
+        </p>
+  			<a href='/ruiy/softwave' class="t shis">构建实现计划</a>
+  			<a href='/ruiy/softwave' class='t shis'>按计划实施</a>
+  			<a href='/ruiy/softwave' class="t shis">标准点检查分析</a>
+  			<a href='/ruiy/softwave' class="t shis">定制改进策略</a>
+        <br>
+        <!-- <img class='bg' src="/ruiy/images/m4.png"> -->
+  		</div>
+      </a>
+	</div>
+
+</div>
+<!-- f2 -->
+<style type="text/css">
+
+</style>
+<div class='floor22'>
+<p class='title'>服务案例</p>
+  <p><img style="width:350px;height:28px;margin-bottom:28px;" src="/ruiy/images/xian.png"></p>
+  <div id="myCarousel" class="carousel slide carousel-image">
+    <!-- 轮播（Carousel）项目 100160-->
+  <div class="banner">
+        <div id="myCarousel_z" class="carousel11 slide">
+         
+          <?php 
+            $a=Cms_Service_Api_Contents_Banner::getInstance()->getListByTypeId(100160,1,99)->_data;
+            /*echo "<pre>";
+             var_dump($a);*/
+            foreach ($a as $k => $v) {
+            ?>
+            <a href="<?php echo $v['jump_url']?>">
+            <div class='box_img'>
+              <img src="<?php echo $v["_ad_img"] ?>">
+            </div>
+            </a>
+           <?php } ;?>
+          
+        </div>
+    </div> 
+  </div>
+</div>
+<script type="text/javascript">
+    $('.carousel').carousel({
+    interval: 2000
+})
+</script>
+
+<style type="text/css">
+#nav1{
+  display: none!important;
+}
+.box_img img{
+  width: 100%;
+  padding: 2px 12px 0;
+}
+#myCarousel_z .item{
+  display: block;
+}
+#myCarousel_z .carousel-indicators{
+  display: none;
+}
+  #myCarousel1 a{
+    height: 200px;
+  }
+  .floor .font .title{
+    color:#373D41;
+    font-size:16px;
+    text-align: left;
+    line-height: 0.5;
+    border-bottom: 1px solid #EBECEC;
+    padding: 5px 20px 17px;
+  }
+  .floor .font{
+    transition: all .3s linear;
+    background:#fff;
+  }
+  .floor .font .t{
+    margin: 10px 0;
+    color: #373D41;
+    text-align: left;
+    padding: 0 20px;
+    height: 35px;
+    line-height: 35px;
+  }
+  .floor3{
+    height:359px;
+    background-size: 263% 106%;
+    position: relative;
+    top: -10px;
+
+  }
+  .floor3 .font{
+    width:230px;
+    height:200px;
+    margin-right: 81px;
+    margin-left: 76px;
+    background: rgba(255,255,255,.1);
+    box-shadow: 3px 5px 10px #999;
+  }
+  .floor3 .title{
+    top:55px;
+    font-size:19px;
+  }
+   @media screen and (max-width: 500px){
+  body .floor .row .font{
+    width: 95%;
+    height: 60px;
+    margin-left: 0px;
+    background-size: 100% 100%;
+    padding: 0;
+    margin: 10px auto;
+  }
+/*   body .floor .font11{
+    background: url('/uploads/m1.png') no-repeat;
+  }
+   body .floor .font12{
+    background: url('/uploads/m2.png') no-repeat;
+  }
+   body .floor .font13{
+    background: url('/uploads/m3.png') no-repeat;
+  }
+   body .floor .font14{
+    background: url('/uploads/m4.png') no-repeat;
+  }*/
+}
+body .floor .font{
+  margin-left:0px;
+}
+.font11,
+.font12,
+.font13,
+.font14{
+  margin: 10px 0;
+}
+ .font2{
+  background: rgba(255,255,255,.1);
+    box-shadow: 3px 5px 10px #999;
+    width: 33%;
+    float: left;
+    padding: 0;
+    height: 140px;
+  }
+  .floor .font .title-img{
+    width: 22px;
+    top: -1px;
+    position: relative;
+    margin: 0;
+    margin-right: 10px;
+  }
+  .font .iconfont{
+    position: relative;
+    font-size: 18px;
+    color: #D7D8D9;
+    top: 3px;
+    margin-right: 0;
+  }
+  .shi,
+  .ding,
+  .shis,
+  .zhan{display: none;}
+  .row a:active,
+  .row a:hover{
+    text-decoration: none;
+  }
+  .row .font2 {
+    background: rgba(255,255,255,.1);
+    box-shadow: 3px 5px 10px #999;
+    width: 28%;
+    float: left;
+    padding: 0;
+    height: 125px;
+    margin-left: 15px;
+}
+.carousel-control.right,
+.carousel-control.left{
+  display: none !important;
+}
+.floor .font .bg {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    margin: 0;
+    top: 0;
+    height: 100%;
+}
+
+.floor22 .title {
+    font-size: 22px;
+    text-align: center;
+    margin: 10px auto 0;
+    color: #151515;
+}
+.floor .font:hover{
+  box-shadow: none;
+}
+
+
+.banner .carousel-indicators li{
+height:1px;border:none;
+}
+
+.banner .carousel-indicators .active{
+height:1px;
+}
+</style>
+
+<div class="floor3">
+	<p class='title'>与您一同制定和实施创新数字化解决方案</p>
+	<p style="margin-top:55px;"><img style="width:350px;height:28px;margin: 12px 0 15px" src="/ruiy/images/xian.png"></p>
+	<div class="container" style='margin-top:-10px;'>
+		<div class="row">
+			<div class="col-sm-4 font2">
+				<!-- <p class='p1'><img src="/ruiy/images/tb1.jpg"></p> -->
+				<div class="p1" style="height: 84px;">
+          <h1 id="demo1" style="padding-top:0px;font-size: 30px;color:#c7161e">212</h1>
+        </div>
+ 
+        <p class='p2' style="font-size:15px;margin-top: -35px;">成功实施项目</p>
+			</div>
+			<div class="col-sm-4 font2">
+				<!-- <p class='p1'><img src="/ruiy/images/tb2.jpg"></p> -->
+        <div class="p1" style="height: 84px;">
+          <h1 id = "demo2" style="padding-top:0px;font-size: 30px;color:#c7161e">156</h1>
+        </div>
+      
+				<p class='p2' style="font-size:15px;margin-top: -35px;">官方认证顾问</p>
+			</div>
+			<div class="col-sm-4 font2">
+        <div class="p1" style="height: 103px;">
+          <h1 id="demo3" style="padding-top:0px;font-size: 30px;color: #c7161e;display: inline-block;">98</h1><span style="font-size: 30px;color: #c7161e;">%</span>
+        </div>
+
+        <p class='p2' style="font-size:15px;margin-top: -35px;">客户平均满意度</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 下拉增加百分号数值 -->
+<script type="text/javascript">
+    var flag = 0;
+
+  function g_demo_fun(demo_number,cp_outtime){  
+    var g_demo=document.getElementById(demo_number);//绑定滚动标签  
+    var g_Number=parseInt(g_demo.innerHTML);//复制标签值  
+    var g_Number_min=0;  
+      
+    function Gundong(){  
+      
+    if(g_Number_min<g_Number){  
+    g_Number_min=g_Number_min+1;  
+    g_demo.innerHTML=g_Number_min;    
+    }  
+
+    }  
+    var MyMar=setInterval(Gundong,20);   
+     }  
+  function gdjz(div){
+      var a,b,c,d;
+      d=$(div).offset().top;
+      a=eval(d + 100);
+      b=$(window).scrollTop(); 
+      c=$(window).height();
+        if(b+c>a){
+          // $((div)).addClass((cssname));
+      if(flag == 0){         
+            g_demo_fun("demo1",10);  
+            g_demo_fun("demo2",200);  
+            g_demo_fun("demo3",5000);
+            flag = 1;
+          }  
+      }else{
+        flag =0;
+      }
+   }
+       
+    $(window).scroll(function(){
+
+      gdjz(".floor3");
+      });
+ $("#shi").click(function(){
+  if($(".shi").css("display") == 'none'){
+    $(".shi").css('display','block');
+    $("#shi i").addClass("icon-jiantoushang").removeClass("icon-jiantouxia");
+    $(".font11").css("height",'216px');
+  }else{
+    $(".shi").css('display','none');
+    $("#shi i").removeClass("icon-jiantoushang").addClass("icon-jiantouxia");
+    $(".font11").css("height",'60px');
+  }
+ })
+ $("#ding").click(function(){
+  if($(".ding").css("display") == 'none'){
+    $(".ding").css('display','block');
+    $("#ding i").addClass("icon-jiantoushang").removeClass("icon-jiantouxia");
+    $(".font13").css("height",'260px');
+  }else{
+    $(".ding").css('display','none');
+    $("#ding i").removeClass("icon-jiantoushang").addClass("icon-jiantouxia");
+    $(".font13").css("height",'60px');
+  }
+ })
+  $("#shis").click(function(){
+  if($(".shis").css("display") == 'none'){
+    $(".shis").css('display','block');
+    $("#shis i").addClass("icon-jiantoushang").removeClass("icon-jiantouxia");
+    $(".font14").css("height",'260px');
+    
+  }else{
+    $(".shis").css('display','none');
+    $("#shis i").removeClass("icon-jiantoushang").addClass("icon-jiantouxia");
+    $(".font14").css("height",'60px');
+    
+  }
+ })
+   $("#zhan").click(function(){
+  if($(".zhan").css("display") == 'none'){
+    $(".zhan").css('display','block');
+    $("#zhan i").addClass("icon-jiantoushang").removeClass("icon-jiantouxia");
+    $(".font12").css("height",'216px');
+    
+
+  }else{
+    $(".zhan").css('display','none');
+    $("#zhan i").removeClass("icon-jiantoushang").addClass("icon-jiantouxia");
+    $(".font12").css("height",'60px');
+  
+  }
+ })
+</script>
+<!-- footer -->
+<div id='footer'><?php require __DIR__.'/../ruiy/footer.phtml';?></div>
+
+<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/main1.js"></script>
+<script type='text/javascript' src='/ruiy/js/img-change.js'></script>
+<script>
+  $('#en').click(function(){
+      location.href='http://www.ibreakingpoint.com/enruiy/index';
+  })
+</script>
+</body>
+</html>

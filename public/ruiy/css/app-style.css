@@ -1,0 +1,55 @@
+body .content .container .row div{
+	width: 100%;
+}
+body .content .container .box{
+	margin-top: 20px;
+}
+.content .container .lianx{
+	padding:20px 0px 0px 0px;
+}
+.content .container .serve,
+.content .container .innovate,
+.content .container .busi,
+.content .container .engine,
+.content .container .busi,
+.content .container .retail,
+.content .container .dealer,
+.content .container .itconsult,
+.content .container .land,
+.content .container .news,
+.content .container .consult
+{
+	padding: 10%;
+}
+.content .container .serve img,
+.content .container .innovate img,
+.content .container .busi img,
+.content .container .engine img,
+.content .container .busi img,
+.content .container .retail img,
+.content .container .dealer img,
+.content .container .itconsult img,
+.content .container .land img
+{
+	width: 100%!important;
+	height: 100%!important;
+}
+.content .container .lianx .lianx_box .xm,
+ .content .container .lianx .lianx_box .gs,
+ .content .container .lianx .lianx_box .fs{
+	margin-left:0px;
+ }
+ .content .container .hr{
+ 	width: 100%;
+ }
+ 
+@media screen and (max-width: 980px){
+	body .floor .font{
+		width: 50%;
+		height: 100%;
+		margin-left:0px;
+	}
+}
+body .floor .font{
+	margin-left:0px;
+}

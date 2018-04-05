@@ -1,0 +1,435 @@
+<?php
+
+
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><?php echo $meta->title; ?></title>
+    <meta name="description" content="<?php echo $meta->description; ?>" />
+    <meta name="keywords" content="<?php echo $meta->keywords; ?>" />
+    <link rel="shortcut icon" href="<?php echo $meta->favicon; ?>" />
+    <link rel="bookmark" href="<?php echo $meta->favicon; ?>" type="image/x-icon"　/>
+    <link rel="icon" href="<?php echo $meta->favgif; ?>" type="image/gif" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta name="baidu-site-verification" content="l9jDiF4kqd" />
+	<meta name="baidu-site-verification" content="qvC3nD7GAI" />
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/ruiy/css/app-style.css">
+</head>
+<body>
+<header id="header"><?php require __DIR__.'/../enruiy/header.phtml';?>
+
+<style>
+	
+  .row img
+  {
+  	width: 180px;
+
+  }
+  body .content .container .row div{
+  width: 100%;
+}
+}
+body .content .container .box{
+  margin-top: 20px;
+}
+    @media screen and (max-width: 767px){
+    .navr ul li a {
+        display: inline-block;
+        width: 65px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: #151515;
+        font-size: 14px;
+    }
+  }
+        @media screen and (max-width: 767px){
+    .navf ul li a {
+        display: inline-block;
+        width: 65px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: #151515;
+        font-size: 14px;
+    }
+  }
+</style>
+
+</header>
+<!-- banner -->
+<div class="banner">
+	<div id="myCarousel1" class="carousel slide">
+		<?php Cms_Widget::factory('Ad')->display(Cms_Service_Api_Contents_Banner::getInstance()->getListByTypeId(100194),['need_LR'=>true,]); ?>
+    </div>
+    <!-- <div class="ban-left">
+    	<p>为了看见未来</p>
+    	<p style="margin-left:20px;">相信未来的企业</p>
+    </div> -->
+</div>
+<!-- nav -->
+<div id="nav" class="navr nav-zh">
+  <div class="nav-left"><i class="glyphicon glyphicon-menu-left"></i></div>
+  <ul>
+   <li><a href="/enruiy/consult" style="width:230px;">Breakingpoint Consulting</a><span>|</span></li>
+    <li style="display: flex;justify-content: space-between;"><a style="width: 170px;" href="/enruiy/lianx">Contact us</a><span>|</span><a href="https://www.liepin.com/zhaopin/?sfrom=click-pc_homepage-centre_searchbox-search_new&d_sfrom=search_fp&key=%E7%9D%BF%E4%BB%AA" style="width:150px;">Join us</a></li>
+     <li style="display: flex;justify-content: space-between;"><span>|</span><a href="/enruiy/news" style="width: 85px;" class='active'>News Room</a>
+     <span>|</span><a  href="http://ibreakingpoint.huodongxing.com" style="width: 120px;">Activities & Salon</a></li>
+  </ul>
+  <div class="nav-right"><i class="glyphicon glyphicon-menu-right"></i></div>
+</div>
+<!-- content -->
+<div class='content'>
+	<div class="container">
+		<div class="row">
+			<div class="news">
+
+
+                 <!-- <script type="text/javascript">
+                 				require(['jquery','flowload','tool','widget'],function($,flowload,tool,widget){
+                 				  flowload.bindDocument('<?php
+                 				  	echo Tool::buildUrl('',[
+                 				  	  'do'=>'getSearchList',
+                 				  	  'begin_id'=>Cms_Service_Api_Contents_Default::getInstance()->getLastDefault([
+                 					    'cms_types_id'=>$current_level_id,
+                 					    $sort_id=>$sort_by,
+                 					    'kw'=>Request::getStringParam('headshkw',''),
+                 				  	  ])->id,
+                 				  	  'cms_types_id'=>$current_level_id,
+                 				  	  $sort_id=>$sort_by,
+                 					  'kw'=>Request::getStringParam('headshkw',''),
+                 				  	]);
+                 				  ?>&page={{page}}','',function(res){
+                 				  	return widget.render('zxitems',res).then(function(x){
+                 				  	  $('#zxitem').append(x);
+                 				  	  return $('#zxitem');
+                 				  	});
+                 				  });
+                 				});
+                 				</script> -->
+                <?php 
+                
+                     /* $zx=fetch_json_data('/ServerZX/GetDetailById.cwg?cms_types_id=100118');
+                      var_dump($zx);*/
+                        $page=Request::getIntParam('page',1);
+                       /* if(isset($_GET['page']))
+                        {
+                        	$page=$_GET['page'];
+                        }
+                         else
+                         {
+                         	$page=1;
+                         }*/
+                       //$d=fetch_json_data('/ServerZX/GetListAll.cwg?count=10&page='.$page);
+                       $a=fetch_json_data('/ServerZX/GetListAll.cwg?count=5&page='.$page.'&cms_types_id=100118');
+                      // var_dump($a);
+                      foreach ($a->Data as $key => $value) {
+                      /*var_dump($value);
+                      exit;
+                             */
+                 ?> 				
+              
+				<div class="row news_b">
+					<div class="col-sm-3">
+						<a href="/ruiy/new?id=<?php echo $value->id;?>">
+						<img  style="    width: 110%;margin-bottom: 23px;" src="<?php echo $value->_face->ico->public_src;?>"></a>
+					</div>
+					<div class="col-sm-9">
+						<p class='title'><a href="/enruiy/new?id=<?php echo $value->id;?>"><?php echo $value->title;?></a></p>
+						<p class="cont"><?php echo $value->summary;?> </p>
+						<p class="date">
+							<span><?php $time=strtotime($value->create_time);
+                                         echo date('Y-m-d',$time);
+							  ?></span>
+							<span>&nbsp;&nbsp;&nbsp;浏览：<?php echo $value->view_count;?></span>
+							<!-- <span><?php echo $value->view_count;?></span> -->
+						</p>
+					</div>
+				</div>
+
+             <?php  }?>
+
+
+     <?php
+
+
+
+
+                              $pageAll=ceil(($a->Count)/5); 
+
+                             $pre=$page-1;
+                             if($pre<=0){
+                             	$pre=1;
+                             }
+                             
+                              $next=$page+1;
+                              if($next>$pageAll) {
+                              	$next=$pageAll;
+                              }
+
+
+
+
+
+                             ?>
+                       	<style type="text/css">
+                       		.pagination li a{color:red;}
+                       	</style>
+						  <ul class="pagination" >
+							<li><a href="?page=<?php echo $pre;?>">&laquo;</a></li>
+                             <?php for($i=1;$i<=$pageAll;$i++){  ?>
+
+							<li><a href="?page=<?php echo $i;?>"><?php echo $i;?></a></li>
+
+
+							 <?php } ?>
+							
+							<li><a href="?page=<?php echo $next;?>">&raquo;</a></li>
+						</ul>
+
+                   <?php
+                              /*  $allcount= $a->Count;
+                                 echo $allcount;
+                                echo Cms_Widget::staticFactory('Pager')->newpager([
+									  'page_code'=>$page, // 当前页码
+									  'page_itemcount'=>5, // 最多显示页码数
+									  'item_count_prepage'=>5, // 每页显示条目数
+									  'item_count_sum'=>$allcount, // 条目总数
+									  'url'=>'?page={{page}}', // 页码对应链接
+									]);*/
+								/*echo Cms_Widget::staticFactory('Pager')->newpager([
+									  'page_code'=>$page, // 当前页码
+									  'page_itemcount'=>6, // 最多显示页码数
+									  'item_count_prepage'=>10, // 每页显示条目数
+									  'item_count_sum'=>$a->Count, // 条目总数
+									 // 'url'=>'?page={{page}}', // 页码对应链接
+									]);*/
+				  ?>
+
+				<!-- <div class="row news_b">
+					<div class="col-sm-3">
+						<a href="/ruiy/new"><img src="/ruiy/images/news.png"></a>
+					</div>
+					<div class="col-sm-9">
+						<p class='title'><a href="/ruiy/new">睿远携手美商会共商跨国企业营销战略</a></p>
+						<p class="cont">迎着5月明媚的阳光，由Breakingpoint Consulting（上海睿远软件信息咨询有限公司）和Amcham（美国会）联合举办的“在2015年的今天，跨国企业如何营销”研讨会子啊昨日上海商城美商会完美落幕，……</p>
+						<p class="date">
+							<span>2018-01-04</span>
+							<span>浏览：</span>
+							<span>1120</span>
+						</p>
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class="row news_b">
+					<div class="col-sm-3">
+						<a href="/ruiy/new"><img src="/ruiy/images/news.png"></a>
+					</div>
+					<div class="col-sm-9">
+						<p class='title'><a href="/ruiy/new">睿远携手美商会共商跨国企业营销战略</a></p>
+						<p class="cont">迎着5月明媚的阳光，由Breakingpoint Consulting（上海睿远软件信息咨询有限公司）和Amcham（美国会）联合举办的“在2015年的今天，跨国企业如何营销”研讨会子啊昨日上海商城美商会完美落幕，……</p>
+						<p class="date">
+							<span>2018-01-04</span>
+							<span>浏览：</span>
+							<span>1120</span>
+						</p>
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class="row news_b">
+					<div class="col-sm-3">
+						<a href="/ruiy/new"><img src="/ruiy/images/news.png"></a>
+					</div>
+					<div class="col-sm-9">
+						<p class='title'><a href="/ruiy/new">睿远携手美商会共商跨国企业营销战略</a></p>
+						<p class="cont">迎着5月明媚的阳光，由Breakingpoint Consulting（上海睿远软件信息咨询有限公司）和Amcham（美国会）联合举办的“在2015年的今天，跨国企业如何营销”研讨会子啊昨日上海商城美商会完美落幕，……</p>
+						<p class="date">
+							<span>2018-01-04</span>
+							<span>浏览：</span>
+							<span>1120</span>
+						</p>
+					</div>
+				</div> -->
+				<!-- <div class="chak"><a href="#">查看更多</a></div> -->
+
+			</div>
+			<div>
+							
+								  
+
+
+			</div>
+			<?php $b=fetch_json_data('/ServerZX/GetListAll.cwg?count=5&page=1&cms_types_id=100120')->Data; ?>
+			<!-- <div class="" style="padding-left:0;">
+				<div class="box">
+					<p class="title"><span class="xian">|</span>关注我们</p>
+					<p style='margin:15px;'>
+						<a target='_blank' href="https://www.facebook.com/ibreakingpoint">
+						<img style='width:40px' src="/ruiy/images/zx_03.jpg"></a>
+						<a target='_blank' href="http://www.linkedin.com/groups?gid=3291404">
+						<img style='width:40px' src="/ruiy/images/zx_05.jpg"></a>
+						<a href="javascript:;">
+						<img id='cimg' style='width:40px' src="/ruiy/images/zx_07.jpg"></a>
+					</p>
+					<p id='pimg' style='text-align:center;display: none;'><img src="/ruiy/images/er.jpg"></p>
+				</div>
+				<div class="box">
+					<p class='title'><span class="xian">|</span>市场合作</p>
+					<p class='s1'>电话：021-34010561</p>
+					<p class='s1'>邮箱：even.zhang@ibreaking point.com</p>
+				</div>
+				<div class="box">
+					<p class='title'>
+					<span class="xian">|</span>阅读参考</p>
+                         
+                     <?php                         
+                        
+                          foreach ($b as $key => $value) {
+                          	//var_dump($value);
+                      
+                      ?>
+                    <a href="/news/<?php echo $value->id.'.html';?>" style='margin-right: 0px;' target="_blank">
+					<p class='wei'><?php echo $value->title;?></p>
+					<p class='s1 w1'><?php echo $value->summary;?></p>
+					</a>
+                    <?php  }?>
+				</div>
+			</div> -->
+		</div>
+	</div>
+</div>
+
+<!-- footer -->
+<div id='footer'><?php require __DIR__.'/../enruiy/footer.phtml';?></div>
+<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/main1.js"></script>
+<script type='text/javascript' src='/ruiy/js/img-change.js'></script>
+<script>
+$(document).ready(function(){
+  var idx=0;//记录当前命中的索引
+  var width=$('#nav ul').width();
+  for(var i=0;i<$("#nav ul li").length;i++){
+    
+    $("#nav ul li").eq(i).css({
+      'position':'absolute',
+      'left':width*i+'px'
+    })
+  }
+  $('#nav .nav-right').click(function(){
+    if(idx<$("#nav ul li").length-1){
+      $("#nav ul li").eq(idx).animate({
+        position:'absolute',
+        left:-width+'px'
+      },300);
+      $("#nav ul li").eq(idx+1).animate({
+        position:'absolute',
+        left:0
+      },300);
+
+      $("#nav1 ul li").eq(idx).animate({
+        position:'absolute',
+        left:-width+'px'
+      },300);
+      $("#nav1 ul li").eq(idx+1).animate({
+        position:'absolute',
+        left:0
+      },300);
+      idx++;
+    }
+  });
+  $('#nav .nav-left').click(function(){
+    if(idx>0){
+      $("#nav ul li").eq(idx).animate({
+        position:'absolute',
+        left:width+'px'
+      },300);
+      $("#nav ul li").eq(idx-1).animate({
+        position:'absolute',
+        left:0
+      },300);
+
+      $("#nav1 ul li").eq(idx).animate({
+        position:'absolute',
+        left:width+'px'
+      },300);
+      $("#nav1 ul li").eq(idx-1).animate({
+        position:'absolute',
+        left:0
+      },300);
+      idx--;
+    }
+  });
+
+  for(var i=0;i<$("#nav1 ul li").length;i++){
+    
+    $("#nav1 ul li").eq(i).css({
+      'position':'absolute',
+      'left':width*i+'px'
+    })
+  }
+  $('#nav1 .nav-right').click(function(){
+    if(idx<$("#nav1 ul li").length-1){
+      console.log(idx);
+      $("#nav ul li").eq(idx).animate({
+        position:'absolute',
+        left:-width+'px'
+      },300);
+      $("#nav ul li").eq(idx+1).animate({
+        position:'absolute',
+        left:0
+      },300);
+
+      $("#nav1 ul li").eq(idx).animate({
+        position:'absolute',
+        left:-width+'px'
+      },300);
+      $("#nav1 ul li").eq(idx+1).animate({
+        position:'absolute',
+        left:0
+      },300);
+      idx++;
+    }
+  });
+  $('#nav1 .nav-left').click(function(){
+    if(idx>0){
+      $("#nav ul li").eq(idx).animate({
+        position:'absolute',
+        left:width+'px'
+      },300);
+      $("#nav ul li").eq(idx-1).animate({
+        position:'absolute',
+        left:0
+      },300);
+
+      $("#nav1 ul li").eq(idx).animate({
+        position:'absolute',
+        left:width+'px'
+      },300);
+      $("#nav1 ul li").eq(idx-1).animate({
+        position:'absolute',
+        left:0
+      },300);
+      idx--;
+    }
+  });
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+    .big-img{
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      z-index: 999;
+      top:8%;
+      /*background: gray;*/
+    }
+    .big-img img{
+      width:80%;
+      height: 80%;
+      position: absolute;
+      z-index: 9999;
+      top:15%;
+      left: 10%;
+      right: 10%;
+      bottom:5%;
+    }
+     #cha2,#cha3,#cha1{
+    position: absolute;
+    top:5%;
+    right:10%;
+    color:#c7161e;
+    font-size:40px;
+    cursor: pointer;
+    }
+    @media screen and (max-width:500px){
+      
+    }
+    #cha1:hover,#cha2:hover,#cha3:hover{text-decoration: none;}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>中欧羽毛球俱乐部在线报名——<?php echo $meta->title; ?></title>
+    <meta name="description" content="<?php echo $meta->description; ?>" />
+    <meta name="keywords" content="<?php echo $meta->keywords; ?>" />
+    <link rel="shortcut icon" href="<?php echo $meta->favicon; ?>" />
+    <link rel="bookmark" href="<?php echo $meta->favicon; ?>" type="image/x-icon"　/>
+    <link rel="icon" href="<?php echo $meta->favgif; ?>" type="image/gif" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta name="baidu-site-verification" content="l9jDiF4kqd" />
+  <meta name="baidu-site-verification" content="qvC3nD7GAI" />
+  <link rel="stylesheet" type="text/css" href="/ruiy/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.css">
+</head>
+<body style='background-color: #ebebeb;'>
+<!-- <header id="header"><?php require __DIR__.'/../ruiy/header.phtml';?></header> -->
+<div class="banner">
+  <div id="myCarousel1" class="carousel slide">
+     <?php //Cms_Widget::factory('Ad')->display(Cms_Service_Api_Contents_Banner::getInstance()->getListByTypeId(),['need_LR'=>true,]); ?>
+      <img style='width: 100%' src="/ruiy/images/bm_01.png">
+    </div>
+</div>
+<!-- f1 -->
+<div class="container list" style='width: 980px;'>
+  <p class="gg">哎呀大球星，我们可把你盼来啦~~速速来报名吧~</p>
+  <p class="ts">温馨提示：本报名表仅仅作为报名登记，报名提交后我们会尽快与您联系确认，成功交纳会费后才算成功报名哦，你懂得~</p>
+  <div class="box">
+    <div class="box_l">
+      <form action="https://webto.salesforce.com/servletservlet.WebToLead?encoding=UTF-8" method="POST">
+        <input type=hidden name="oid" value="00D280000012gtm">
+        <input type=hidden name="retURL" value="http://">
+        <!-- <label for="company">公司</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br> -->
+        <label for="last_name">姓名</label>
+        <img src="/ruiy/images/x_03.png">
+        <input  id="last_name" maxlength="80" name="last_name" size="20" type="text"  style='margin-right: 106px;'/>
+        性别 <img src="/ruiy/images/x_03.png"><select  id="00N28000005wHKD" name="00N28000005wHKD" title="性别">
+          <option value="">--无--</option>
+          <option value="男">男</option>
+          <option value="女">女</option>
+        </select>
+        <label style='margin-left: 125px;' for="mobile">手机号码</label><img src="/ruiy/images/x_03.png">
+        <input  id="mobile" maxlength="40" name="mobile" size="20" type="text" /><br>
+        <label for="email">邮箱</label><img src="/ruiy/images/x_03.png">
+        <input  id="email" maxlength="80" name="email" size="20" type="text" />
+        <label style='margin-left: 100px;'>工作单位（中文）</label><img src="/ruiy/images/x_03.png"><input  id="00N28000005wIEL" maxlength="350" style='width:350px;' name="00N28000005wIEL" size="20" type="text" /><br>
+        <label for="title">职务</label><img src="/ruiy/images/x_03.png">
+        <input  id="title" maxlength="40" name="title" size="20" type="text" />
+        <label style='margin-left:100px;'>生日<img src="/ruiy/images/x_03.png"></label><span class="dateInput dateOnlyInput">
+        <input  id="00N28000005wOqQ" name="00N28000005wOqQ" size="12" type="date" /></span>
+        <label style='margin-left: 36px;'>微信昵称:<img src="/ruiy/images/x_03.png"></label><input  id="00N28000005wIM5" maxlength="255" name="00N28000005wIM5" size="20" type="text" /><br>
+        <label>最早加入羽协年份<img src="/ruiy/images/x_03.png"></label><select  id="00N28000005wIS9" name="00N28000005wIS9" title="最早加入羽协年份">
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+          <option value="2015">2015</option>
+          <option value="2014">2014</option>
+          <option value="2013">2013</option>
+          <option value="2012">2012</option>
+          <option value="2011">2011</option>
+        </select><br>
+        <label>和中欧的关系<img src="/ruiy/images/x_03.png"></label><select  id="00N28000005wIWg" name="00N28000005wIWg" title="和中欧的系">
+          <option value="">--无--</option>
+          <option value="EMBA">EMBA</option>
+          <option value="MBA">MBA</option>
+          <option value="FMBA">FMBA</option>
+          <option value="教职工">教职工</option>
+          <option value="家属">家属</option>
+          <option value="嘉宾">嘉宾</option>
+          <option value="其他">其他</option>
+        </select><br>
+        <label for="country">
+        所属分会</label><img src="/ruiy/images/x_03.png"><input  id="country" maxlength="40" name="country" size="20" type="text" /><br>
+        <p style='font-size:14px;color: #555;margin-left: 10px;'>只所属华北/东华/华南分会</p>
+        <label for="city">所在城市</label><img src="/ruiy/images/x_03.png">
+        <input  id="city" maxlength="40" name="city" size="20" type="text" />
+        <p style='font-size:14px;color: #555;margin-left: 10px;'>指经常参加羽毛球活动的城市</p><br>
+        
+        <label>擅长项目<img src="/ruiy/images/x_03.png"></label><select  id="00N28000005wImj" multiple="multiple"  name="00N28000005wImj" title="擅长项目">
+          <option value="单打">单打</option>
+          <option value="双打">双打</option>
+          <option value="混双">混双</option>
+          <option value="还不知道哎">还不知道哎</option>
+        </select><span style='font-size:12px;color: #555;'>（按住ctrl多选）</span><br>
+        <label for="lead_source">加入羽协的途径</label><img src="/ruiy/images/x_03.png">
+        <select  id="lead_source" name="lead_source">
+          <option value="">--无--</option>
+          <option value="会员招募活动">会员招募活动</option>
+          <option value="会员介绍">会员介绍<img src="/ruiy/images/x_03.png"></option>
+          <option value="其他">其他</option>
+        </select><br>
+        <label>队服尺码<img src="/ruiy/images/x_03.png"></label>
+        <input  id="00N28000005wJoH" maxlength="10" name="00N28000005wJoH" size="20" type="text" /><br>
+        <label for="street">对付邮寄地址</label>
+        <input type='text' name="street"><br>
+        <label>其他要求</label><textarea  id="00N28000005wdpR" name="00N28000005wdpR" type="text" wrap="soft">
+        </textarea><br>
+        <div style='margin: 0 auto;text-align:center;margin-top: 30px;'>
+        <input type="reset" name="" value='重置' style='        background: #ef3333;
+            width: 120px;
+            line-height: 30px;
+            text-align: center;
+            margin: 10px 10px 10px 0;
+            outline: none;
+            border: none;
+            color: #fff;
+            border-radius: 3px;'>
+        <input type="submit" name="submit" value='提交' style='    background: #ef3333;
+              width: 120px;
+              line-height: 30px;
+              text-align: center;
+              margin: 10px 10px 10px 150px;
+              outline: none;
+              border: none;
+              color: #fff;
+              border-radius: 3px;'>
+              </div>
+      </form>
+      <div style='text-align: center;'>
+          <img src="/ruiy/images/bm_04.png">
+        </div>
+    </div>
+  </div>
+</div>
+<div style='background-image: url(/ruiy/images/bm_footer.png);background-repeat: no-repeat;background-position: center;height: 179px;width: 100%;'>
+  <p style='font-size:18px;color: #fff;text-align: center;padding-top: 100px'>有睿远软件提供技术支持</p>
+</div>
+
+<!-- <div id='footer'><?php require __DIR__.'/../ruiy/footer.phtml';?></div> -->
+
+<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/main1.js"></script>
+<script type='text/javascript' src='/ruiy/js/img-change.js'></script>
+</body>
+</html>

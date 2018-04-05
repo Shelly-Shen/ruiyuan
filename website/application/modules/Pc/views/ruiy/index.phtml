@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><?php echo $meta->title; ?></title>
+    <meta name="description" content="<?php echo $meta->description; ?>" />
+    <meta name="keywords" content="<?php echo $meta->keywords; ?>" />
+    <link rel="shortcut icon" href="<?php echo $meta->favicon; ?>" />
+    <link rel="bookmark" href="<?php echo $meta->favicon; ?>" type="image/x-icon"　/>
+    <link rel="icon" href="<?php echo $meta->favgif; ?>" type="image/gif" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta name="baidu-site-verification" content="l9jDiF4kqd" />
+  <meta name="baidu-site-verification" content="qvC3nD7GAI" />
+  <link rel="stylesheet" type="text/css" href="/ruiy/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.css">
+</head>
+<body>
+<header id="header" style='opacity:0;'><?php require __DIR__.'/../ruiy/header.phtml';?></header>
+
+<!-- 旧版后台上传banner -->
+<div class="banner" style="display:none">
+  <div id="myCarousel1" class="carousel slide">
+       <?php Cms_Widget::factory('Ad')->display(Cms_Service_Api_Contents_Banner::getInstance()->getListByTypeId(100096),['need_LR'=>true,]); ?>
+    </div>
+    <div class="banner-right" style="top:35%;font-color:#252525;">
+      <!--  <p class="title">帮助企业实现数字化转型</p>-->
+
+
+        <script type="text/javascript">window._not_pack_widget=<?php echo @Yaf_Registry::get('cms')->global->pack_widget_php?1:0; ?></script>
+    <script src='/Cms/pack.js<?php if(@Yaf_Registry::get('cms')->global->pack_js_php)echo '.php'; ?>?<?php echo time(); ?>'></script>
+    <?php if(@Yaf_Registry::get('cms')->global->pack_widget_php): ?><script src='/Cms/widget.js.php?<?php echo time(); ?>'></script><?php endif; ?>
+
+
+
+
+      <div  style="display:none;">
+        <form>
+          <input type="text" name="uname" id='uname' placeholder="姓名">
+          <input type="text" name="company" id='company' placeholder="公司">
+          <p class='i1'>
+            <input type="text" name="mobile" id='mobile' placeholder="联系电话">
+          </p>
+          <div class="zix" style="background-color: #c7161e">
+            <!--<span class='iconfont' style="color:#fff;">&#xe64a;</span>-->
+            <span><a href="#" id="thisStep">我要咨询</a></span>
+          </div>
+        </form>
+      </div>
+
+    <script type="text/javascript">
+  require(['wx'],function(wx){
+    wx.config(<?php echo (Cms_Service_Api_Share_WX::getInstance()->getConfig()); ?>);
+
+  });
+  $('body').ready(function(){
+    $('#header').css('opacity',1)
+  })
+  </script>
+                  <script>
+                    
+
+
+                      $('#thisStep').on('click',function(){
+
+    require(['request'],function(request){
+      try{
+        if(!$('#uname').val())throw '姓名必填';
+         if(!$('#company').val())throw '公司名称必填';
+        if(!$('#mobile').val() || !$('#mobile').val().match(/^\d{11}/))throw '请填写正确手机号';
+        
+       
+      }catch(e){
+        alert(e)
+        return;
+      }
+    
+
+      
+
+             var msg =[                
+                       '姓名：'+$('#uname').val(),
+                       '手机号：'+$('#company').val(),
+                       '联系方式：'+$('#mobile').val()
+                                        
+           
+                         ].join('\n')
+
+request({
+                        url:'/ServerMsg/Add44.cwg',
+                        data:{
+                                 
+                                  x_state:'8',
+                                  msg: msg
+                                  
+                                   
+                        
+                              
+
+                        },
+                        method:'post',
+                        header:{
+                          'Content-Type':'application/x-www-form-urlencoded'
+                        }
+                 
+
+
+
+           }).then(function(){
+                    alert("已提交");
+                    
+                  },function(msg){
+                    alert(msg);
+                  })         
+                    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  })
+
+
+</script>
+
+
+    </div>
+</div>
+
+
+<!-- 2.05静态banner -->
+
+
+<div class="banner" style="">
+  <div id="myCarousel1" class="carousel slide">
+       
+<style type="text/css">
+.banner .banner-right{
+  width:450px;
+}
+.l1{
+  display: inline-block;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #fff;
+    font-size:14px;
+    text-decoration: none;
+    border-radius: 2px;
+    margin-right:6px;
+}
+.lianxi{
+  height: 40px;
+   width: 140px;
+  line-height:40px;
+}
+.img-solution{
+  width:140px;
+  height:40px;
+  line-height: 40px;
+}
+.img-solution:hover{
+  border: none;
+   background: #c7161e;
+    color:#fff;
+    text-decoration: none;
+}
+.l1:hover{
+   border: none;
+   background: #c7161e;
+    color:#fff;
+      text-decoration: none;
+
+}
+.carousel-control.left {
+    background: transparent;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#00000000', GradientType=1);
+    /*background-repeat: repeat-x;*/
+}
+.carousel-control.right {
+    right: 0;
+    left: auto;
+    background: transparent;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#00000000', GradientType=1);
+   /* background-repeat: repeat-x;*/
+}
+.carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+.banner-right .banner-text{
+  margin-bottom: 30px;
+  font-size:15px;
+  color:#fff;
+  line-height:1.5;
+}
+.banner-right p{
+  margin-bottom: 20px;
+}
+.dis{display: none;}
+.img-2-2,
+.img-2-3,
+.img-2-4,
+.img-2-5,
+.img-2-6{
+  display: none;
+}
+</style>
+
+    <div id="sxb5a8fcd86673f3" style="" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+                <li data-target="#sxb5a8fcd86673f3" data-slide-to="0" class="active"></li>
+                <li data-target="#sxb5a8fcd86673f3" data-slide-to="1" class=""></li>
+                <li data-target="#sxb5a8fcd86673f3" data-slide-to="2" class=""></li>
+                <!-- <li data-target="#sxb5a8fcd86673f3" data-slide-to="3" class=""></li> -->
+
+              </ol>
+      <div class="carousel-inner" role="listbox">
+                <div class="item active" >
+          <!-- <a href="/pc/ruiy/serve/" target="_blank"> -->
+              <div class="banner-right" style="top:35%;font-color:#252525;left:17%;">
+                <p style="color:#fff;font-size:33px;">数字化转型</p>
+                <p class="banner-text">数字化转型不仅是通过IT系统支持现有业务，而是应用数字技术使企业用全新的方式开展业务，睿远深度融合行业经验与数字技术，为企业实现数字化转型。</p>
+                <a href="/cn/zh/management-consulting.html" class="l1 lianxi">了解详情</a>
+                </div>
+            <img src="/uploads/banner-img1.jpg" data-holder-rendered="true">
+                      <!-- </a> -->
+        </div>
+        <div class="item">
+            <div class="banner-right" style="top:35%;font-color:#252525;left:17%;">
+                <p style="color:#fff;font-size:33px;">行业解决方案</p>
+                <p class="banner-text" >睿远的解决方案聚焦新零售、汽车和房地产三大方向，并在这三个方向上持续知识投资与积累</p>
+                <a href="/cn/zh/automaker.html" class="l1 img-solution">汽车</a>
+                <a href="/cn/zh/real-estate.html" class="l1 img-solution">地产</a>
+                <a href="/cn/zh/new-retail.html" class="l1 img-solution">新零售</a>
+                
+                </div>
+            <img src="/uploads/banner-img2.jpg" data-holder-rendered="true">
+        </div>
+        <!-- <div class="item">
+            <div class="banner-right" style="top:35%;font-color:#252525;left:17%;">
+                <p style="color:#fff;font-size:33px;">量身定制属于您的软件服务</p>
+                <p class="banner-text">基于Salesforce与SAP的创新管理咨询&解决方案供应商</p>
+                <a href="/pc/ruiy/serve/" class="l1 lianxi">了解详情</a>
+                
+                </div>
+            <img src="/uploads/banner-img3.jpg" data-holder-rendered="true">
+        </div> -->
+        <div class="item">
+            <div class="banner-right" style="top:35%;font-color:#252525;left:17%;">
+                <p style="color:#fff;font-size:33px;">睿远服务的客户</p>
+                <p class="banner-text"><p class="banner-text">作为Salesforce和SAP的卓越合作伙伴，成立10年以来为200+企业提供数字化经营解决方案</p></p>
+               <!--  <a href="/pc/ruiy/consult/" class="l1 lianxi">了解详情</a> -->
+                </div>
+            <img src="/uploads/banner-4.jpg" data-holder-rendered="true">
+        </div>
+        
+              </div>
+                        <a class="left carousel-control" href="#sxb5a8fcd86673f3" role="button" data-slide="prev" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .0001) 100%);padding-top:65px;background:transparent;">
+            <img src="/images/prev.png" style="    position: absolute;
+    top: 50%;
+    margin-top: -30px;">
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#sxb5a8fcd86673f3" role="button" data-slide="next" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .0001) 100%);padding-top:65px;background:transparent;">
+            <img src="/images/next.png" style="    position: absolute;
+    top: 50%;
+    margin-top: -30px;">
+            <span class="sr-only">Next</span>
+          </a>
+              
+      
+    </div>
+    <!-- <div style="position: relative;left:0px;top:-278px;z-index:5;">
+      <div style="position: absolute;left:40px;top:0;">
+          <a href="javascript:void;" style="display: inline-block;padding:30px 15px;border:1px solid #f00;">
+            <img src="/images/prev.png"/>
+          </a>
+      </div>
+       <div style="position: absolute;right:40px;top:0;">
+          <a href="javascript:void;" style="display: inline-block;padding:30px 15px;border:1px solid #f00;">
+            <img src="/images/next.png"/>
+          </a>
+      </div>
+    </div> -->
+    </div>
+   
+</div>
+
+
+
+<!-- f1 -->
+<div class="container floor">
+  <p class='title'>管理咨询 x 数字技术应用</p>
+  <p><img style="width:400px;height:28px;" src="/ruiy/images/xian.png"></p>
+  <p style="margin:0 auto;text-align:center;font-size:16px;color:#555; line-height:2">以高远的战略思维和清晰的战略逻辑缓解企业数字化转型中对未知的恐惧</p><p style="margin:0 auto;text-align:center;font-size:16px;color:#555;line-height:2;">以丰富的行业经验和全面的技术整合帮助企业在数字化的大潮中建立竞争优势</p>
+  <div class="row" style="margin-top:40px;">
+    <a href="/cn/zh/management-consulting.html">
+      <div class='col-sm-3 font' style='background:#fdfdfd;'>
+        <p>
+          <img src="/ruiy/images/x.png">
+        </p>
+        <p class="title">市场分析</p>
+        <p class="t">宏观环境PEST分析</p>
+        <p class='t'>竞争环境及竞争对标分析</p>
+        <p class="t">数字技术应用前景分析</p>
+      </div>
+    </a>
+    <a href="/cn/zh/management-consulting.html">    
+      <div class='col-sm-3 font' style='background:#fafafa;'>
+        <p>
+          <img src="/ruiy/images/y.png">
+          <img class="i2" src="/ruiy/images/1.jpg">
+        </p>
+        <p class="title">战略及布局</p>
+        <p class="t">经营战略</p>
+        <p class='t'>阶段实现方法</p>
+        <p class="t">风险及应对策略</p>
+      </div>
+    </a>
+    <a href="/cn/zh/software.html">
+      <div class='col-sm-3 font' style='background:#fdfdfd;'>
+        <p>
+          <img src="/ruiy/images/z.png">
+          <img class="i2" src="/ruiy/images/1.jpg">
+        </p>
+        <p class="title">定制转型方案</p>
+        <p class="t">运营管理模型</p>
+        <p class='t'>创建管理</p>
+        <p class="t">组织流程管理</p>
+        <p class="t">数字技术支撑</p>
+      </div>
+    </a>
+    <a href="/pc/ru/cn/zh/software.html">
+      <div class='col-sm-3 font' style='background:#fafafa;'>
+        <p>
+          <img src="/ruiy/images/u.png">
+          <img class="i2" src="/ruiy/images/1.jpg">
+        </p>
+        <p class="title">实施及迭代</p>
+        <p class="t">构建实现计划</p>
+        <p class='t'>按计划实施</p>
+        <p class="t">标准点检查分析</p>
+        <p class="t">定制改进策略</p>
+      </div>
+      </a>
+  </div>
+</div>
+<!-- f2 -->
+<div class='floor2 clear'>
+<style type="text/css">
+  .carousel .carousel-control img,
+  .carousel .carousel-control img{opacity:0 !important;}
+  .left-f2{
+    width:85%;
+    float: left;
+    position: relative;
+    height: 288px;
+    overflow: hidden;
+  }
+  .left-f2 img{
+    width:100%;
+  }
+  .right-f2{
+    float: left;
+    width:15%;
+    position: relative;
+  }
+.clear:after{
+  display:block;
+  clear:both;
+  content:"";
+  visibility:hidden;
+  height:0;
+} 
+.clear{zoom:1} 
+.right-f2 img{
+    margin-bottom: 5px;
+    padding: 0px 5px;
+}
+.dao{
+    height: 287px;
+    overflow: hidden;
+    position: relative;
+}
+.roww{
+  height: 100%;
+  position: relative;
+  top:0;
+  width: 180px;
+  padding: 0 5px;
+}
+.left-f2 .font{
+  position: relative;
+    top: -209px;
+    left: 33px;
+    width: 40%;
+    color: #fff;
+    font-size: 14px;
+}
+.left-f2 p{
+  margin-left: 20px;
+}
+.left-f2 .font1{
+  position: relative;
+    top: -209px;
+    left: 33px;
+    width: 50%;
+    color: #fff;
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.left-f2 .title{
+  position: relative;
+    top: -209px;
+    left: 33px;
+    width: 50%;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom:0;
+}
+
+.shang,
+.xia{
+  width:53px;
+  position: absolute;
+  color: #fff;
+  display: none;
+}
+
+.shang{
+  top:0;
+  left: 37%
+}
+.xia{
+  bottom:-5px;
+  left: 37%
+}
+.zhe{
+    position: absolute;
+    width: 63%;
+    height: 288px;
+    top: 0;
+    background:linear-gradient(to right, #bc131a 25%, transparent);
+}
+
+.dao{
+  position: relative;
+}
+.floor2 {
+  width:1200px;
+  margin: 0 auto;
+}
+.img-1 .on,
+.img-2 .on,
+.img-3 .on,
+.img-4 .on,
+.img-5 .on,
+.img-6 .on{
+    position: absolute;
+   width: 174px;
+    height: 68px;
+    background: rgba(0,0,0,0);
+    left: 8px;
+    top: 0;
+}
+.img-1,
+.img-2,
+.img-3,
+.img-4,
+.img-5,
+.img-6{
+    position: relative;
+    width: 180px;
+    height: 68px;
+    overflow: hidden;
+    margin-bottom: 5px;
+   
+}
+.img-1 img,
+.img-2 img,
+.img-3 img,
+.img-4 img,
+.img-5 img,
+.img-6 img{
+    width: 150%;
+    padding:0;
+    left: -90px;
+    position: relative;
+
+}
+.zhe1{
+    position: absolute;
+    width: 174px;
+    height: 68px;
+    background: rgba(0,0,0,.5);
+    left: 0;
+    z-index: 10;
+}
+.img-2-1 a,
+.img-2-2 a,
+.img-2-3 a,
+.img-2-4 a
+{
+  text-decoration: none;
+}
+</style>
+  <!-- <div id="myCarousel2" class="carousel slide" style='position: relative;'>
+       <?php //Cms_Widget::factory('Ad')->display(Cms_Service_Api_Contents_Banner::getInstance()->getListByTypeId(100098),['need_LR'=>true,]); ?>
+   
+    <img style='position: absolute;top:0;right:0;height:100%' src="/ruiy/images/rz.png">
+  </div> 
+  <div class='font'>
+    <p class="p1">从终局来看布局</p>
+    <p class='p2'>以未来定义现在</p>
+    <p class="p3">为企业量身定制与业务相匹配的数字化战略，以及实施解决方案</p>
+  </div> -->
+  <div class="left-f2">
+    <ul>
+      <li class='img-2-1'>
+        <a href="/cn/zh/example-new-retail.html">
+          <img src="/ruiy/images/f3-1-f.png">
+          <div class='zhe'></div>
+          <p class='title'>成功案例 </p>
+          <p class='font1'>家电企业的新零售转型</p>
+          <p class='font'>我们帮助企业构造全新零售体系，制定全渠道、全场景、轻量化、精准化、智能化零售解决方案。</p>
+        </a>
+      </li>
+       <li class='img-2-2'>
+        <a href="/cn/zh/example-real-estate.html">
+          <img src="/ruiy/images/l-1.png">
+          <div class='zhe'></div>
+          <p class='title'>成功案例 </p>
+          <p class='font1'>地产企业的服务转型</p>
+          <p class='font'>我们帮助房地产企业充分利用互联网工具构建新型的客户经营模式，助力房地产企业从传统房产销售企业向综合生活服务提供商转型。</p>
+        </a>
+      </li>
+      <li class='img-2-3'>
+        <a href="/cn/zh/example-autodealer.html">
+          <img src="/ruiy/images/f3-3.png">
+          <div class='zhe'></div>
+          <p class='title'>成功案例 </p>
+          <p class='font1'>汽车经销企业的战略转型</p>
+          <p class='font'>我们为汽车经销商集团企业提供包括组织、流程和信息化系统在内的全面转型落地解决方案，助力汽车经销商集团实现向自主经营和自有品牌转型，为成为真正的出行服务提供商奠定基础。</p>
+        </a>
+      </li>
+      <li class='img-2-4'>
+        <a href="/cn/zh/example-automaker.html">
+          <img src="/ruiy/images/f3-4.png">
+          <div class='zhe'></div>
+          <p class='title'>成功案例 </p>
+          <p class='font1'>传统整车厂的5S运营模式转型</p>
+          <p class='font'>我们帮助主机厂充分利用互联网工具构建，新型5S经营模式，在不久的未来实现直达最终消费者。</p>
+        </a>
+      </li>
+      <!-- <li class='img-2-5'>
+        <img src="/ruiy/images/f3-5.png">
+        <div class='zhe'></div>
+        <p class='title'>成功案例 </p>
+        <p class='font1'>汽车 主机厂</p>
+        <p class='font'>以高远的战略思维和清晰的战略逻辑缓解企业数字化转型中对未知的恐惧,以丰富的行业经验和全面的技术整合帮助企业在数字化的大潮中建立竞争优势</p>
+      </li>
+      <li class='img-2-6'>
+        <img src="/ruiy/images/f3-6.png">
+        <div class='zhe'></div>
+        <p class='title'>成功案例 </p>
+        <p class='font1'>汽车 主机厂</p>
+        <p class='font'>以高远的战略思维和清晰的战略逻辑缓解企业数字化转型中对未知的恐惧以丰富的行业经验和全面的技术整合帮助企业在数字化的大潮中建立竞争优势</p>
+      </li> -->
+      
+    </ul>
+  </div>
+  <div class="right-f2">
+    <div class='dao'>
+        <div class="roww">  
+              <div class='img-1'>
+                <div class="zhe1"></div>
+                <img src="/ruiy/images/f3-1.png">
+              </div>
+               <div class='img-2'>
+               <div class="zhe1"></div>
+                <img src="/ruiy/images/l-1.png">
+              </div>
+               <div class='img-3'>
+               <div class="zhe1"></div>
+                <img src="/ruiy/images/f3-3.png">
+              </div>
+               <div class='img-4'>
+               <div class="zhe1"></div>
+                <img src="/ruiy/images/f3-4.png">
+              </div>
+               <div class='img-5'>
+               <div class="zhe1"></div>
+                <img src="/ruiy/images/f3-5.png">
+              </div>      
+               <div class='img-6'>
+               <div class="zhe1"></div>
+                <img src="/ruiy/images/f3-6.png">
+              </div>
+        </div>
+    </div>
+      <a class='shang' href="javascript:;"><img class='' src='/ruiy/images/shang.png'></a>
+      <a class='xia' href="javascript:;"><img class='' src='/ruiy/images/xia.png'></a>
+  </div>
+</div>
+<!-- floor3 -->
+<script>  
+  var list = $(".roww img");
+  var ge = list.length - 4;
+  var i = 1;
+  var roww = $(".roww").css('top');
+  // if(ge > 0){
+  //   $(".xia").css('display','block');
+  // }else{
+  //   $(".xia").css('display','none');
+  //   $(".shang").css('display','block');
+  // }
+  // $(".xia").click(function(){
+  //     if(ge > 0){
+  //       $(".roww").css('top',-i*73);
+  //       i++;
+  //       ge--;
+  //     }else{
+  //       $(".xia").css('display','none');
+  //       $(".shang").css('display','block');
+  //       i=0;
+  //       ge = list.length - 4;
+  //     }
+  //   })
+  $(".shang").click(function(){
+        $(".roww").css('top',0);
+        $(".shang").css('display','none');
+        $(".xia").css('display','block');
+    })
+  var ii=1;
+  var timer = "";
+    function tim(){
+    if(ii ==1){
+      $(".img-1 .zhe1").addClass('on');
+      $(".img-1").siblings().children().removeClass("on");
+      $(".img-2-1").css('display','block');
+      $(".img-2-1").siblings().css('display','none');
+      ii++;
+   }else if(ii==2){
+     $(".img-2 .zhe1").addClass('on');
+     $(".img-2").siblings().children().removeClass("on");
+     $(".img-2-2").css('display','block');
+     $(".img-2-2").siblings().css('display','none');
+      ii++;
+   }else if(ii==3){
+     $(".img-3 .zhe1").addClass('on'); 
+     $(".img-3").siblings().children().removeClass("on");
+     $(".img-2-3").css('display','block');
+     $(".img-2-3").siblings().css('display','none');;
+      ii++;
+   }else if(ii==4){
+      $(".img-4 .zhe1").addClass('on');      
+      $(".img-4").siblings().children().removeClass("on");
+      $(".img-2-4").css('display','block');
+      $(".img-2-4").siblings().css('display','none');;
+      ii++;
+   // }else if(ii==5){
+   //    $(".img-5 .zhe1").addClass('on');
+   //    $(".img-5").siblings().children().removeClass("on");
+   //    $(".img-2-5").css('display','block');
+   //    $(".img-2-5").siblings().css('display','none');; 
+   //    ii++;
+   // }else if(ii==6){
+   //    $(".img-6 .zhe1").addClass('on');
+   //    $(".img-6").siblings().children().removeClass("on");
+   //    $(".img-2-6").css('display','block');
+   //    $(".img-2-6").siblings().css('display','none');;
+      
+   // }else{
+    ii=1;
+   }
+  }
+  timer = setInterval(tim,2500);
+  $(".left-f2").mouseenter(function(){
+    clearInterval(timer);
+  })
+  $(".left-2").mouseleave(function(){
+    timer = setInterval(tim,2500)
+  })
+  $(".roww").mouseenter(function(){
+    clearInterval(timer);
+  })
+  $(".roww").mouseleave(function(){
+    timer = setInterval(tim,2500)
+  })
+  $(".img-1").click(function(){
+    $(".img-1 .zhe1").addClass("on");
+    $(".img-1").siblings().children().removeClass("on");
+    $(".img-2-1").css("display","block");
+    $(".img-2-1").siblings().css("display",'none');
+  })
+  $(".img-2").click(function(){
+    $(".img-2 .zhe1").addClass("on");
+    $(".img-2").siblings().children().removeClass("on");
+    $(".img-2-2").css("display","block");
+    $(".img-2-2").siblings().css("display",'none');
+  })
+  $(".img-3").click(function(){
+    $(".img-3 .zhe1").addClass("on");
+    $(".img-3").siblings().children().removeClass("on");
+    $(".img-2-3").css("display","block");
+    $(".img-2-3").siblings().css("display",'none');
+  })
+  $(".img-4").click(function(){
+    $(".img-4 .zhe1").addClass("on");
+    $(".img-4").siblings().children().removeClass("on");
+    $(".img-2-4").css("display","block");
+    $(".img-2-4").siblings().css("display",'none');
+  })
+  $(".img-5").click(function(){
+    $(".img-5 .zhe1").addClass("on");
+    $(".img-5").siblings().children().removeClass("on");
+    $(".img-2-5").css("display","block");
+    $(".img-2-5").siblings().css("display",'none');
+  })
+  $(".img-6").click(function(){
+    $(".img-6 .zhe1").addClass("on");
+    $(".img-6").siblings().children().removeClass("on");
+    $(".img-2-6").css("display","block");
+    $(".img-2-6").siblings().css("display",'none');
+  })
+     
+   
+</script> 
+<style type="text/css">
+  .floor3{
+    height:449px;
+    background-size: 100% 110%;
+    position: relative;
+
+  }
+  .floor3 .font{
+    width:230px;
+    height:200px;
+    margin-right: 81px;
+    margin-left: 76px;
+    background: rgba(255,255,255,.1);
+    box-shadow: 3px 5px 10px #999;
+  }
+  .floor3 .title{
+    top:55px;
+  }
+</style>
+<div class="floor3">
+  <p class='title'>与您一同制定和实施创新数字化解决方案</p>
+  <p style="margin-top:55px;"><img style="width:400px;height:28px;" src="/ruiy/images/xian.png"></p>
+  <div class="container" style='margin-top:-10px;'>
+    <div class="row">
+      <div class="col-sm-4 font">
+        <!-- <p class='p1'><img src="/ruiy/images/tb1.jpg"></p> -->
+        <div class="p1" style="height: 90px;">
+          <h1 id="demo1" style="padding-top:30px;font-size: 44px;color:#c7161e">212</h1>
+        </div>
+ 
+        <p class='p2' style="font-size:18px;">成功实施项目</p>
+      </div>
+      <div class="col-sm-4 font">
+        <!-- <p class='p1'><img src="/ruiy/images/tb2.jpg"></p> -->
+        <div class="p1" style="height: 90px;">
+          <h1 id = "demo2" style="padding-top:30px;font-size: 44px;color:#c7161e">156</h1>
+        </div>
+      
+        <p class='p2' style="font-size:18px;">官方认证顾问</p>
+      </div>
+      <div class="col-sm-4 font">
+        <!-- <p class='p1'><img src="/ruiy/images/tb3.jpg"></p> -->
+        <div class="p1" style="height: 113px;">
+          <h1 id="demo3" style="padding-top:30px;font-size: 44px;color: #c7161e;display: inline-block;">98</h1><span style="font-size: 44px;color: #c7161e;">%</span>
+        </div>
+
+        <p class='p2' style="font-size:18px;">客户平均满意度</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 下拉增加百分号数值 -->
+<script type="text/javascript">
+    var flag = 0;
+
+  function g_demo_fun(demo_number,cp_outtime){  
+    var g_demo=document.getElementById(demo_number);//绑定滚动标签  
+    var g_Number=parseInt(g_demo.innerHTML);//复制标签值  
+    var g_Number_min=0;  
+      
+    function Gundong(){  
+      
+    if(g_Number_min<g_Number){  
+    g_Number_min=g_Number_min+1;  
+    g_demo.innerHTML=g_Number_min;    
+    }  
+
+    }  
+    var MyMar=setInterval(Gundong,20);   
+     }  
+  function gdjz(div){
+      var a,b,c,d;
+      d=$(div).offset().top;
+      a=eval(d + 100);
+      b=$(window).scrollTop(); 
+      c=$(window).height();
+        if(b+c>a){
+          // $((div)).addClass((cssname));
+      if(flag == 0){         
+            g_demo_fun("demo1",10);  
+            g_demo_fun("demo2",200);  
+            g_demo_fun("demo3",5000);
+            flag = 1;
+          }  
+      }else{
+        flag =0;
+      }
+   }
+       
+    $(window).scroll(function(){
+
+      gdjz(".floor3");
+      });
+ 
+</script>
+<!-- footer -->
+<div id='footer'><?php require __DIR__.'/../ruiy/footer.phtml';?></div>
+
+<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/main.js"></script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1272959461'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1272959461%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+</html>

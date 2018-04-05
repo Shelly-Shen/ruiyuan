@@ -1,0 +1,237 @@
+<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/ruiy/css/iconfont.css">
+<div class="header1">
+			<div class="logo">
+				<a href="/ruiy/index"><img id="logo" src="/ruiy/images/logob.png"></a>
+				<a id="bread" href="javascript:;"><img src="/ruiy/images/b.png"></a>
+			</div>
+			<div class="content55"></div>
+			<div class="right11"  style="display:none;">
+				<ul>
+					<li class='item_p ' >
+				          <a  href="/ruiy/index/" class="item-a">首页
+				          </a>
+          			</li>
+					<li class='item_p server1'><a href="javascript:;" class="item-a">服务&nbsp;&nbsp;&nbsp;<i class="iconfont icon-jiantouxia"></i></a>
+				        <ul class='hide'>
+				           	<li class='er'><a href="/ruiy/serve/">咨询</a>
+					           	<ul class='er_son'>
+					           		<li class='item_son_p'><a href="/ruiy/innovate/">创新变革</a></li>
+					           		<li class='item_son_p'><a href="/ruiy/busi/">企业运营</a></li>
+					           		<li class='item_son_p'><a href="/ruiy/itconsult/"> IT咨询规划</a></li>
+					           	</ul>
+				           	</li>
+				           	<li class='er' class='item_son_p'><a  href="/ruiy/softwave/">软件</a>
+				           		<ul class='er_son'>
+				           		    <li class='item_son_p'><a href="/ruiy/spa/">SAP</a></li>
+					           		<li class='item_son_p'><a  href="/ruiy/salesforce/">Salesforce</a></li>
+					           	</ul>
+					        </li>	
+				        </ul> 
+					</li> 
+					<li class='item_p hangy1'><a  href="javascript:;"  class="item-a">行业与解决方案<i class="iconfont icon-jiantouxia"></i></a>
+						 <ul class='hide'>
+				           	<li class='er' class='item_son_p'><a href="/ruiy/engine/">汽车</a>
+					           	<ul class='er_son'>
+					           		<li class='item_son_p'><a href="/ruiy/engine/">主机厂</a></li>
+					           		<li class='item_son_p'><a href="/ruiy/dealer/">经销商</a></li>
+					           	</ul>
+				           	</li>
+				           	<li class='er'><a href="/ruiy/land/">地产</a></li>
+				           	<li class='er'><a href="/ruiy/retail/">新零售</a></li>
+				        </ul>
+					</li>	
+					<li class='item_p ours1'><a href="javascript:;"  class="item-a">关于我们<i class='iconfont icon-jiantouxia'></i></a>
+						 <ul class='hide'>
+				           	<li class='er'><a href="/ruiy/consult/">睿远咨询</a>
+					        <li class='er'><a href="/ruiy/lianx/" >联系我们</a>
+				           	<li class='er'><a href="http://search.51job.com/list/020000,000000,0000,00,9,99,%25E4%25B8%258A%25E6%25B5%25B7%25E7%259D%25BF%25E8%25BF%259C%25E8%25BD%25AF%25E4%25BB%25B6%25E4%25BF%25A1%25E6%2581%25AF%25E5%2592%25A8%25E8%25AF%25A2%25E6%259C%2589%25E9%2599%2590%25E5%2585%25AC%25E5%258F%25B8,1,1.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare= " target="_blank">加入睿远</a></li>
+				           	<li class='er'><a href="/ruiy/news/">新闻室</a>
+				           	<li class='er'><a href="http://ibreakingpoint.huodongxing.com " target="_blank">活动沙龙</a></li>
+				        </ul>
+					
+							<li class='item_p'><a  href="http://search.51job.com/list/020000,000000,0000,00,9,99,%25E4%25B8%258A%25E6%25B5%25B7%25E7%259D%25BF%25E8%25BF%259C%25E8%25BD%25AF%25E4%25BB%25B6%25E4%25BF%25A1%25E6%2581%25AF%25E5%2592%25A8%25E8%25AF%25A2%25E6%259C%2589%25E9%2599%2590%25E5%2585%25AC%25E5%258F%25B8,1,1.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare= " target="_blank" class="item-a">加入我们</a></li>
+					</li>
+					<li class='item_p'><a  href="#">400-820-7332</a></li>
+					<li class="item_p" >	
+						<a href="/ruiy/lianx" >联系我们 </a><a class="l2" href="/enruiy/index">EN</a>
+					</li>
+				</ul>
+			</div>
+</div>
+
+<script type="text/javascript">
+$('body').load(function(){
+	$(".right11").css("display",'block');
+})
+$(document).ready(function(){
+	$(".server1").click(function(){
+		if($(".server1>ul").hasClass('show')){
+			$(".server1>ul").addClass('hide').removeClass('show');
+			$(".server1>a>i").addClass("icon-jiantouxia").removeClass("icon-jiantoushang");
+		}else{
+			$(".server1>ul").addClass('show').removeClass('hide');
+			$(".server1>a>i").addClass("icon-jiantoushang").removeClass("icon-jiantouxia");
+		}
+	})
+	$(".hangy1").click(function(){
+		if($(".hangy1>ul").hasClass('show')){
+			$(".hangy1>ul").addClass('hide').removeClass('show');
+			$(".hangy1>a>i").addClass("icon-jiantouxia").removeClass("icon-jiantoushang");
+		}else{
+			$(".hangy1>ul").addClass('show').removeClass('hide');
+			$(".hangy1>a>i").addClass("icon-jiantoushang").removeClass("icon-jiantouxia");
+		}
+	})
+	$(".ours1").click(function(){
+		if($(".ours1>ul").hasClass('show')){
+			$(".ours1>ul").addClass('hide').removeClass('show');
+			$(".ours1>a>i").addClass("icon-jiantouxia").removeClass("icon-jiantoushang");
+		}else{
+			$(".ours1>ul").addClass('show').removeClass('hide');
+			$(".ours1>a>i").addClass("icon-jiantoushang").removeClass("icon-jiantouxia");
+		}
+	})
+	
+	$("#bread").click(function(){
+		$(".right11").css("display",'block');
+		$(".content55").css("display",'block');
+	})
+	$(".content55").on("click",function(){
+		$(".right11").css("display",'none');
+		$(".content55").css("display",'none')
+	})
+
+})
+$(window).scroll(function(){
+	var height = $(window).scrollTop();
+	if(height > 100){
+		$(".header1").css("position",'fixed');
+	}
+	if(height > 100){
+	 	$('#logo').attr('src','/ruiy/images/logob.png');
+	 }else{
+	 	$('#logo').attr('src','/ruiy/images/logob.png')
+	 }
+	  
+})
+</script>
+
+
+
+<style type="text/css">
+	  [v-cloak] { 
+	    display: none; 
+	  } 
+	#header{
+	height:45px;
+	background:#323232;
+	}
+	.content55{
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    height: 100%;
+		    width: 35%;
+		    z-index: 1;
+		    background: rgba(0, 0, 0, 0.4);
+		    opacity: 1;
+		    transition: all 0.2s;
+		    display: none;
+	}
+	.header1{
+		height:45px;
+		width:100%;
+		position: relative;
+		z-index: 1000;
+		background: #323232;
+	}
+	.logo img{
+		width: 150px;
+    	margin-top: 6px;
+	}
+	.logo{
+		width:100%;
+		margin: 0 auto;
+		text-align: center;
+	}
+	.right11{
+		width: 65%;
+		background: #2E2E2E;
+	    position: fixed;
+	    top:0;
+	    right: 0;
+	    height: 100%;
+	    color: #fff;
+	    text-align: left;
+	    font-size: 0.32rem;
+	    z-index: 10;
+	    overflow-y: auto;
+	   	display: none;
+	    transition: all .3s linear;
+	}
+	.right11 a{
+		border-bottom: 1px solid #444
+	}
+	.item_p a{
+		padding: 0px 5px 0px 10px;
+		font-size:20px;
+		color: #fff;
+
+	}
+	.item_p>a{
+		color: #fff;
+		height: 44px;
+		line-height:44px;
+		font-size:16px;
+		display: block;
+	}
+	.item_p .er a{
+		padding: 0px 5px 0px 30px;
+		font-size:20px;
+		color: #fff;
+	}
+	.item_p .er a{
+		color: #9b9ea0;
+		font-size:14px;
+		height:44px;
+		line-height: 44px;
+		display: block;
+		background:#3b3b3b;
+	}
+
+	.item_p .er_son a{
+		padding: 0px 5px 0px 50px;
+		font-size:14px;
+		color: #9b9ea0;
+	}
+	.hide{
+		display: none;
+		transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+	}
+	.show{
+		height:100% !important;
+		transition: all 0.2s;
+        -webkit-transition: all 0.2s;
+	}
+	#bread img{
+		display: block;
+	    position: relative;
+	    right: 15px;
+	    top: 5px;
+	    width: 20px !important;
+	    float: right;
+	}
+	.iconfont{
+		float: right;
+    	margin-right: 20px;
+	}
+	i{
+		transition: all 0.2s;
+	    -webkit-transition: all 0.2s;
+	}
+
+</style>
+

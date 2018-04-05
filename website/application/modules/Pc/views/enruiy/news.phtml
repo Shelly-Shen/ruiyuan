@@ -1,0 +1,303 @@
+<?php
+
+
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title><?php echo $meta->title; ?></title>
+    <meta name="description" content="<?php echo $meta->description; ?>" />
+    <meta name="keywords" content="<?php echo $meta->keywords; ?>" />
+    <link rel="shortcut icon" href="<?php echo $meta->favicon; ?>" />
+    <link rel="bookmark" href="<?php echo $meta->favicon; ?>" type="image/x-icon"　/>
+    <link rel="icon" href="<?php echo $meta->favgif; ?>" type="image/gif" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+    <meta name="baidu-site-verification" content="ISvznniG2q" />
+    <meta name="baidu-site-verification" content="l9jDiF4kqd" />
+	<meta name="baidu-site-verification" content="qvC3nD7GAI" />
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/ruiy/css/bootstrap.css">
+</head>
+<body>
+<header id="header"><?php require __DIR__.'/../enruiy/header.phtml';?>
+
+<style>
+	
+  .row img
+  {
+  	width: 180px;
+
+  }
+
+
+</style>
+
+</header>
+<!-- banner -->
+<div class="banner">
+	<div id="myCarousel1" class="carousel slide">
+		<?php Cms_Widget::factory('Ad')->display(Cms_Service_Api_Contents_Banner::getInstance()->getListByTypeId(100099),['need_LR'=>true,]); ?>
+    </div>
+    <!-- <div class="ban-left">
+    	<p>为了看见未来</p>
+    	<p style="margin-left:20px;">相信未来的企业</p>
+    </div> -->
+</div>
+<!-- nav -->
+<div id="nav" class="navr">
+	<ul style='margin: 0;'>
+		<li><a href="/pc/enruiy/consult" style="width: 235px;">Breakingpoint Consulting</a><span class="xian">|</span></li>
+		<li><a href="/pc/enruiy/lianx">Contact us</a><span class="xian">|</span></li>
+		<li><a href="http://search.51job.com/list/020000,000000,0000,00,9,99,%25E4%25B8%258A%25E6%25B5%25B7%25E7%259D%25BF%25E8%25BF%259C%25E8%25BD%25AF%25E4%25BB%25B6%25E4%25BF%25A1%25E6%2581%25AF%25E5%2592%25A8%25E8%25AF%25A2%25E6%259C%2589%25E9%2599%2590%25E5%2585%25AC%25E5%258F%25B8,1,1.html?lang=c&stype=&postchannel=0000&workyear=99&cotype=99&degreefrom=99&jobterm=99&companysize=99&providesalary=99&lonlat=0%2C0&radius=-1&ord_field=0&confirmdate=9&fromType=&dibiaoid=0&address=&line=&specialarea=00&from=&welfare=" target="_blank">Join us</a><span class="xian">|</span></li>
+		<li><a class='active' href="/pc/enruiy/news">News Room</a><span class="xian">|</span></li>
+		<li><a href="http://ibreakingpoint.huodongxing.com " target="_blank" style="width: 160px;">Activities & Salon</a></li>
+	</ul>
+</div>
+<!-- content -->
+<div class='content'>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-10 news">
+
+
+                 <!-- <script type="text/javascript">
+                 				require(['jquery','flowload','tool','widget'],function($,flowload,tool,widget){
+                 				  flowload.bindDocument('<?php
+                 				  	echo Tool::buildUrl('',[
+                 				  	  'do'=>'getSearchList',
+                 				  	  'begin_id'=>Cms_Service_Api_Contents_Default::getInstance()->getLastDefault([
+                 					    'cms_types_id'=>$current_level_id,
+                 					    $sort_id=>$sort_by,
+                 					    'kw'=>Request::getStringParam('headshkw',''),
+                 				  	  ])->id,
+                 				  	  'cms_types_id'=>$current_level_id,
+                 				  	  $sort_id=>$sort_by,
+                 					  'kw'=>Request::getStringParam('headshkw',''),
+                 				  	]);
+                 				  ?>&page={{page}}','',function(res){
+                 				  	return widget.render('zxitems',res).then(function(x){
+                 				  	  $('#zxitem').append(x);
+                 				  	  return $('#zxitem');
+                 				  	});
+                 				  });
+                 				});
+                 				</script> -->
+                <?php 
+                
+                     /* $zx=fetch_json_data('/ServerZX/GetDetailById.cwg?cms_types_id=100118');
+                      var_dump($zx);*/
+                        $page=Request::getIntParam('page',1);
+                       /* if(isset($_GET['page']))
+                        {
+                        	$page=$_GET['page'];
+                        }
+                         else
+                         {
+                         	$page=1;
+                         }*/
+                       //$d=fetch_json_data('/ServerZX/GetListAll.cwg?count=10&page='.$page);
+                       $a=fetch_json_data('/ServerZX/GetListAll.cwg?count=5&page='.$page.'&cms_types_id=100118');
+                      // var_dump($a);
+                      foreach ($a->Data as $key => $value) {
+                      /*var_dump($value);
+                      exit;
+                             */
+                 ?> 				
+              
+				<div class="row news_b">
+					<div class="col-sm-3">
+						<a href="/pc/enruiy/new?id=<?php echo $value->id;?>">
+						<img  style="width:135px;" src="<?php echo $value->_face->ico->public_src;?>"></a>
+					</div>
+					<div class="col-sm-9" style="margin-left:-60px;">
+						<p class='title'><a href="/pc/enruiy/new?id=<?php echo $value->id;?>"><?php echo $value->title;?></a></p>
+						<p class="cont"><?php echo $value->summary;?> </p>
+						<p class="date">
+							<span><?php $time=strtotime($value->create_time);
+                                         echo date('Y-m-d',$time);
+							  ?></span>
+							<span>Viewed：<?php echo $value->view_count;?></span>
+							<!-- <span><?php echo $value->view_count;?></span> -->
+						</p>
+					</div>
+				</div>
+
+             <?php  }?>
+
+
+     <?php
+
+
+
+
+                              $pageAll=ceil(($a->Count)/5); 
+
+                             $pre=$page-1;
+                             if($pre<=0){
+                             	$pre=1;
+                             }
+                             
+                              $next=$page+1;
+                              if($next>$pageAll) {
+                              	$next=$pageAll;
+                              }
+
+
+
+
+
+                             ?>
+                       	<style type="text/css">
+                       		.pagination li a{color:red;}
+                       	</style>
+						  <ul class="pagination" >
+							<li><a href="?page=<?php echo $pre;?>">&laquo;</a></li>
+                             <?php for($i=1;$i<=$pageAll;$i++){  ?>
+
+							<li><a href="?page=<?php echo $i;?>"><?php echo $i;?></a></li>
+
+
+							 <?php } ?>
+							
+							<li><a href="?page=<?php echo $next;?>">&raquo;</a></li>
+						</ul>
+
+                   <?php
+                              /*  $allcount= $a->Count;
+                                 echo $allcount;
+                                echo Cms_Widget::staticFactory('Pager')->newpager([
+									  'page_code'=>$page, // 当前页码
+									  'page_itemcount'=>5, // 最多显示页码数
+									  'item_count_prepage'=>5, // 每页显示条目数
+									  'item_count_sum'=>$allcount, // 条目总数
+									  'url'=>'?page={{page}}', // 页码对应链接
+									]);*/
+								/*echo Cms_Widget::staticFactory('Pager')->newpager([
+									  'page_code'=>$page, // 当前页码
+									  'page_itemcount'=>6, // 最多显示页码数
+									  'item_count_prepage'=>10, // 每页显示条目数
+									  'item_count_sum'=>$a->Count, // 条目总数
+									 // 'url'=>'?page={{page}}', // 页码对应链接
+									]);*/
+				  ?>
+
+				<!-- <div class="row news_b">
+					<div class="col-sm-3">
+						<a href="/pc/ruiy/new"><img src="/ruiy/images/news.png"></a>
+					</div>
+					<div class="col-sm-9">
+						<p class='title'><a href="/pc/ruiy/new">睿远携手美商会共商跨国企业营销战略</a></p>
+						<p class="cont">迎着5月明媚的阳光，由Breakingpoint Consulting（上海睿远软件信息咨询有限公司）和Amcham（美国会）联合举办的“在2015年的今天，跨国企业如何营销”研讨会子啊昨日上海商城美商会完美落幕，……</p>
+						<p class="date">
+							<span>2018-01-04</span>
+							<span>浏览：</span>
+							<span>1120</span>
+						</p>
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class="row news_b">
+					<div class="col-sm-3">
+						<a href="/pc/ruiy/new"><img src="/ruiy/images/news.png"></a>
+					</div>
+					<div class="col-sm-9">
+						<p class='title'><a href="/pc/ruiy/new">睿远携手美商会共商跨国企业营销战略</a></p>
+						<p class="cont">迎着5月明媚的阳光，由Breakingpoint Consulting（上海睿远软件信息咨询有限公司）和Amcham（美国会）联合举办的“在2015年的今天，跨国企业如何营销”研讨会子啊昨日上海商城美商会完美落幕，……</p>
+						<p class="date">
+							<span>2018-01-04</span>
+							<span>浏览：</span>
+							<span>1120</span>
+						</p>
+					</div>
+				</div>
+				
+				
+				
+				
+				<div class="row news_b">
+					<div class="col-sm-3">
+						<a href="/pc/ruiy/new"><img src="/ruiy/images/news.png"></a>
+					</div>
+					<div class="col-sm-9">
+						<p class='title'><a href="/pc/ruiy/new">睿远携手美商会共商跨国企业营销战略</a></p>
+						<p class="cont">迎着5月明媚的阳光，由Breakingpoint Consulting（上海睿远软件信息咨询有限公司）和Amcham（美国会）联合举办的“在2015年的今天，跨国企业如何营销”研讨会子啊昨日上海商城美商会完美落幕，……</p>
+						<p class="date">
+							<span>2018-01-04</span>
+							<span>浏览：</span>
+							<span>1120</span>
+						</p>
+					</div>
+				</div> -->
+				<!-- <div class="chak"><a href="#">查看更多</a></div> -->
+
+			</div>
+			<div>
+							
+								  
+
+
+			</div>
+			<?php $b=fetch_json_data('/ServerZX/GetListAll.cwg?count=5&page=1&cms_types_id=100120')->Data; ?>
+			<div class="col-sm-2" style="padding-left:0;">
+				<div class="box">
+					<p class="title"><span class="xian">|</span>Follow us</p>
+					<p style='margin:15px;'>
+						<a href="https://www.facebook.com/ibreakingpoint" target="_blank">
+						<img style='width:40px' src="/ruiy/images/zx_03.jpg"></a>
+						<a href="http://www.linkedin.com/groups?gid=3291404" target="_blank">
+						<img style='width:40px' src="/ruiy/images/zx_05.jpg"></a>
+						<a href="javascript:;">
+						<img id='cimg' style='width:40px' src="/ruiy/images/zx_07.jpg"></a>
+					</p>
+					<p id='pimg' style='text-align:center;display: none;'><img src="/ruiy/images/er.jpg"></p>
+				</div>
+				<div class="box">
+					<p class='title'><span class="xian">|</span>Market Cooperation</p>
+					<p class='s1'>Hotline:021-34010561</p>
+					<p class='s1'>Email：even.zhang@ibreaking point.com</p>
+				</div>
+				<div class="box">
+					<p class='title'>
+					<span class="xian">|</span>Explore Content</p>
+                         
+                     <?php                         
+                        
+                          foreach ($b as $key => $value) {
+                          	//var_dump($value);
+                      
+                      ?>
+                    <a href="/news/<?php echo $value->id.'.html';?>" style='margin-right: 0px;' target="_blank">
+					<p class='wei'><?php echo $value->title;?></p>
+					<p class='s1 w1'><?php echo $value->summary;?></p>
+					</a>
+                    <?php  }?>
+
+
+					<!-- <p class='wei'>. 微信文章标题</p>
+					<p class='s1 w1'>微信文章介绍简介微信微信文章介绍</p>
+					<p class='s1 w1'>简介微信文章介绍简介</p> -->
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- footer -->
+<div id='footer'><?php require __DIR__.'/../enruiy/footer.phtml';?></div>
+<script type="text/javascript" src="/ruiy/js/jquery.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.js"></script>
+<script type="text/javascript" src="/ruiy/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/ruiy/js/main.js"></script>
+</body>
+</html>
